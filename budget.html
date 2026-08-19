@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
+<title>Two Households</title>
+<style>
+:root{--paper:#fbfaf7;--card:#fff;--ink:#1f3d2e;--ink-body:#2f3a35;--ink-soft:#6b7a72;--ink-faint:#9aa79f;
+--rule:#dfe3dc;--hair:#ecefe8;--accent:#b8522a;--sage:#7a9282;--sage-pale:#e8ebe4;--field:#f4f6f1}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#141a17;--card:#1b221e;--ink:#e9efe9;
+--ink-body:#cdd6d0;--ink-soft:#93a29a;--ink-faint:#6e7b74;--rule:#2c3630;--hair:#242c27;--accent:#d97a4a;
+--sage:#8fa899;--sage-pale:#222b26;--field:#1f2723}}
+:root[data-theme="dark"]{--paper:#141a17;--card:#1b221e;--ink:#e9efe9;--ink-body:#cdd6d0;--ink-soft:#93a29a;
+--ink-faint:#6e7b74;--rule:#2c3630;--hair:#242c27;--accent:#d97a4a;--sage:#8fa899;--sage-pale:#222b26;--field:#1f2723}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink-body);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.6}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
+.num{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.wrap{max-width:960px;margin:0 auto;padding:56px 28px 96px}
+.kicker{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 15px}
+h1{font-size:clamp(38px,6vw,56px);line-height:1.02;margin:0;color:var(--ink);font-weight:400;letter-spacing:-.02em;text-wrap:balance}
+.rule-accent{width:52px;height:2px;background:var(--accent);margin:21px 0 19px}
+.lede{font-size:17px;line-height:1.6;color:var(--ink-soft);max-width:62ch;margin:0}
+section{margin-bottom:44px}
+.sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+.sechead h2{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:0;white-space:nowrap}
+.sechead .fill{flex:1;height:1px;background:var(--rule)}
+.houses{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:760px){.houses{grid-template-columns:1fr;gap:34px}}
+.house h3{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:25px;font-weight:400;color:var(--ink);margin:0 0 3px}
+.house .place{font-size:13px;color:var(--ink-faint);margin:0 0 18px}
+.line{display:flex;align-items:baseline;gap:8px;padding:6px 0}
+.line+.line{border-top:1px solid var(--hair)}
+.line label{font-size:14px;color:var(--ink-body);white-space:nowrap}
+.line .dots{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-3px);min-width:12px}
+input.f{width:78px;text-align:right;font-size:14px;padding:2px 4px;color:var(--ink);background:transparent;border:none;border-bottom:1px solid var(--rule)}
+input.f:hover{background:var(--field)}
+input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:var(--field)}
+.ck{width:auto;accent-color:var(--accent)}
+.line.credit label,.line.credit input{color:var(--sage)}
+.htotal{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-top:13px;border-top:2px solid var(--ink)}
+.htotal .lbl{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.htotal .amt{font-size:27px;color:var(--ink)}
+.combined{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:32px 36px;display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between}
+.big .lbl,.annual .lbl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:8px}
+.big .amt{font-size:clamp(42px,7vw,60px);line-height:.95;color:var(--ink);letter-spacing:-.025em}
+.big .sub{font-size:13.5px;color:var(--ink-faint);margin-top:8px}
+.annual{text-align:right}.annual .amt{font-size:29px;color:var(--ink)}
+.ledger{display:grid;grid-template-columns:1fr auto;gap:0 22px;max-width:560px}
+.ledger .l,.ledger .v{font-size:14.5px;padding:7px 0;border-bottom:1px solid var(--hair)}
+.ledger .v{text-align:right;color:var(--ink)}
+.ledger .l.tot,.ledger .v.tot{border-bottom:none;border-top:2px solid var(--ink);font-weight:600;padding-top:11px;font-size:16px}
+.ledger .v.pos{color:var(--sage)}
+.inputrow{display:flex;align-items:baseline;gap:10px;margin-bottom:9px;font-size:14.5px}
+.inputrow label{color:var(--ink-soft)}
+.inputrow input.f{width:92px;font-size:14.5px}
+.margin-note{background:var(--sage-pale);border-radius:3px;padding:25px 30px;margin-top:25px}
+.margin-note h4{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:20px;font-weight:400;color:var(--ink);margin:0 0 10px}
+.margin-note p{margin:0 0 11px;font-size:14.5px;color:var(--ink-body);max-width:64ch}
+.margin-note p:last-child{margin-bottom:0}
+.hl{color:var(--accent);font-weight:600}
+.proceeds{border:1px solid var(--rule);border-radius:3px;padding:28px 32px;background:var(--card)}
+.notesbox{border:1px solid var(--rule);border-radius:3px;background:var(--card);padding:24px 28px}
+.notesbox h4{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:19px;font-weight:400;color:var(--ink);margin:0 0 4px}
+.notesbox .hint{font-size:13px;color:var(--ink-faint);margin:0 0 14px}
+.pad{min-height:110px;font-size:14.5px;line-height:1.7;color:var(--ink-body);outline:none}
+.pad:focus{outline:none}
+.pad p{margin:0 0 8px}
+.pad:empty::before{content:"Type here — both of you see the same notes.";color:var(--ink-faint)}
+.foot{border-top:1px solid var(--rule);padding-top:24px;margin-top:48px}
+.foot h4{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:0 0 13px}
+.foot dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 20px}
+.foot dt{font-size:13.5px;color:var(--ink);font-weight:600;white-space:nowrap}
+.foot dd{margin:0;font-size:13.5px;color:var(--ink-soft);max-width:70ch}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<div class="masthead">
+  <p class="kicker">Household Plan · August 2026</p>
+  <h1 class="serif">Two Households</h1>
+  <div class="rule-accent"></div>
+  <p style="margin:0 0 14px;font-size:14px"><a href="./index.html" style="color:var(--accent)">← back to the whole picture</a></p>
+  <p class="lede">What each home needs to run, and where it comes from. Every figure is editable and shared — when one of you changes a number, the other sees it.</p>
+</div>
+
+
+<section>
+  <div class="sechead"><h2>What's needed</h2><div class="fill"></div></div>
+  <div class="houses">
+    <div class="house">
+      <h3 class="serif">Jason</h3><p class="place">Condo · one adult</p>
+      <div class="line"><label for="j0">Rent</label><span class="dots"></span><input class="num f" id="j0" data-g="j" type="number" value="2000"></div>
+<div class="line"><label for="j1">Electric</label><span class="dots"></span><input class="num f" id="j1" data-g="j" type="number" value="100"></div>
+<div class="line"><label for="j2">Gas</label><span class="dots"></span><input class="num f" id="j2" data-g="j" type="number" value="20"></div>
+<div class="line"><label for="j3">Groceries</label><span class="dots"></span><input class="num f" id="j3" data-g="j" type="number" value="450"></div>
+<div class="line"><label for="j4">Dining out</label><span class="dots"></span><input class="num f" id="j4" data-g="j" type="number" value="250"></div>
+<div class="line"><label for="j5">Car insurance</label><span class="dots"></span><input class="num f" id="j5" data-g="j" type="number" value="110"></div>
+<div class="line"><label for="j6">Renters insurance</label><span class="dots"></span><input class="num f" id="j6" data-g="j" type="number" value="18"></div>
+<div class="line"><label for="j7">Fuel &amp; upkeep</label><span class="dots"></span><input class="num f" id="j7" data-g="j" type="number" value="90"></div>
+<div class="line"><label for="j8">Household</label><span class="dots"></span><input class="num f" id="j8" data-g="j" type="number" value="75"></div>
+<div class="line"><label for="j9">Personal</label><span class="dots"></span><input class="num f" id="j9" data-g="j" type="number" value="150"></div>
+<div class="line"><label for="j10">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="j10" data-g="j" type="number" value="100"></div>
+<div class="line"><label for="j11">Subscriptions</label><span class="dots"></span><input class="num f" id="j11" data-g="j" type="number" value="40"></div>
+      <div class="htotal"><span class="lbl">Monthly</span><span class="amt num serif" id="jTotal" >—</span></div>
+    </div>
+    <div class="house">
+      <h3 class="serif">Amanda, Eli &amp; Jacob</h3><p class="place">Rental · one adult, two teen drivers</p>
+      <div class="line"><label for="a0">Rent</label><span class="dots"></span><input class="num f" id="a0" data-g="a" type="number" value="2600"></div>
+<div class="line"><label for="a1">Electric</label><span class="dots"></span><input class="num f" id="a1" data-g="a" type="number" value="140"></div>
+<div class="line"><label for="a2">Gas / heat</label><span class="dots"></span><input class="num f" id="a2" data-g="a" type="number" value="60"></div>
+<div class="line"><label for="a3">Water &amp; sewer</label><span class="dots"></span><input class="num f" id="a3" data-g="a" type="number" value="55"></div>
+<div class="line"><label for="a4">Groceries</label><span class="dots"></span><input class="num f" id="a4" data-g="a" type="number" value="1100"></div>
+<div class="line"><label for="a5">Dining out</label><span class="dots"></span><input class="num f" id="a5" data-g="a" type="number" value="200"></div>
+<div class="line"><label for="a6">Car insurance</label><span class="dots"></span><input class="num f" id="a6" data-g="a" type="number" value="450"></div>
+<div class="line"><label for="a7">Renters insurance</label><span class="dots"></span><input class="num f" id="a7" data-g="a" type="number" value="22"></div>
+<div class="line"><label for="a8">Fuel</label><span class="dots"></span><input class="num f" id="a8" data-g="a" type="number" value="200"></div>
+<div class="line"><label for="a9">Household</label><span class="dots"></span><input class="num f" id="a9" data-g="a" type="number" value="150"></div>
+<div class="line"><label for="a10">Boys — activities</label><span class="dots"></span><input class="num f" id="a10" data-g="a" type="number" value="250"></div>
+<div class="line"><label for="a11">Boys — school</label><span class="dots"></span><input class="num f" id="a11" data-g="a" type="number" value="100"></div>
+<div class="line"><label for="a12">Boys — clothing</label><span class="dots"></span><input class="num f" id="a12" data-g="a" type="number" value="150"></div>
+<div class="line"><label for="a13">Personal</label><span class="dots"></span><input class="num f" id="a13" data-g="a" type="number" value="150"></div>
+<div class="line"><label for="a14">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="a14" data-g="a" type="number" value="150"></div>
+<div class="line"><label for="a15">Subscriptions</label><span class="dots"></span><input class="num f" id="a15" data-g="a" type="number" value="50"></div>
+<div class="line credit"><label for="c0">− Eli &amp; Jacob contribute</label><span class="dots"></span><input class="num f" id="c0" data-g="c" type="number" value="400"></div>
+      <div class="htotal"><span class="lbl">Monthly, net</span><span class="amt num serif" id="aTotal" >—</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="combined">
+    <div class="big"><div class="lbl">Both households, monthly</div>
+      <div class="amt num serif" id="combMo" >—</div>
+      <div class="sub">everything it takes to run two homes</div></div>
+    <div class="annual"><div class="lbl">Annually</div>
+      <div class="amt num serif" id="combYr" >—</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><h2>Where it comes from</h2><div class="fill"></div></div>
+  <div class="inputrow"><label for="s0">Business net income / mo</label><input class="num f" id="s0" data-g="s" type="number" value="12187"></div>
+<div class="inputrow"><label for="s1">Amanda — net income / mo</label><input class="num f" id="s1" data-g="s" type="number" value="5000"></div>
+<div class="inputrow"><label for="s2">Consolidated debt note</label><input class="num f" id="s2" data-g="s" type="number" value="1446"></div>
+<div class="inputrow"><label for="s3">IRS installment</label><input class="num f" id="s3" data-g="s" type="number" value="500"></div>
+<div class="inputrow"><label for="s4">Tax reserve %</label><input class="num f" id="s4" data-g="s" type="number" value="24"></div>
+  <div class="ledger" id="flow" ></div>
+  <div class="margin-note">
+    <h4 class="serif" id="mTitle">Margin</h4>
+    <p id="mBody" ></p>
+    <p id="mDebt" ></p>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><h2>One-time · house proceeds</h2><div class="fill"></div></div>
+  <div class="proceeds">
+    <div class="inputrow"><label for="eq">Expected net at close</label><input class="num f" id="eq" type="number" value="20000"></div>
+    <p style="margin:6px 0 16px;font-size:14.5px;color:var(--ink-soft);max-width:66ch">Personal money clearing personal debt — the business note is handled separately by the consolidation loan.</p>
+    <div class="line"><label for="da0" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk0" checked><span>Student loans</span></label><span class="dots"></span><input class="num f" id="da0" data-g="d" type="number" value="15000"></div>
+<div class="line"><label for="da1" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk1" checked><span>Credit cards (remainder)</span></label><span class="dots"></span><input class="num f" id="da1" data-g="d" type="number" value="2000"></div>
+<div class="line"><label for="da2" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk2" ><span>IRS back taxes</span></label><span class="dots"></span><input class="num f" id="da2" data-g="d" type="number" value="20000"></div>
+    <div class="ledger" id="eqFlow"  style="margin-top:16px"></div>
+    <p style="margin:14px 0 0;font-size:14.5px;color:var(--ink-body);max-width:64ch" id="eqNote" ></p>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><h2>Notes</h2><div class="fill"></div></div>
+  <div class="notesbox">
+    <h4 class="serif">Between the two of you</h4>
+    <p class="hint">Questions, decisions, things to check. Shared — you'll both see whatever the other writes.</p>
+    <div class="pad" contenteditable="true" id="pad"></div>
+  </div>
+</section>
+
+
+<div class="foot">
+  <h4>Notes on the figures</h4>
+  <dl>
+    <dt>Business income</dt><dd>Annualized from $91,401 through 7.5 months — a stretch including the year's two weakest months. July alone was $30,450, and the accounts added in July aren't in here at all. Deliberately conservative.</dd>
+    <dt>Actuals vs. estimates</dt><dd>Rent, utilities and the boys' insurance contribution are real. Groceries, activities, clothing and personal spending are estimates — overwrite them.</dd>
+    <dt>Health insurance</dt><dd>Zero in both columns pending a decision on whether the boys are covered through Amanda's employer or the business. Largest unresolved item.</dd>
+    <dt>Tax reserve</dt><dd>A placeholder percentage, not a bill. An S-corp with the QBI deduction can land well below it — worth a real projection from the CPA.</dd>
+  </dl>
+</div>
+</div>
+
+<script>
+const money=n=>(n<0?"−":"")+"$"+Math.abs(Math.round(n)).toLocaleString();
+const val=id=>parseFloat((document.getElementById(id)||{}).value)||0;
+const PMT=[165,60,500];
+function calc(){
+  let jT=0; for(let i=0;i<12;i++) jT+=val("j"+i);
+  let aG=0; for(let i=0;i<16;i++) aG+=val("a"+i);
+  const aT=aG-val("c0"), need=jT+aT;
+  const biz=val("s0"), amInc=val("s1"), debt=val("s2"), irs=val("s3"), taxPct=val("s4");
+  const tax=biz*(taxPct/100), avail=biz-debt-irs-tax+amInc, margin=avail-need;
+  document.getElementById("jTotal").textContent=money(jT);
+  document.getElementById("aTotal").textContent=money(aT);
+  document.getElementById("combMo").textContent=money(need);
+  document.getElementById("combYr").textContent=money(need*12);
+  document.getElementById("flow").innerHTML=
+    '<div class="l">Business net income</div><div class="v num">'+money(biz)+'</div>'+
+    '<div class="l">less consolidated debt note</div><div class="v num">−'+money(debt).slice(1)+'</div>'+
+    '<div class="l">less IRS installment</div><div class="v num">−'+money(irs).slice(1)+'</div>'+
+    '<div class="l">less tax reserve ('+taxPct+'%)</div><div class="v num">−'+money(tax).slice(1)+'</div>'+
+    '<div class="l">Amanda\'s net income</div><div class="v num pos">'+money(amInc)+'</div>'+
+    '<div class="l tot">Available each month</div><div class="v num tot">'+money(avail)+'</div>';
+  const t=document.getElementById("mTitle"),b=document.getElementById("mBody"),d=document.getElementById("mDebt");
+  if(margin>=0){
+    t.textContent="Margin";
+    b.innerHTML='Both households need <span class="hl">'+money(need)+'</span> a month. Available income is <span class="hl">'+money(avail)+'</span>, leaving <span class="hl">'+money(margin)+'</span> a month — <span class="hl">'+money(margin*12)+'</span> a year.';
+    d.innerHTML=margin>0?'Applied against the $65,000 of business debt, that clears it in roughly <span class="hl">'+Math.ceil(65000/margin)+' months</span> — before the growth still coming onto the books.':'';
+  }else{
+    t.textContent="Still to close";
+    b.innerHTML='Both households need <span class="hl">'+money(need)+'</span> against <span class="hl">'+money(avail)+'</span> available — a difference of <span class="hl">'+money(-margin)+'</span> a month.';
+    d.textContent="Revenue here excludes the accounts added in July.";
+  }
+  const eq=val("eq"); let used=0,freed=0,rows="";
+  for(let i=0;i<3;i++){
+    if(document.getElementById("dk"+i).checked){
+      const a=val("da"+i); used+=a; freed+=PMT[i];
+      rows+='<div class="l">'+document.querySelector('label[for="da'+i+'"] span').textContent+'</div><div class="v num">−'+money(a).slice(1)+'</div>';
+    }
+  }
+  const left=eq-used;
+  document.getElementById("eqFlow").innerHTML=
+    '<div class="l">Proceeds at close</div><div class="v num pos">'+money(eq)+'</div>'+rows+
+    '<div class="l tot">Remaining</div><div class="v num tot">'+money(left)+'</div>';
+  document.getElementById("eqNote").innerHTML=
+    left<0 ? 'Payoffs exceed the proceeds by <span class="hl">'+money(-left)+'</span> — untick one, or cover the difference from monthly margin.'
+    : 'Leaves <span class="hl">'+money(left)+'</span> and frees <span class="hl">'+money(freed)+'</span> a month. That remainder covers about <span class="hl">'+(left/need).toFixed(1)+' months</span> of both households.';
+}
+const KEY="two-households";
+function persist(){const o={};document.querySelectorAll("input").forEach(i=>{o[i.id]=i.type==="checkbox"?i.checked:i.value});
+  const p=document.getElementById("pad");if(p)o.__pad=p.innerHTML;
+  try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+function restore(){try{const o=JSON.parse(localStorage.getItem(KEY)||"null");if(!o)return;
+  Object.keys(o).forEach(k=>{if(k==="__pad"){const p=document.getElementById("pad");if(p&&o[k])p.innerHTML=o[k];return;}
+  const el=document.getElementById(k);if(!el)return;if(el.type==="checkbox")el.checked=o[k];else el.value=o[k];});}catch(e){}}
+document.addEventListener("input",()=>{calc();persist()});
+document.addEventListener("change",()=>{calc();persist()});
+const _pad=document.getElementById("pad");if(_pad)_pad.addEventListener("blur",persist);
+restore();calc();
+</script></body>
+</html>
