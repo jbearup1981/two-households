@@ -191,13 +191,18 @@ a{color:var(--accent)}
 
 <section>
   <div class="sechead"><h2>The business debt, and when it's gone</h2><div class="fill"></div></div>
-  <p class="intro">Whatever the business has left after taxes, both households and the deposit goes straight at the debt — worst rate first. No consolidation loan, no bank, starting this month.</p>
+  <p class="intro">Whatever the business has left after taxes, both households and the deposit gets split: the cash reserve fills first, then everything goes at the debt, worst rate first. No consolidation loan, no bank. <b>The clock starts January 2027</b> — Sept through Dec is consumed by catching payroll and the year's tax up in one run, so the debt sits at minimums until then.</p>
   <div class="grid2">
     <div class="panel">
       <div class="line"><label for="d0">American Express</label><span class="dots"></span><input class="num f" id="d0" type="number" value="25000"><input class="num f" id="r0" type="number" step="0.1" value="24.5" style="width:52px">%</div>
       <div class="line"><label for="d1">Apple / Goldman</label><span class="dots"></span><input class="num f" id="d1" type="number" value="10000"><input class="num f" id="r1" type="number" step="0.1" value="24" style="width:52px">%</div>
       <div class="line"><label for="d2">Loan from Jason's dad</label><span class="dots"></span><input class="num f" id="d2" type="number" value="30000"><input class="num f" id="r2" type="number" step="0.1" value="10" style="width:52px">%</div>
       <div class="htotal"><span class="lbl">Total owed</span><span class="amt num serif" id="dTot">—</span></div>
+      <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)">
+        <div class="lbl" style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:12px">Cash reserve — funded first</div>
+        <div class="line"><label for="rsv">Set aside each month</label><span class="dots"></span><input class="num f" id="rsv" type="number" value="1500"></div>
+        <div class="line"><label for="rsvT">Target ($10k business + $5k family)</label><span class="dots"></span><input class="num f" id="rsvT" type="number" value="15000"></div>
+      </div>
     </div>
     <div class="panel">
       <h4 class="serif">Payoff</h4>
@@ -212,13 +217,14 @@ a{color:var(--accent)}
 </section>
 
 <section>
-  <div class="sechead"><h2>One-time · house proceeds</h2><div class="fill"></div></div>
+  <div class="sechead"><h2>One-time money</h2><div class="fill"></div></div>
   <div class="proceeds">
-    <div class="inputrow"><label for="eq">Expected net at close</label><input class="num f" id="eq" type="number" value="20000"></div>
-    <p style="margin:6px 0 16px;font-size:14.5px;color:var(--ink-soft);max-width:66ch">Personal money clearing personal debt. The $65,000 on the business is a separate pile, paid from business income above.</p>
+    <div class="inputrow"><label for="eq">House — expected net at close</label><input class="num f" id="eq" type="number" value="20000"></div>
+    <div class="inputrow"><label for="eq2">Tractor &amp; household items sold</label><input class="num f" id="eq2" type="number" value="3500"></div>
+    <p style="margin:6px 0 16px;font-size:14.5px;color:var(--ink-soft);max-width:66ch">Personal money clearing personal debt. The $65,000 on the business is a separate pile, paid from business income above. <b>The item sales are the near-term one:</b> roughly $3,500 against the $3,939 that Sept–Dec runs short while payroll catches up — that alone is what keeps the fall off a credit card.</p>
     <div class="line"><label for="da0" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk0" checked><span>Student loans</span></label><span class="dots"></span><input class="num f" id="da0" type="number" value="15000"></div>
 <div class="line"><label for="da1" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk1" checked><span>Credit cards (remainder)</span></label><span class="dots"></span><input class="num f" id="da1" type="number" value="2000"></div>
-<div class="line"><label for="da2" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk2"><span>IRS back taxes</span></label><span class="dots"></span><input class="num f" id="da2" type="number" value="20000"></div>
+<div class="line"><label for="da2" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk2"><span>IRS back taxes (incl. 2025 filing)</span></label><span class="dots"></span><input class="num f" id="da2" type="number" value="20000"></div>
     <div class="ledger" id="eqFlow" style="margin-top:16px"></div>
     <p style="margin:14px 0 0;font-size:14.5px;color:var(--ink-body);max-width:64ch" id="eqNote"></p>
   </div>
@@ -246,6 +252,8 @@ a{color:var(--accent)}
     <dt>Income tax</dt><dd>$16,968 for 2026, married filing jointly — calculated from the published 2026 brackets against actual business profit and the $55,000 W-2 salary, including the QBI deduction. Not a placeholder percentage. It gets withheld from the eight remaining paychecks, so nothing is owed in April.</dd>
     <dt>Health insurance</dt><dd>Settled: Amanda carries all five of us through her employer and maxes the HSA at the $8,750 family limit. That's why there's no premium line in either column — only out-of-pocket.</dd>
     <dt>Actuals vs. estimates</dt><dd>Rent, utilities, the boys' insurance contribution and Amanda's income are real. Groceries, activities, clothing and personal spending are estimates — overwrite them as the actual bills arrive.</dd>
+    <dt>IRS back taxes</dt><dd>About $5,000–6,000 owed now plus $5,000–8,000 expected once the 2025 return is filed. That arithmetic reaches $10,000–14,000; it's carried at $20,000 as a safe number. The $6,000 spread is worth resolving — it decides whether the house proceeds clear this line outright.</dd>
+    <dt>Why a reserve</dt><dd>2026 ran between $1,425 and $25,038 of net income a month. Two months of seven landed below what it takes to run everything — in a year averaging $12,899. That swing is normal for commission income; having no cash against it is what put $65,000 on the cards. $10,000 in the business covers the deepest month with room; $5,000 in the family account covers a surprise without a phone call.</dd>
     <dt>Car insurance</dt><dd>$750/mo for all four vehicles is a quote, not a bill. Michigan with two teen drivers can come in higher — worth confirming before it's locked in.</dd>
   </dl>
 </div>
@@ -257,27 +265,31 @@ const val=id=>parseFloat((document.getElementById(id)||{}).value)||0;
 const set=(id,t)=>{const e=document.getElementById(id);if(e)e.textContent=t};
 const PMT=[165,60,500];
 const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-// payoff starts Sept 2026
-function mlabel(m){const t=8+(m-1);return MON[t%12]+" "+(2026+Math.floor(t/12));}
+// real paydown starts Jan 2027 -- Sept-Dec 2026 is consumed by payroll catch-up
+function mlabel(m){const t=m-1;return MON[t%12]+" "+(2027+Math.floor(t/12));}
 
-function avalanche(monthly){
+function avalanche(monthly,resRate,resTarget){
+  resRate=resRate||0; resTarget=resTarget||0;
   const d=[0,1,2].map(i=>({b:val("d"+i),r:val("r"+i)/100,n:i}));
   const tot=d.reduce((s,x)=>s+x.b,0);
-  if(tot<=0) return {months:0,interest:0,gone:{},done:true};
+  if(tot<=0) return {months:0,interest:0,gone:{},done:true,resFull:resTarget>0?Math.ceil(resTarget/Math.max(resRate,1)):null};
   const minRate=d.reduce((s,x)=>s+x.b*x.r/12,0);
+  if(monthly-resRate<=minRate&&resTarget>0){} // reserve phase may dip below interest; handled below
   if(monthly<=minRate) return {months:null,interest:null,gone:{},done:false,minNeeded:minRate};
-  let interest=0,gone={};
+  let interest=0,gone={},res=0,resFull=null;
   for(let m=1;m<=600;m++){
+    const put=Math.min(resRate,Math.max(resTarget-res,0)); res+=put;
+    if(res>=resTarget&&resFull===null&&resTarget>0) resFull=m;
     d.forEach(x=>{if(x.b>0){const i=x.b*x.r/12;x.b+=i;interest+=i;}});
-    let pay=monthly;
+    let pay=monthly-put;
     d.slice().sort((a,b)=>b.r-a.r).forEach(x=>{
       if(x.b<=0||pay<=0)return;
       const p=Math.min(pay,x.b);x.b-=p;pay-=p;
       if(x.b<=0.005&&gone[x.n]===undefined)gone[x.n]=m;
     });
-    if(d.every(x=>x.b<=0.005)) return {months:m,interest:interest,gone:gone,done:true};
+    if(d.every(x=>x.b<=0.005)) return {months:m,interest:interest,gone:gone,done:true,resFull:resFull};
   }
-  return {months:null,interest:null,gone:{},done:false};
+  return {months:null,interest:null,gone:{},done:false,resFull:resFull};
 }
 
 function calc(){
@@ -318,7 +330,8 @@ function calc(){
   // Debt
   const dTot=val("d0")+val("d1")+val("d2");
   set("dTot",money(dTot));
-  const res=avalanche(surplus);
+  const rsv=val("rsv"), rsvT=val("rsvT");
+  const res=avalanche(surplus,rsv,rsvT);
   const names=["Amex","Apple","Dad"];
   const box=document.getElementById("payoff");
   if(res.done&&res.months===0){
@@ -327,23 +340,25 @@ function calc(){
     box.innerHTML='<div class="n" style="grid-column:1/-1">'+money(surplus)+' a month doesn\'t cover the interest, so the balance grows. It needs at least <b>'+money(res.minNeeded||0)+'</b> a month just to hold steady.</div>';
   }else{
     let h='';
+    if(res.resFull) h+='<div style="color:var(--sage)">Reserve funded</div><div class="d"></div><div class="n num" style="color:var(--sage)">'+mlabel(res.resFull)+'</div>';
     [0,1,2].forEach(i=>{ if(res.gone[i]!==undefined&&val("d"+i)>0)
       h+='<div>'+names[i]+'</div><div class="d"></div><div class="n num">'+mlabel(res.gone[i])+'</div>'; });
     h+='<div style="border-top:2px solid var(--ink);padding-top:9px;font-weight:600">Debt-free</div>'+
        '<div class="d" style="border-top:2px solid var(--ink);border-bottom:none"></div>'+
        '<div class="n num" style="border-top:2px solid var(--ink);padding-top:9px;font-size:17px">'+mlabel(res.months)+'</div>'+
        '<div style="color:var(--ink-soft)">Total interest</div><div class="d"></div><div class="n num" style="font-weight:400">'+money(res.interest)+'</div>'+
-       '<div style="color:var(--ink-soft)">Months from now</div><div class="d"></div><div class="n num" style="font-weight:400">'+res.months+'</div>';
+       '<div style="color:var(--ink-soft)">Months from Jan 2027</div><div class="d"></div><div class="n num" style="font-weight:400">'+res.months+'</div>';
     box.innerHTML=h;
   }
 
   const b=document.getElementById("mBody"),t=document.getElementById("mTrade");
   if(res.done&&res.months>0){
-    b.innerHTML='After taxes, both households and a <span class="hl">'+money(depBi)+'</span> deposit, the business has <span class="hl">'+money(surplus)+' a month</span> left. All of it goes at the debt, which clears it in <span class="hl">'+res.months+' months</span> — <span class="hl">'+mlabel(res.months)+'</span>.';
-    const alt=avalanche(surplus-200*26/12);
-    t.innerHTML= alt.done&&alt.months
-      ? 'The deposit and the debt are the <b>same money</b>. Raising the deposit by $200 every other Friday would push debt-free from '+mlabel(res.months)+' to <span class="hl">'+mlabel(alt.months)+'</span>. That\'s the whole trade — there is no third pile.'
-      : 'The deposit and the debt are the <b>same money</b>. Every dollar added to the deposit is a dollar that stops going at the debt.';
+    b.innerHTML='After taxes, both households and a <span class="hl">'+money(depBi)+'</span> deposit, the business has <span class="hl">'+money(surplus)+' a month</span> left. '+(rsv>0?'<span class="hl">'+money(rsv)+'</span> of that builds the reserve until it hits '+money(rsvT)+(res.resFull?' in <span class="hl">'+mlabel(res.resFull)+'</span>':'')+'; the rest goes at the debt, which clears <span class="hl">'+mlabel(res.months)+'</span>.':'All of it goes at the debt, which clears <span class="hl">'+mlabel(res.months)+'</span>.')+' Sept through Dec 2026 is consumed by the payroll catch-up, so this clock starts in January.';
+    const altD=avalanche(surplus-200*26/12,rsv,rsvT), altR=avalanche(surplus,0,0);
+    t.innerHTML= 'Three claims on the same <b>'+money(surplus)+'</b>. '+
+      (altD.done&&altD.months?'Raising the deposit $200 every other Friday moves debt-free to <span class="hl">'+mlabel(altD.months)+'</span>. ':'')+
+      (rsv>0&&altR.done&&altR.months?'Skipping the reserve entirely would get there by <span class="hl">'+mlabel(altR.months)+'</span> — five months sooner, with no protection against a February or an April. ':'')+
+      'There is no fourth pile.';
   }else if(surplus<0){
     b.innerHTML='At a <span class="hl">'+money(depBi)+'</span> deposit the business runs <span class="hl">'+money(-surplus)+' a month</span> short before a dollar reaches the debt.';
     t.textContent='Lower the deposit, trim a household line, or the growth still coming onto the books has to cover it.';
@@ -353,7 +368,7 @@ function calc(){
   }
 
   // Proceeds
-  const eq=val("eq"); let used=0,freed=0,rows="";
+  const eq=val("eq")+val("eq2"); let used=0,freed=0,rows="";
   for(let i=0;i<3;i++){
     if(document.getElementById("dk"+i).checked){
       const a=val("da"+i); used+=a; freed+=PMT[i];
@@ -362,7 +377,8 @@ function calc(){
   }
   const rem=eq-used;
   document.getElementById("eqFlow").innerHTML=
-    '<div class="l">Proceeds at close</div><div class="v num pos">'+money(eq)+'</div>'+rows+
+    '<div class="l">House at close</div><div class="v num pos">'+money(val("eq"))+'</div>'+
+    '<div class="l">Tractor &amp; household items</div><div class="v num pos">'+money(val("eq2"))+'</div>'+rows+
     '<div class="l tot">Remaining</div><div class="v num tot">'+money(rem)+'</div>';
   document.getElementById("eqNote").innerHTML= rem<0
     ? 'Payoffs exceed the proceeds by <span class="hl">'+money(-rem)+'</span> — untick one, or cover the difference from monthly margin.'
