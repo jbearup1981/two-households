@@ -7,182 +7,162 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
 <title>The Whole Picture</title>
 <style>
-:root{--paper:#fbfaf7;--card:#fff;--ink:#1f3d2e;--ink-body:#2f3a35;--ink-soft:#6b7a72;--ink-faint:#9aa79f;
---rule:#dfe3dc;--hair:#ecefe8;--accent:#b8522a;--sage:#7a9282;--sage-pale:#e8ebe4}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#141a17;--card:#1b221e;--ink:#e9efe9;
---ink-body:#cdd6d0;--ink-soft:#93a29a;--ink-faint:#6e7b74;--rule:#2c3630;--hair:#242c27;--accent:#d97a4a;
---sage:#8fa899;--sage-pale:#222b26}}
-:root[data-theme="dark"]{--paper:#141a17;--card:#1b221e;--ink:#e9efe9;--ink-body:#cdd6d0;--ink-soft:#93a29a;
---ink-faint:#6e7b74;--rule:#2c3630;--hair:#242c27;--accent:#d97a4a;--sage:#8fa899;--sage-pale:#222b26}
+:root{
+  --paper:#f3f5f7; --card:#ffffff; --card-2:#fafbfc;
+  --ink:#16202b; --ink-body:#39434e; --ink-soft:#66717d; --ink-faint:#98a2ac;
+  --rule:#dbe0e6; --hair:#eaeef1;
+  --jason:#35618c; --jason-pale:#e8eff6;
+  --amanda:#a8761c; --amanda-pale:#f7efdf;
+  --good:#4a8462; --good-pale:#e6f0ea;
+  --warn:#ac4f3f;
+  --deep:#1d2b3a; --deep-ink:#e9eef3;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11161c; --card:#1a2129; --card-2:#161d24;
+  --ink:#e9eef3; --ink-body:#c1cad3; --ink-soft:#8b96a2; --ink-faint:#68737e;
+  --rule:#2a333d; --hair:#212932;
+  --jason:#7fb0dc; --jason-pale:#1c2a38;
+  --amanda:#dcaf58; --amanda-pale:#2c2618;
+  --good:#79b48f; --good-pale:#1a2620;
+  --warn:#dd8471;
+  --deep:#0d1319; --deep-ink:#e9eef3;
+}}
+:root[data-theme="dark"]{
+  --paper:#11161c; --card:#1a2129; --card-2:#161d24;
+  --ink:#e9eef3; --ink-body:#c1cad3; --ink-soft:#8b96a2; --ink-faint:#68737e;
+  --rule:#2a333d; --hair:#212932;
+  --jason:#7fb0dc; --jason-pale:#1c2a38;
+  --amanda:#dcaf58; --amanda-pale:#2c2618;
+  --good:#79b48f; --good-pale:#1a2620;
+  --warn:#dd8471;
+  --deep:#0d1319; --deep-ink:#e9eef3;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink-body);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.62}
-.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
-.num{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
-.wrap{max-width:900px;margin:0 auto;padding:56px 28px 96px}
-.kicker{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 15px}
-h1{font-size:clamp(36px,6vw,54px);line-height:1.03;margin:0;color:var(--ink);font-weight:400;letter-spacing:-.02em}
-.rule-accent{width:52px;height:2px;background:var(--accent);margin:21px 0 19px}
-.lede{font-size:17px;color:var(--ink-soft);max-width:62ch;margin:0}
-section{margin:0 0 46px}
-.sechead{display:flex;align-items:baseline;gap:14px;margin:0 0 8px}
-.sechead h2{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:0;white-space:nowrap}
-.sechead .fill{flex:1;height:1px;background:var(--rule)}
-.intro{font-size:15px;color:var(--ink-soft);margin:0 0 18px;max-width:64ch}
-table{width:100%;border-collapse:collapse;margin:0}
-td,th{padding:7px 0;text-align:left;font-size:14.5px;border-bottom:1px solid var(--hair)}
-th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;border-bottom:1px solid var(--rule)}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink-body);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:15.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;letter-spacing:-.01em}
+.wrap{max-width:940px;margin:0 auto;padding:0 26px 90px}
+a{color:var(--jason)}
+
+/* ---------- masthead ---------- */
+.mast{background:var(--deep);color:var(--deep-ink);width:100vw;margin-left:calc(50% - 50vw);padding:66px 26px 58px}
+.mast-in{max-width:888px;margin:0 auto}
+.kicker{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--amanda);font-weight:700;margin:0 0 16px}
+h1{font-size:clamp(38px,7vw,60px);line-height:1;margin:0;font-weight:400;letter-spacing:-.025em;color:var(--deep-ink);text-wrap:balance}
+.lede{font-size:17.5px;line-height:1.55;color:#b9c6d3;max-width:56ch;margin:20px 0 0}
+
+/* ---------- the answer strip ---------- */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:-30px 0 0;box-shadow:0 6px 24px rgba(16,26,38,.10)}
+@media(max-width:760px){.strip{grid-template-columns:1fr 1fr}}
+.cell{background:var(--card);padding:20px 18px}
+.cell .lbl{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin-bottom:7px;line-height:1.35}
+.cell .v{font-size:26px;line-height:1.05;color:var(--ink);letter-spacing:-.025em}
+.cell .v.j{color:var(--jason)} .cell .v.a{color:var(--amanda)} .cell .v.g{color:var(--good)}
+.cell .s{font-size:12.5px;color:var(--ink-faint);margin-top:5px}
+
+/* ---------- sections ---------- */
+section{margin:54px 0 0}
+.eyebrow{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin:0 0 6px}
+h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:clamp(24px,3.6vw,31px);
+  font-weight:400;color:var(--ink);margin:0 0 10px;letter-spacing:-.015em;line-height:1.15;text-wrap:balance}
+.intro{font-size:15.5px;color:var(--ink-soft);margin:0 0 20px;max-width:66ch}
+.act{display:flex;align-items:center;gap:15px;margin:70px 0 30px}
+.act .n{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:13px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--amanda);font-weight:700;white-space:nowrap}
+.act .bar{flex:1;height:1px;background:var(--rule)}
+
+.card{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:26px 28px}
+.card+.card{margin-top:18px}
+@media(max-width:600px){.card{padding:22px 18px}}
+
+table{width:100%;border-collapse:collapse}
+td,th{padding:7.5px 0;text-align:left;font-size:14.5px;border-bottom:1px solid var(--hair);vertical-align:baseline}
+th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;
+  border-bottom:1px solid var(--rule);padding-bottom:9px}
 td.r,th.r{text-align:right}
-tr.tot td{border-bottom:none;border-top:2px solid var(--ink);font-weight:600;font-size:16px;padding-top:11px}
 tr.sub td{color:var(--ink-soft)}
-.card{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:26px 30px}
-.hero{background:var(--sage-pale);border-radius:3px;padding:28px 32px;margin:22px 0}
-.hero .lbl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
-.hero .amt{font-size:clamp(34px,5.5vw,46px);line-height:1.05;color:var(--ink);margin:6px 0 4px;letter-spacing:-.02em}
-.hero p{margin:8px 0 0;font-size:14.5px;color:var(--ink-body);max-width:60ch}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-@media(max-width:720px){.grid2{grid-template-columns:1fr}}
-.hl{color:var(--accent);font-weight:600}
-.tl{list-style:none;padding:0;margin:16px 0 0}
-.tl li{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:14.5px}
-.tl .when{width:88px;flex:none;color:var(--accent);font-weight:600;font-size:13px}
-.note{font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:66ch}
-.foot{border-top:1px solid var(--rule);padding-top:22px;margin-top:44px;font-size:13.5px;color:var(--ink-faint)}
-a{color:var(--accent)}
+tr.tot td{border-bottom:none;border-top:2px solid var(--ink);font-weight:700;font-size:16.5px;padding-top:12px;color:var(--ink)}
+tr:last-child td{border-bottom:none}
+.neg{color:var(--warn);font-weight:700}
+.pos{color:var(--good);font-weight:700}
+.note{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:15px 0 0;max-width:68ch}
+.note b{color:var(--ink-body)}
+.note+.note{margin-top:10px}
+
+/* ---------- two households ---------- */
+.homes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.homes{grid-template-columns:1fr}}
+.home{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:0;overflow:hidden}
+.home .cap{padding:17px 24px 15px;border-bottom:1px solid var(--rule)}
+.home.j .cap{background:var(--jason-pale);border-top:3px solid var(--jason)}
+.home.a .cap{background:var(--amanda-pale);border-top:3px solid var(--amanda)}
+.home .who{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:20px;color:var(--ink);line-height:1.2}
+.home .where{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+.home .body{padding:16px 24px 22px}
+.home table td{font-size:14px;padding:6px 0}
+.home.j tr.tot td{border-top-color:var(--jason);color:var(--jason)}
+.home.a tr.tot td{border-top-color:var(--amanda);color:var(--amanda)}
+
+/* ---------- feature panel ---------- */
+.feat{border-radius:4px;padding:26px 30px;margin:20px 0 0;border:1px solid var(--rule);background:var(--card-2)}
+.feat.j{background:var(--jason-pale);border-color:transparent}
+.feat.a{background:var(--amanda-pale);border-color:transparent}
+.feat.g{background:var(--good-pale);border-color:transparent}
+.feat .lbl{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+.feat .amt{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:clamp(30px,5vw,42px);line-height:1.06;
+  color:var(--ink);margin:8px 0 0;letter-spacing:-.025em}
+.feat .amt small{font-size:.4em;letter-spacing:0;color:var(--ink-soft)}
+.feat p{margin:11px 0 0;font-size:14.5px;color:var(--ink-body);max-width:62ch}
+.feat p:last-child{margin-bottom:0}
+.hl{font-weight:700;color:var(--ink)}
+.hl.j{color:var(--jason)} .hl.a{color:var(--amanda)} .hl.g{color:var(--good)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+
+/* ---------- timeline ---------- */
+.tl{list-style:none;padding:0;margin:0}
+.tl li{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid var(--hair);font-size:14.5px}
+.tl li:last-child{border-bottom:none}
+.tl .when{width:82px;flex:none;color:var(--jason);font-weight:700;font-size:12.5px;letter-spacing:.03em;
+  text-transform:uppercase;padding-top:2px}
+.tl.next .when{color:var(--amanda)}
+
+.foot{border-top:1px solid var(--rule);padding-top:24px;margin-top:64px;font-size:13px;color:var(--ink-faint);max-width:72ch}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="kicker">Where we stand · August 2026</div>
-<h1 class="serif">The Whole Picture</h1>
-<div class="rule-accent"></div>
-<p class="lede">The business, the debt, the taxes, and what lands in the family account each week. Everything in one place, nothing held back.</p>
+<header class="mast">
+  <div class="mast-in">
+    <p class="kicker">Where we stand · August 2026</p>
+    <h1 class="serif">The Whole Picture</h1>
+    <p class="lede">Two households for a year, what each one costs, and where every dollar comes from. Nothing held back and nothing rounded in our favor.</p>
+  </div>
+</header>
 
-<section style="margin-top:44px">
-  <div class="sechead"><h2>The business</h2><div class="fill"></div></div>
-  <p class="intro">Nexus, January through mid-August. Cash basis — money actually in and actually out.</p>
-  <div class="card">
-    <table>
-      <tr><td>Commission income</td><td class="r num">$194,516</td></tr>
-      <tr class="sub"><td>Advisor commissions paid out</td><td class="r num">−65,167</td></tr>
-      <tr class="sub"><td>Software, subscriptions, office</td><td class="r num">−6,954</td></tr>
-      <tr class="sub"><td>Legal &amp; accounting</td><td class="r num">−8,912</td></tr>
-      <tr class="sub"><td>Interest on business debt</td><td class="r num">−2,878</td></tr>
-      <tr class="sub"><td>Everything else</td><td class="r num">−19,869</td></tr>
-      <tr class="tot"><td>Net income, 7½ months</td><td class="r num">$91,401</td></tr>
-    </table>
-    <p class="note">That pace works out to roughly <span class="hl">$146,000 a year</span> — and it's a conservative read. It includes February and April, the two weakest months, and none of the accounts added in July have hit the books yet.</p>
-  </div>
-  <div class="card" style="margin-top:22px">
-    <table>
-      <tr><th>What changes on the expense side</th><th class="r">Now</th><th class="r">Going forward</th></tr>
-      <tr><td>Legal — a one-time fight, not a running cost</td><td class="r num">$1,188/mo</td><td class="r num">~$300</td></tr>
-      <tr><td>Software &amp; AI development</td><td class="r num">$1,068/mo</td><td class="r num">~$534</td></tr>
-      <tr class="sub"><td>Administrative help — added deliberately</td><td class="r">—</td><td class="r num">~$1,500</td></tr>
-      <tr class="tot"><td>Net change</td><td class="r"></td><td class="r num">about even</td></tr>
-    </table>
-    <p class="note">Worth being straight about this: tightening the spending <b>pays for the admin help</b> — it doesn't by itself make any number on this page better. That's still the right move, because it buys Jason time back to sell instead of doing paperwork. <b>The lever that actually moves things is revenue</b>, where every 10% adds about <span class="hl">$1,725 a month</span> after advisor splits.</p>
-    <p class="note">There is one cushion already baked in: the $146,000 above <b>includes</b> $8,912 of legal fees that shouldn't repeat. Strip those out and the underlying business runs closer to <span class="hl">$13,100 a month</span> — roughly <b>$900 a month better</b> than everything on this page assumes. Every date here is calculated the pessimistic way.</p>
-  </div>
-</section>
+<div class="strip">
+  <div class="cell"><div class="lbl">Both households</div><div class="v num serif">$9,640</div><div class="s">a month, all in</div></div>
+  <div class="cell"><div class="lbl">Amanda &amp; the boys</div><div class="v num serif a">$1,686</div><div class="s">left over each month</div></div>
+  <div class="cell"><div class="lbl">Jason&nbsp;/ the business</div><div class="v num serif j">$3,596</div><div class="s">a month at the debt</div></div>
+  <div class="cell"><div class="lbl">Owed next April</div><div class="v num serif g">$0</div><div class="s">taxes fully withheld</div></div>
+</div>
 
-<section>
-  <div class="sechead"><h2>The debt, and how it ends</h2><div class="fill"></div></div>
-  <p class="intro">$65,000 sits on the business — not on us personally. It gets paid from business income, and it goes fastest by attacking the worst rate first.</p>
-  <div class="card">
-    <table>
-      <tr><th>What</th><th class="r">Balance</th><th class="r">Rate</th><th class="r">Gone by</th></tr>
-      <tr><td>American Express</td><td class="r num">$25,000</td><td class="r num">24.5%</td><td class="r"><b>Jan 2028</b></td></tr>
-      <tr><td>Apple / Goldman</td><td class="r num">$10,000</td><td class="r num">24.0%</td><td class="r"><b>Apr 2028</b></td></tr>
-      <tr><td>Loan from Jason's dad</td><td class="r num">$30,000</td><td class="r num">10.0%</td><td class="r"><b>Feb 2029</b></td></tr>
-      <tr class="tot"><td>Total</td><td class="r num">$65,000</td><td class="r num">17.7% blended</td><td class="r">30 months</td></tr>
-    </table>
-    <p class="note">No consolidation loan — the savings were small enough that an application fee ate most of them, so we're paying the three directly, worst rate first. These dates build in two things a straight-line payoff ignores: <b>nothing meaningful gets paid down until January</b> (see below), and <b>$1,500 a month goes to a cash reserve first</b>. Insuring against a bad month costs 5 months and about $3,900 of extra interest. It's worth it — the next paragraph is why.</p>
-  </div>
-</section>
+<div class="act"><span class="n">One — Your side</span><span class="bar"></span></div>
 
-<section>
-  <div class="sechead"><h2>Why we're building a cushion before killing the debt</h2><div class="fill"></div></div>
-  <p class="intro">The business earns well on average. It does not earn evenly — and that gap is the single biggest financial risk either of us is carrying right now.</p>
-  <div class="card">
-    <table>
-      <tr><th>2026, month by month</th><th class="r">Business net</th><th class="r">Against the $8,591 it takes to run everything</th></tr>
-      <tr><td>January</td><td class="r num">$25,038</td><td class="r num">+16,447</td></tr>
-      <tr><td><b>February</b></td><td class="r num">$5,076</td><td class="r num" style="color:var(--accent)"><b>−3,515</b></td></tr>
-      <tr><td>March</td><td class="r num">$19,316</td><td class="r num">+10,725</td></tr>
-      <tr><td><b>April</b></td><td class="r num">$1,425</td><td class="r num" style="color:var(--accent)"><b>−7,166</b></td></tr>
-      <tr><td>May</td><td class="r num">$13,504</td><td class="r num">+4,913</td></tr>
-      <tr><td>June</td><td class="r num">$9,631</td><td class="r num">+1,040</td></tr>
-      <tr><td>July</td><td class="r num">$16,301</td><td class="r num">+7,710</td></tr>
-      <tr class="tot"><td>Average</td><td class="r num">$12,899</td><td class="r num">+4,308</td></tr>
-    </table>
-    <p class="note">Two months out of seven came in under what it takes to run both households and pay the taxes — in a year that averaged nearly $13,000 a month. That is normal for commission income and it is not a sign anything is wrong. But with no cash set aside, an April means reaching for the Amex at 24.5%. <b>That is exactly how the $65,000 got there.</b></p>
-  </div>
-  <div class="hero">
-    <div class="lbl">So the first $15,000 of surplus goes here</div>
-    <div class="amt num serif">$10,000 <span style="font-size:.42em;letter-spacing:0">business</span> · $5,000 <span style="font-size:.42em;letter-spacing:0">family</span></div>
-    <p>At <span class="hl">$1,500 a month</span> starting in January, both are funded by <span class="hl">October 2027</span>. After that every dollar goes back to the debt. Curiously, saving $1,500 a month instead of $1,000 lands on the <b>same debt-free month</b> — it just gets us protected five months sooner. So we take the $1,500.</p>
-  </div>
-  <p class="note">The family account cushion is Amanda's, not a business account — one month of household costs sitting there so a surprise doesn't have to become a phone call.</p>
-</section>
-
-<section>
-  <div class="sechead"><h2>The tax situation, in plain English</h2><div class="fill"></div></div>
-  <div class="card">
-    <p style="margin:0 0 14px;font-size:15px">The business is an <b>S-corp</b>. That's a tax setup, not a different company — same Nexus, filed differently since January 1.</p>
-    <p style="margin:0 0 14px;font-size:15px"><b>The business itself pays no income tax.</b> Its profit passes through onto our personal return. So there is no such thing as "the business's taxes" separate from ours — it's one bill, and it's the one below.</p>
-    <p style="margin:0 0 14px;font-size:15px">What the S-corp does require is that Jason <b>pay himself an actual paycheck</b> rather than just taking money out. The IRS insists on it. Money he takes <i>beyond</i> that paycheck comes out as a distribution, which skips the 15.3% Social Security and Medicare hit. Paycheck plus distributions instead of everything as a paycheck is the entire reason for the S-corp, and it saves several thousand dollars a year.</p>
-    <p style="margin:0 0 18px;font-size:15px">The catch: <b>no payroll has run yet this year.</b> January through August, Jason took money out with nothing withheld. Eight paychecks between September 15 and December 31 fix that — and because the IRS treats withholding as though it were paid evenly across the whole year, catching up now lands us exactly where we'd be if we'd done it right in January. No penalty.</p>
-    <table>
-      <tr><th>The 2026 bill</th><th class="r"></th></tr>
-      <tr><td>Total income tax, married filing jointly</td><td class="r num">$16,968</td></tr>
-      <tr class="sub"><td>What filing jointly saves vs. separately</td><td class="r num">−8,450</td></tr>
-      <tr class="sub"><td>Withheld from the eight remaining paychecks</td><td class="r num">16,968</td></tr>
-      <tr class="tot"><td>Owed next April</td><td class="r num">$0</td></tr>
-    </table>
-    <p class="note"><b>Separate and older:</b> roughly $20,000 from prior years, being paid down at $500 a month. That is its own thing and it is not part of the 2026 number. Some of the house proceeds may clear it.</p>
-  </div>
-</section>
-
-<section>
-  <div class="sechead"><h2>Payroll &amp; taxes — the part that's been missing</h2><div class="fill"></div></div>
-  <p class="intro">The business became an S-corp on January 1, which means Jason has to be paid a real W-2 salary. That hasn't happened yet this year. Here's the fix, and it's a normal one — the IRS looks at the yearly total, not the timing.</p>
-  <div class="card">
-    <table>
-      <tr><th>Every two weeks, Sept 15 → Dec 31</th><th class="r"></th></tr>
-      <tr><td>Gross paycheck</td><td class="r num">$6,875</td></tr>
-      <tr class="sub"><td>Social Security &amp; Medicare</td><td class="r num">−526</td></tr>
-      <tr class="sub"><td>Income tax withheld</td><td class="r num">−2,121</td></tr>
-      <tr class="tot"><td>Net</td><td class="r num">$4,228</td></tr>
-    </table>
-    <p class="note">Eight paychecks gets Jason to $55,000 of W-2 wages for the year. The business pays a matching $4,208 of Social Security and Medicare on top of the gross — that's an employer cost, not a deduction from the check.</p>
-  </div>
-  <div class="hero">
-    <div class="lbl">Total 2026 income tax — and it's covered</div>
-    <div class="amt num serif">$16,968</div>
-    <p>Filing jointly saves us about <span class="hl">$8,450</span> versus filing separately. The whole bill gets withheld from those eight paychecks — no surprise in April, no quarterly payments to remember. Withholding counts as if it were paid evenly all year, which is exactly why doing this now works.</p>
-  </div>
-  <p class="note">There is still tax owed on the business profit above the salary — that's the $16,968 figure, and it's the number those eight paychecks are sized to cover. Separately, the $500/month going to the IRS is for prior years and continues untouched. That older balance is roughly <b>$5,000–6,000 owed now</b>, plus another <b>$5,000–8,000</b> expected when the 2025 return is finished — carried here at <b>$20,000</b> to be safe. Nailing that number down is worth doing; it decides whether the house proceeds clear it outright.</p>
-  <div class="card" style="margin-top:20px">
-    <table>
-      <tr><th>What this does to the business account, Sept 15 → Dec 31</th><th class="r"></th></tr>
-      <tr><td>Paid out — salary, employer payroll tax, IRS installment</td><td class="r num">$61,208</td></tr>
-      <tr><td>Taken in over the same four months</td><td class="r num">48,748</td></tr>
-      <tr class="sub"><td>Of the salary, what lands in Jason's account unspent</td><td class="r num">+8,520</td></tr>
-      <tr class="tot"><td>Net, both accounts together</td><td class="r num">−$3,939</td></tr>
-    </table>
-    <p class="note">A full year of tax gets paid in three and a half months — <b>$7,252 a month</b> where the normal rate is $2,115. Nothing is wrong here; it's the cost of catching payroll up in one run. It does mean <b>the debt sits at minimum payments until January</b>, and the $8,520 showing up in Jason's account is not spare money — it goes back to the business to cover the gap. The real paydown starts in the new year.</p>
-    <p class="note" style="color:var(--ink-body)"><b>And the gap has a cover.</b> Jason is selling the John Deere and some other things around the house — call it <b>$3,000 to $4,000</b>. That lands almost exactly on the $3,939 shortfall, which is the difference between coasting through the fall and reaching for a credit card again. It's the one piece of this that should happen in the next few weeks.</p>
-  </div>
-</section>
-
-<section>
-  <div class="sechead"><h2>What each household costs</h2><div class="fill"></div></div>
-  <p class="intro">Every line, both homes. Rent, utilities and the boys' insurance contribution are real figures; the rest are estimates we can adjust as the actual bills arrive. <b>All four vehicles ride on one policy on Amanda's side</b> — hers, Jason's, Eli's and Jacob's — which is cheaper than separate policies and simpler to manage.</p>
-  <div class="grid2">
-    <div class="card">
-      <table>
-        <tr><th>Jason — condo</th><th class="r"></th></tr>
+<section style="margin-top:0">
+  <p class="eyebrow">The two homes</p>
+  <h2 class="serif">What each household costs</h2>
+  <p class="intro">Rent, utilities, the boys' insurance contribution and Amanda's income are real numbers. Groceries, activities, clothing and personal spending are estimates we adjust as the actual bills arrive. All four vehicles ride on one policy on Amanda's side — hers, Jason's, Eli's and Jacob's — cheaper than separate policies and simpler to run.</p>
+  <div class="homes">
+    <div class="home j">
+      <div class="cap"><div class="who serif">Jason</div><div class="where">Condo · one adult</div></div>
+      <div class="body"><table>
         <tr><td>Rent</td><td class="r num">$2,000</td></tr>
         <tr><td>Electric</td><td class="r num">100</td></tr>
         <tr><td>Gas</td><td class="r num">20</td></tr>
@@ -195,11 +175,11 @@ a{color:var(--accent)}
         <tr><td>Health out-of-pocket</td><td class="r num">100</td></tr>
         <tr><td>Subscriptions</td><td class="r num">40</td></tr>
         <tr class="tot"><td>Monthly</td><td class="r num">$3,293</td></tr>
-      </table>
+      </table></div>
     </div>
-    <div class="card">
-      <table>
-        <tr><th>Amanda, Eli, Jacob &amp; Joseph</th><th class="r"></th></tr>
+    <div class="home a">
+      <div class="cap"><div class="who serif">Amanda, Eli, Jacob &amp; Joseph</div><div class="where">Rental · one adult, three boys (two driving)</div></div>
+      <div class="body"><table>
         <tr><td>Rent</td><td class="r num">$2,600</td></tr>
         <tr><td>Electric</td><td class="r num">150</td></tr>
         <tr><td>Gas / heat</td><td class="r num">65</td></tr>
@@ -218,23 +198,24 @@ a{color:var(--accent)}
         <tr><td>Subscriptions</td><td class="r num">50</td></tr>
         <tr class="sub"><td>less Eli &amp; Jacob — car insurance</td><td class="r num">−400</td></tr>
         <tr class="tot"><td>Monthly</td><td class="r num">$6,347</td></tr>
-      </table>
+      </table></div>
     </div>
   </div>
-  <div class="hero" style="margin-top:24px">
+  <div class="feat">
     <div class="lbl">Both households together</div>
-    <div class="amt num serif">$9,640 <span style="font-size:.45em;letter-spacing:0">/ month</span></div>
-    <p>$115,680 a year. Living apart costs about <span class="hl">$2,500 a month</span> more than one household would — roughly <span class="hl">$36,000</span> over the year including deposits, furnishing and two moves. That's the real price of the year, and we can carry it.</p>
+    <div class="amt num">$9,640 <small>/ month · $115,680 a year</small></div>
+    <p>Living apart costs about <span class="hl">$2,500 a month</span> more than one household would — roughly <span class="hl">$36,000</span> across the year once deposits, furnishing and two moves are counted. That is the real price of this year, and we can carry it.</p>
   </div>
 </section>
 
 <section>
-  <div class="sechead"><h2>Amanda — what lands, and when</h2><div class="fill"></div></div>
-  <p class="intro">Your paycheck one week, Jason's deposit the next. Money arriving every week rather than in two lumps.</p>
+  <p class="eyebrow">Amanda</p>
+  <h2 class="serif">What lands, and when</h2>
+  <p class="intro">Your paycheck one Friday, Jason's deposit the next — so money arrives every week instead of in two lumps.</p>
   <div class="grid2">
     <div class="card">
       <table>
-        <tr><th>Your side</th><th class="r"></th></tr>
+        <tr><th>Coming in</th><th class="r"></th></tr>
         <tr><td>Your paycheck, every other Friday</td><td class="r num">$2,308</td></tr>
         <tr><td>Jason's deposit, alternate Fridays</td><td class="r num">$1,400</td></tr>
         <tr class="tot"><td>Landing each month</td><td class="r num">$8,033</td></tr>
@@ -242,41 +223,167 @@ a{color:var(--accent)}
     </div>
     <div class="card">
       <table>
-        <tr><th>Where it goes</th><th class="r"></th></tr>
+        <tr><th>Going out</th><th class="r"></th></tr>
         <tr><td>Household running costs</td><td class="r num">$6,347</td></tr>
-        <tr class="tot"><td>Left over</td><td class="r num">$1,686</td></tr>
+        <tr class="tot"><td>Left over</td><td class="r num pos">$1,686</td></tr>
       </table>
       <p class="note">Yours to save, absorb a surprise, or put toward the boys.</p>
     </div>
   </div>
-  <p class="note"><b>$1,400 every other Friday is where we're starting.</b> Combined with Amanda's paycheck that's roughly <b>$1,850 landing in the joint account every single week</b>. There is room to go higher — but it isn't spare money. Every extra $200 every other Friday is $200 that stops going at the business debt and pushes the debt-free date out about three months. That's the honest trade, and it's a dial we can move either way as the year goes.</p>
-</section>
-
-<section>
-  <div class="sechead"><h2>What you're carrying</h2><div class="fill"></div></div>
-  <div class="card">
-    <table>
-      <tr><td>Health insurance for all five of us</td><td class="r">through your employer</td></tr>
-      <tr><td>HSA, maxed — 2026 family limit</td><td class="r num">$8,750/yr · $729/mo</td></tr>
-      <tr class="tot"><td>Tax the HSA saves us</td><td class="r num">≈ $1,470/yr</td></tr>
-    </table>
-    <p class="note">Maxing the HSA is one of the highest-return things either of us does — it comes out pre-tax, covers the medical costs we're already paying, and reduces what we owe. Worth continuing next year without question.</p>
+  <div class="feat a">
+    <div class="lbl">Roughly landing every week</div>
+    <div class="amt num">$1,850</div>
+    <p><b>$1,400 every other Friday is where we start</b>, not a ceiling. There is room to go higher — but it isn't spare money. Every extra $200 every other Friday is $200 that stops going at the business debt and pushes the debt-free date out about three months. That's the honest trade, and it's a dial we can move either way as the year goes.</p>
   </div>
 </section>
 
 <section>
-  <div class="sechead"><h2>Getting the house ready</h2><div class="fill"></div></div>
-  <p class="intro">Before listing. Most of it is Jason's own labor plus some paid help.</p>
+  <p class="eyebrow">Amanda</p>
+  <h2 class="serif">What you're carrying</h2>
+  <div class="card">
+    <table>
+      <tr><td>Health insurance for all five of us</td><td class="r">through your employer</td></tr>
+      <tr><td>HSA, maxed — 2026 family limit</td><td class="r num">$8,750/yr · $729/mo</td></tr>
+      <tr class="tot"><td>Tax the HSA saves us</td><td class="r num pos">≈ $1,470/yr</td></tr>
+    </table>
+    <p class="note">Maxing the HSA is one of the highest-return things either of us does — it comes out pre-tax, covers medical costs we're already paying, and lowers what we owe. Worth continuing next year without question.</p>
+  </div>
+</section>
+
+<div class="act"><span class="n">Two — Where it comes from</span><span class="bar"></span></div>
+
+<section style="margin-top:0">
+  <p class="eyebrow">Nexus</p>
+  <h2 class="serif">The business</h2>
+  <p class="intro">January through mid-August, cash basis — money actually in and actually out.</p>
+  <div class="card">
+    <table>
+      <tr><td>Commission income</td><td class="r num">$194,516</td></tr>
+      <tr class="sub"><td>Advisor commissions paid out</td><td class="r num">−65,167</td></tr>
+      <tr class="sub"><td>Legal &amp; accounting</td><td class="r num">−8,912</td></tr>
+      <tr class="sub"><td>Software, subscriptions, office</td><td class="r num">−6,954</td></tr>
+      <tr class="sub"><td>Interest on business debt</td><td class="r num">−2,878</td></tr>
+      <tr class="sub"><td>Everything else</td><td class="r num">−19,869</td></tr>
+      <tr class="tot"><td>Net income, 7½ months</td><td class="r num">$91,401</td></tr>
+    </table>
+    <p class="note">That pace is roughly <b>$146,000 a year</b> — a conservative read. It includes February and April, the two weakest months, and none of the accounts added in July have reached the books yet.</p>
+  </div>
+  <div class="card">
+    <table>
+      <tr><th>What changes on the expense side</th><th class="r">Now</th><th class="r">Forward</th></tr>
+      <tr><td>Legal — a one-time fight, not a running cost</td><td class="r num">$1,188/mo</td><td class="r num">~$300</td></tr>
+      <tr><td>Software &amp; AI development</td><td class="r num">$1,068/mo</td><td class="r num">~$534</td></tr>
+      <tr class="sub"><td>Administrative help — added deliberately</td><td class="r">—</td><td class="r num">~$1,500</td></tr>
+      <tr class="tot"><td>Net change</td><td class="r"></td><td class="r">about even</td></tr>
+    </table>
+    <p class="note">Worth being straight about this: tightening the spending <b>pays for the admin help</b> — it does not by itself make any number on this page better. It's still the right move, because it buys Jason time back to sell instead of doing paperwork. <b>Revenue is the lever that actually moves things</b>, where every 10% adds about <b>$1,725 a month</b> after advisor splits.</p>
+    <p class="note">One cushion is already baked in: the $146,000 above <b>includes</b> $8,912 of legal fees that shouldn't repeat. Strip those and the business runs closer to <b>$13,100 a month</b> — about <b>$900 a month better</b> than anything on this page assumes. Every date here is calculated the pessimistic way.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Taxes</p>
+  <h2 class="serif">The tax situation, in plain English</h2>
+  <div class="card">
+    <p style="margin:0 0 13px;font-size:15px">The business is an <b>S-corp</b>. That's a tax setup, not a different company — same Nexus, filed differently since January 1.</p>
+    <p style="margin:0 0 13px;font-size:15px"><b>The business itself pays no income tax.</b> Its profit passes through onto our personal return. So there is no such thing as "the business's taxes" separate from ours — it's one bill.</p>
+    <p style="margin:0 0 13px;font-size:15px">What the S-corp does require is that Jason <b>pay himself an actual paycheck</b> rather than just taking money out. The IRS insists on it. Money he takes <i>beyond</i> that paycheck comes out as a distribution, which skips the 15.3% Social Security and Medicare hit. That split is the entire reason for the S-corp and it saves several thousand dollars a year.</p>
+    <p style="margin:0 0 18px;font-size:15px">The catch: <b>no payroll has run yet this year.</b> Eight paychecks between September 15 and December 31 fix it — and because the IRS treats withholding as though it were paid evenly across the whole year, catching up now lands us exactly where we'd be had we started in January. No penalty.</p>
+    <table>
+      <tr><th>The 2026 bill</th><th class="r"></th></tr>
+      <tr><td>Total income tax, married filing jointly</td><td class="r num">$16,968</td></tr>
+      <tr class="sub"><td>What filing jointly saves vs. separately</td><td class="r num pos">−8,450</td></tr>
+      <tr class="sub"><td>Withheld from the eight remaining paychecks</td><td class="r num">16,968</td></tr>
+      <tr class="tot"><td>Owed next April</td><td class="r num pos">$0</td></tr>
+    </table>
+    <p class="note"><b>Separate and older:</b> roughly $20,000 from prior years, paid down at $500 a month. That is its own thing and not part of the 2026 number. Some of the house proceeds may clear it.</p>
+  </div>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card">
+      <table>
+        <tr><th>Each paycheck, Sept 15 → Dec 31</th><th class="r"></th></tr>
+        <tr><td>Gross</td><td class="r num">$6,875</td></tr>
+        <tr class="sub"><td>Social Security &amp; Medicare</td><td class="r num">−526</td></tr>
+        <tr class="sub"><td>Income tax withheld</td><td class="r num">−2,121</td></tr>
+        <tr class="tot"><td>Net</td><td class="r num">$4,228</td></tr>
+      </table>
+      <p class="note">Eight of these gets Jason to $55,000 of W-2 wages for the year. The business pays a matching $4,208 of Social Security and Medicare on top — an employer cost, not a deduction from the check.</p>
+    </div>
+    <div class="card">
+      <table>
+        <tr><th>What that does to the business account</th><th class="r"></th></tr>
+        <tr><td>Paid out — salary, employer tax, IRS installment</td><td class="r num">$61,208</td></tr>
+        <tr><td>Taken in over the same four months</td><td class="r num">48,748</td></tr>
+        <tr class="sub"><td>Of the salary, what sits unspent in Jason's account</td><td class="r num">+8,520</td></tr>
+        <tr class="tot"><td>Net, both accounts together</td><td class="r num neg">−$3,939</td></tr>
+      </table>
+      <p class="note">A full year of tax gets paid in three and a half months — <b>$7,252 a month</b> where the normal rate is $2,115. Nothing is wrong; it's the cost of catching payroll up in one run. It does mean <b>the debt sits at minimum payments until January</b>.</p>
+    </div>
+  </div>
+  <div class="feat g">
+    <div class="lbl">And that gap already has a cover</div>
+    <div class="amt num">$3,000 – $4,000</div>
+    <p>Jason is selling the John Deere and some other things around the house. That lands almost exactly on the $3,939 shortfall — the difference between coasting through the fall and reaching for a credit card again. <b>It's the one item that should happen in the next few weeks.</b></p>
+  </div>
+</section>
+
+<div class="act"><span class="n">Three — The plan</span><span class="bar"></span></div>
+
+<section style="margin-top:0">
+  <p class="eyebrow">Risk</p>
+  <h2 class="serif">Why a cushion comes before killing the debt</h2>
+  <p class="intro">The business earns well on average. It does not earn evenly — and that gap is the single biggest financial risk either of us carries right now.</p>
+  <div class="card">
+    <table>
+      <tr><th>2026, month by month</th><th class="r">Business net</th><th class="r">Against the $8,591 it takes to run everything</th></tr>
+      <tr><td>January</td><td class="r num">$25,038</td><td class="r num pos">+16,447</td></tr>
+      <tr><td><b>February</b></td><td class="r num">$5,076</td><td class="r num neg">−3,515</td></tr>
+      <tr><td>March</td><td class="r num">$19,316</td><td class="r num pos">+10,725</td></tr>
+      <tr><td><b>April</b></td><td class="r num">$1,425</td><td class="r num neg">−7,166</td></tr>
+      <tr><td>May</td><td class="r num">$13,504</td><td class="r num pos">+4,913</td></tr>
+      <tr><td>June</td><td class="r num">$9,631</td><td class="r num pos">+1,040</td></tr>
+      <tr><td>July</td><td class="r num">$16,301</td><td class="r num pos">+7,710</td></tr>
+      <tr class="tot"><td>Average</td><td class="r num">$12,899</td><td class="r num">+4,308</td></tr>
+    </table>
+    <p class="note">Two months out of seven landed under what it takes to run both households and pay the taxes — in a year averaging nearly $13,000 a month. That's normal for commission income and it is not a sign anything is wrong. But with no cash set aside, an April means reaching for the Amex at 24.5%. <b>That is exactly how the $65,000 got there.</b></p>
+  </div>
+  <div class="feat g">
+    <div class="lbl">So the first $15,000 of surplus goes here</div>
+    <div class="amt num">$10,000 <small>business</small> · $5,000 <small>family</small></div>
+    <p>At <span class="hl g">$1,500 a month</span> starting in January, both are funded by <span class="hl g">October 2027</span>. After that every dollar goes back at the debt. Curiously, saving $1,500 a month instead of $1,000 lands on the <b>same debt-free month</b> — it just gets us protected five months sooner. So we take the $1,500.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">$65,000, on the business — not on us personally</p>
+  <h2 class="serif">The debt, and how it ends</h2>
+  <p class="intro">Paid from business income, worst rate first. No consolidation loan — the savings were small enough that an application fee ate most of them.</p>
+  <div class="card">
+    <table>
+      <tr><th>What</th><th class="r">Balance</th><th class="r">Rate</th><th class="r">Gone by</th></tr>
+      <tr><td>American Express</td><td class="r num">$25,000</td><td class="r num">24.5%</td><td class="r"><b>Jan 2028</b></td></tr>
+      <tr><td>Apple / Goldman</td><td class="r num">$10,000</td><td class="r num">24.0%</td><td class="r"><b>Apr 2028</b></td></tr>
+      <tr><td>Loan from Jason's dad</td><td class="r num">$30,000</td><td class="r num">10.0%</td><td class="r"><b>Feb 2029</b></td></tr>
+      <tr class="tot"><td>Total</td><td class="r num">$65,000</td><td class="r num">17.7% blended</td><td class="r">30 months</td></tr>
+    </table>
+    <p class="note">These dates build in two things a straight-line payoff ignores: <b>nothing meaningful gets paid down until January</b>, and <b>$1,500 a month funds the cushion first</b>. Insuring against a bad month costs five months and about $3,900 of extra interest. It's worth it.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Before listing</p>
+  <h2 class="serif">Getting the house ready</h2>
+  <p class="intro">Most of it is Jason's own labor plus some paid help.</p>
   <div class="card">
     <table>
       <tr><th>Job</th><th class="r">Cost</th></tr>
       <tr><td>Deck repair — materials already bought</td><td class="r">—</td></tr>
       <tr><td>Yard cleanup</td><td class="r">—</td></tr>
       <tr><td>Paint &amp; clean</td><td class="r num">$350</td></tr>
-      <tr><td>Basement bathroom exhaust fan</td><td class="r num">$250</td></tr>
-      <tr><td><b>Egress window — Joseph's room</b></td><td class="r num">$900</td></tr>
-      <tr><td>Slider doors, power wash, touch-ups</td><td class="r num">$400</td></tr>
-      <tr><td>Paid help</td><td class="r num">$1,000</td></tr>
+      <tr><td>Basement bathroom exhaust fan</td><td class="r num">250</td></tr>
+      <tr><td><b>Egress window — Joseph's room</b></td><td class="r num">900</td></tr>
+      <tr><td>Slider doors, power wash, touch-ups</td><td class="r num">400</td></tr>
+      <tr><td>Paid help</td><td class="r num">1,000</td></tr>
       <tr class="tot"><td>Total</td><td class="r num">$2,900</td></tr>
     </table>
     <p class="note">The window is the one that pays for itself — it makes the house a legal <b>four-bedroom</b>, which moves both the asking price and the pool of buyers far more than $900.</p>
@@ -284,36 +391,38 @@ a{color:var(--accent)}
 </section>
 
 <section>
-  <div class="sechead"><h2>The year ahead</h2><div class="fill"></div></div>
-  <ul class="tl">
-    <li><span class="when">Sept</span><span>House work finished. First payroll runs Sept 15 — taxes start being withheld.</span></li>
-    <li><span class="when">Oct–Nov</span><span>House listed and sold. Proceeds clear the student loans and the last credit card.</span></li>
-    <li><span class="when">Dec</span><span>2026 taxes fully paid through withholding. Nothing owed in April.</span></li>
-    <li><span class="when">Jan 2027</span><span>Payroll settles into a normal rhythm. Real debt paydown and the reserve both begin.</span></li>
-    <li><span class="when">Apr 2028</span><span>Apple card gone. Only Dad's loan left, at the lowest rate.</span></li>
-    <li><span class="when">Oct 2027</span><span>Cash reserve fully funded — $10,000 business, $5,000 family. From here everything goes at the debt.</span></li>
-    <li><span class="when">Jan 2028</span><span>Amex gone — the worst debt, at 24.5%, is the first to go.</span></li>
-    <li><span class="when">Feb 2029</span><span>Business debt clear, including Jason's dad.</span></li>
-  </ul>
-  <div class="hero" style="margin-top:26px">
-    <div class="lbl">Where this lands</div>
-    <div class="amt num serif">Debt-free, with a cushion</div>
-    <p>The year apart costs about <span class="hl">$36,000</span> in duplicate housing and moving. We can carry that, build a real cushion for the first time, and still retire the business note — because after taxes and both households, the business has <span class="hl">$3,600 a month</span> left over. It buys safety first, then speed. <b>Nothing on this page depends on the business growing.</b> Jason expects it to; if he's right, every date here moves earlier.</p>
+  <p class="eyebrow">In order of what matters</p>
+  <h2 class="serif">What happens next</h2>
+  <div class="card">
+    <ul class="tl next">
+      <li><span class="when">Now</span><span><b>Sell the John Deere and the household items.</b> Roughly $3,500 against the $3,939 that Sept–Dec runs short. This is the one that keeps the fall off a credit card.</span></li>
+      <li><span class="when">Now</span><span><b>Confirm the car insurance quote.</b> $750 a month for four vehicles with two teen drivers in Michigan is an estimate, not a bill. It's the largest soft number here.</span></li>
+      <li><span class="when">Sept</span><span><b>Michigan registration, then first payroll September 15.</b> Eight checks, $6,875 gross each.</span></li>
+      <li><span class="when">Sept</span><span><b>House work finished</b> — deck, yard, paint, exhaust fan, Joseph's egress window. About $2,900.</span></li>
+      <li><span class="when">Fall</span><span><b>Finish the 2025 return</b> and pin down the real IRS balance. The $20,000 carried here may be $6,000 too high.</span></li>
+    </ul>
   </div>
 </section>
 
 <section>
-  <div class="sechead"><h2>What happens next</h2><div class="fill"></div></div>
-  <p class="intro">Short list, in the order it matters.</p>
+  <p class="eyebrow">The arc</p>
+  <h2 class="serif">The year ahead</h2>
   <div class="card">
     <ul class="tl">
-      <li><span class="when">Now</span><span><b>Sell the John Deere and the household items.</b> Roughly $3,500 against the $3,939 that Sept–Dec runs short. This is the one that keeps the fall off a credit card.</span></li>
-      <li><span class="when">Now</span><span><b>Confirm the car insurance quote.</b> $750/mo for four vehicles with two teen drivers in Michigan is an estimate, not a bill. It's the largest soft number here.</span></li>
-      <li><span class="when">Sept</span><span><b>Michigan registration, then first payroll Sept 15.</b> Eight checks, $6,875 gross each.</span></li>
-      <li><span class="when">Sept</span><span><b>House work finished</b> — deck, yard, paint, exhaust fan, Joseph's egress window. About $2,900.</span></li>
-      <li><span class="when">Fall</span><span><b>Finish the 2025 return</b> and pin down the real IRS balance. The $20,000 here may be $6,000 too high.</span></li>
-      <li><span class="when">Jan</span><span><b>Reserve and debt paydown both start.</b> $1,500 a month set aside, the rest at the Amex.</span></li>
+      <li><span class="when">Sept</span><span>House work finished. First payroll runs — taxes start being withheld.</span></li>
+      <li><span class="when">Oct–Nov</span><span>House listed and sold. Proceeds clear the student loans and the last credit card.</span></li>
+      <li><span class="when">Dec</span><span>2026 taxes fully paid through withholding. Nothing owed in April.</span></li>
+      <li><span class="when">Jan 2027</span><span>Payroll settles into a normal rhythm. Real debt paydown and the cushion both begin.</span></li>
+      <li><span class="when">Oct 2027</span><span>Cash reserve fully funded — $10,000 business, $5,000 family. From here everything goes at the debt.</span></li>
+      <li><span class="when">Jan 2028</span><span>Amex gone — the worst debt, at 24.5%, is the first to go.</span></li>
+      <li><span class="when">Apr 2028</span><span>Apple card gone. Only Dad's loan left, at the lowest rate.</span></li>
+      <li><span class="when">Feb 2029</span><span>Business debt clear, including Jason's dad.</span></li>
     </ul>
+  </div>
+  <div class="feat">
+    <div class="lbl">Where this lands</div>
+    <div class="amt serif">Debt-free, with a cushion</div>
+    <p>The year apart costs about <span class="hl">$36,000</span> in duplicate housing and moving. We can carry that, build a real cushion for the first time, and still retire the business note — because after taxes and both households the business has <span class="hl j">$3,596 a month</span> left over. It buys safety first, then speed. <b>Nothing on this page depends on the business growing.</b> Jason expects it to; if he's right, every date here moves earlier.</p>
   </div>
 </section>
 
