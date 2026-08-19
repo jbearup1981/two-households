@@ -41,13 +41,15 @@ body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--body);
 
 /* ---- masthead ---- */
 .mast{padding:78px 0 0}
+.mast .hr{width:min(1080px,100%)}
 .dateline{font-size:11.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--amanda);font-weight:700;margin:0 0 22px}
 h1{font-size:clamp(44px,8vw,78px);line-height:.98;margin:0;font-weight:800;letter-spacing:-.042em;color:var(--ink);text-wrap:balance}
 .lede{font-size:20.5px;line-height:1.5;color:var(--soft);margin:26px 0 0;font-weight:400;text-wrap:pretty}
 .mast .hr{height:3px;background:var(--ink);margin:44px 0 0}
 
 /* ---- chapter openers ---- */
-.chap{margin:96px 0 0;padding:0 0 4px;border-top:3px solid var(--ink);display:flex;align-items:flex-start;gap:22px}
+.chap{grid-column:1/-1;width:min(1080px,calc(100% - 44px));margin:96px auto 0;padding:0 0 4px;
+  border-top:3px solid var(--ink);display:flex;align-items:flex-start;gap:22px}
 .chap .n{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--amanda);
   padding-top:18px;white-space:nowrap}
 .chap .t{font-size:clamp(32px,5.4vw,50px);font-weight:800;letter-spacing:-.04em;line-height:1.04;
@@ -152,7 +154,7 @@ figure .cap b{color:var(--body)}
   <div class="hr"></div>
 </header>
 
-<div class="chap full" style="border-top:none;margin-top:0"><div class="wide" style="display:flex;gap:22px;align-items:flex-start"><span class="n">One</span><h2 class="t">Where we stand</h2></div></div>
+<div class="chap" style="border-top:none;margin-top:34px"><span class="n">One</span><h2 class="t">Where we stand</h2></div>
 
 <div class="wide">
   <div class="stand-grid">
