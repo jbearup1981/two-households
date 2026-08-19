@@ -20,12 +20,12 @@
   --rule:#2a333d; --hair:#212932; --accent:#7fb0dc; --sage:#79b48f; --sage-pale:#1a2620; --field:#212a33;
   --jason:#7fb0dc; --jason-pale:#1c2a38; --amanda:#dcaf58; --amanda-pale:#2c2618; --warn:#dd8471}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink-body);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.6}
-.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
+body{margin:0;background:var(--paper);color:var(--ink-body);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16.5px;line-height:1.66;-webkit-font-smoothing:antialiased}
+.disp{font-weight:700;letter-spacing:-.022em}
 .num{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 .wrap{max-width:960px;margin:0 auto;padding:56px 28px 96px}
 .kicker{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 15px}
-h1{font-size:clamp(38px,6vw,56px);line-height:1.02;margin:0;color:var(--ink);font-weight:400;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(34px,5.6vw,50px);line-height:1.05;margin:0;color:var(--ink);font-weight:700;letter-spacing:-.032em;text-wrap:balance}
 .rule-accent{width:52px;height:2px;background:var(--accent);margin:21px 0 19px}
 .lede{font-size:17px;line-height:1.6;color:var(--ink-soft);max-width:62ch;margin:0}
 section{margin-bottom:44px}
@@ -39,7 +39,7 @@ section{margin-bottom:44px}
 .house.hj{border-top-color:var(--jason)} .house.ha{border-top-color:var(--amanda)}
 .house.hj .htotal{border-top-color:var(--jason)} .house.hj .htotal .amt{color:var(--jason)}
 .house.ha .htotal{border-top-color:var(--amanda)} .house.ha .htotal .amt{color:var(--amanda)}
-.house h3{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:25px;font-weight:400;color:var(--ink);margin:0 0 3px}
+.house h3{font-size:21px;font-weight:700;letter-spacing:-.022em;color:var(--ink);margin:0 0 3px}
 .house .place{font-size:13px;color:var(--ink-faint);margin:0 0 18px}
 .line{display:flex;align-items:baseline;gap:8px;padding:6px 0}
 .line+.line{border-top:1px solid var(--hair)}
@@ -52,12 +52,12 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
 .line.credit label,.line.credit input{color:var(--sage)}
 .htotal{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-top:13px;border-top:2px solid var(--ink)}
 .htotal .lbl{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
-.htotal .amt{font-size:27px;color:var(--ink)}
+.htotal .amt{font-size:25px;font-weight:700;letter-spacing:-.025em;color:var(--ink)}
 .combined{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:32px 36px;display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between}
 .big .lbl,.annual .lbl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:8px}
-.big .amt{font-size:clamp(42px,7vw,60px);line-height:.95;color:var(--ink);letter-spacing:-.025em}
+.big .amt{font-size:clamp(38px,6.4vw,54px);font-weight:700;line-height:1;color:var(--ink);letter-spacing:-.034em}
 .big .sub{font-size:13.5px;color:var(--ink-faint);margin-top:8px}
-.annual{text-align:right}.annual .amt{font-size:29px;color:var(--ink)}
+.annual{text-align:right}.annual .amt{font-size:26px;font-weight:700;letter-spacing:-.025em;color:var(--ink)}
 .ledger{display:grid;grid-template-columns:1fr auto;gap:0 22px;max-width:580px}
 .ledger .l,.ledger .v{font-size:14.5px;padding:7px 0;border-bottom:1px solid var(--hair)}
 .ledger .v{text-align:right;color:var(--ink)}
@@ -68,7 +68,7 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
 .inputrow label{color:var(--ink-soft)}
 .inputrow input.f{width:92px;font-size:14.5px}
 .margin-note{background:var(--sage-pale);border-radius:3px;padding:25px 30px;margin-top:25px}
-.margin-note h4{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:20px;font-weight:400;color:var(--ink);margin:0 0 10px}
+.margin-note h4{font-size:18px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin:0 0 10px}
 .margin-note p{margin:0 0 11px;font-size:14.5px;color:var(--ink-body);max-width:64ch}
 .margin-note p:last-child{margin-bottom:0}
 .hl{color:var(--accent);font-weight:600}
@@ -78,14 +78,14 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
 .dial{background:var(--sage-pale);border-radius:3px;padding:26px 30px;margin-bottom:24px}
 .dial .top{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-end;justify-content:space-between}
 .dial .lbl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:7px}
-.dial .amt{font-size:40px;line-height:1;color:var(--ink);letter-spacing:-.02em}
+.dial .amt{font-size:36px;font-weight:700;line-height:1;color:var(--ink);letter-spacing:-.03em}
 .dial .amt small{font-size:.36em;letter-spacing:0;color:var(--ink-soft)}
 input[type=range]{width:100%;margin:20px 0 4px;accent-color:var(--accent)}
 .scale{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-faint)}
 .paywall{display:grid;grid-template-columns:auto 1fr auto;gap:8px 16px;align-items:baseline;font-size:14.5px}
 .paywall .n{color:var(--ink);font-weight:600}
 .paywall .d{border-bottom:1px dotted var(--rule);transform:translateY(-3px)}
-.notesbox h4,.panel h4{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:19px;font-weight:400;color:var(--ink);margin:0 0 4px}
+.notesbox h4,.panel h4{font-size:17.5px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin:0 0 4px}
 .notesbox .hint,.panel .hint{font-size:13px;color:var(--ink-faint);margin:0 0 14px;max-width:62ch}
 .pad{min-height:110px;font-size:14.5px;line-height:1.7;color:var(--ink-body);outline:none}
 .pad p{margin:0 0 8px}
@@ -109,7 +109,7 @@ a{color:var(--accent)}
 <div class="wrap">
 <div class="masthead">
   <p class="kicker">Household Plan · August 2026</p>
-  <h1 class="serif">Two Households</h1>
+  <h1 class="disp">Two Households</h1>
   <div class="rule-accent"></div>
   <p style="margin:0 0 14px;font-size:14px"><a href="./index.html">← back to the whole picture</a></p>
   <p class="lede">Every figure here is editable. Change anything and the whole plan re-runs — including the date the business debt is gone.</p>
@@ -120,7 +120,7 @@ a{color:var(--accent)}
   <p class="intro">All four vehicles ride on one policy on Amanda's side — hers, Jason's, Eli's and Jacob's — which is cheaper than separate policies. Eli and Jacob's $400 contribution comes off the bottom.</p>
   <div class="houses">
     <div class="house hj">
-      <h3 class="serif">Jason</h3><p class="place">Condo · one adult</p>
+      <h3 class="disp">Jason</h3><p class="place">Condo · one adult</p>
       <div class="line"><label for="j0">Rent</label><span class="dots"></span><input class="num f" id="j0" type="number" value="2000"></div>
 <div class="line"><label for="j1">Electric</label><span class="dots"></span><input class="num f" id="j1" type="number" value="100"></div>
 <div class="line"><label for="j2">Gas</label><span class="dots"></span><input class="num f" id="j2" type="number" value="20"></div>
@@ -132,10 +132,10 @@ a{color:var(--accent)}
 <div class="line"><label for="j8">Personal</label><span class="dots"></span><input class="num f" id="j8" type="number" value="150"></div>
 <div class="line"><label for="j9">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="j9" type="number" value="100"></div>
 <div class="line"><label for="j10">Subscriptions</label><span class="dots"></span><input class="num f" id="j10" type="number" value="40"></div>
-      <div class="htotal"><span class="lbl">Monthly</span><span class="amt num serif" id="jTotal">—</span></div>
+      <div class="htotal"><span class="lbl">Monthly</span><span class="amt num disp" id="jTotal">—</span></div>
     </div>
     <div class="house ha">
-      <h3 class="serif">Amanda, Eli, Jacob &amp; Joseph</h3><p class="place">Rental · one adult, three boys (two driving)</p>
+      <h3 class="disp">Amanda, Eli, Jacob &amp; Joseph</h3><p class="place">Rental · one adult, three boys (two driving)</p>
       <div class="line"><label for="a0">Rent</label><span class="dots"></span><input class="num f" id="a0" type="number" value="2600"></div>
 <div class="line"><label for="a1">Electric</label><span class="dots"></span><input class="num f" id="a1" type="number" value="150"></div>
 <div class="line"><label for="a2">Gas / heat</label><span class="dots"></span><input class="num f" id="a2" type="number" value="65"></div>
@@ -153,7 +153,7 @@ a{color:var(--accent)}
 <div class="line"><label for="a14">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="a14" type="number" value="175"></div>
 <div class="line"><label for="a15">Subscriptions</label><span class="dots"></span><input class="num f" id="a15" type="number" value="50"></div>
 <div class="line credit"><label for="c0">− Eli &amp; Jacob (car insurance)</label><span class="dots"></span><input class="num f" id="c0" type="number" value="400"></div>
-      <div class="htotal"><span class="lbl">Monthly, net</span><span class="amt num serif" id="aTotal">—</span></div>
+      <div class="htotal"><span class="lbl">Monthly, net</span><span class="amt num disp" id="aTotal">—</span></div>
     </div>
   </div>
 </section>
@@ -161,10 +161,10 @@ a{color:var(--accent)}
 <section>
   <div class="combined">
     <div class="big"><div class="lbl">Both households, monthly</div>
-      <div class="amt num serif" id="combMo">—</div>
+      <div class="amt num disp" id="combMo">—</div>
       <div class="sub">everything it takes to run two homes</div></div>
     <div class="annual"><div class="lbl">Annually</div>
-      <div class="amt num serif" id="combYr">—</div></div>
+      <div class="amt num disp" id="combYr">—</div></div>
   </div>
 </section>
 
@@ -173,21 +173,21 @@ a{color:var(--accent)}
   <p class="intro">Jason deposits into the family account every other Friday, opposite Amanda's paycheck — so money lands every week rather than in two lumps. Move the slider to see what any amount does to everything downstream.</p>
   <div class="dial">
     <div class="top">
-      <div><div class="lbl">Every other Friday</div><div class="amt num serif" id="depBi">—</div></div>
-      <div style="text-align:right"><div class="lbl">Per month</div><div class="amt num serif" id="depMo" style="font-size:30px">—</div></div>
+      <div><div class="lbl">Every other Friday</div><div class="amt num disp" id="depBi">—</div></div>
+      <div style="text-align:right"><div class="lbl">Per month</div><div class="amt num disp" id="depMo" style="font-size:30px">—</div></div>
     </div>
     <input type="range" id="dep" min="0" max="2600" step="25" value="1400">
     <div class="scale"><span>$0</span><span>$1,300</span><span>$2,600</span></div>
   </div>
   <div class="grid2">
     <div class="panel">
-      <h4 class="serif">What lands for Amanda</h4>
+      <h4 class="disp">What lands for Amanda</h4>
       <div class="inputrow" style="margin-top:10px"><label for="am">Amanda — net income / mo</label><input class="num f" id="am" type="number" value="5000"></div>
       <div class="ledger" id="amFlow" style="margin-top:10px"></div>
       <p class="hint" style="margin-top:14px" id="amWeek"></p>
     </div>
     <div class="panel">
-      <h4 class="serif">What the business has to cover</h4>
+      <h4 class="disp">What the business has to cover</h4>
       <p class="hint">Household income never touches business debt. This is business money only.</p>
       <div class="inputrow"><label for="biz">Business net income / mo</label><input class="num f" id="biz" type="number" value="12187"></div>
       <div class="inputrow"><label for="tax">Income tax / mo</label><input class="num f" id="tax" type="number" value="1414"></div>
@@ -206,7 +206,7 @@ a{color:var(--accent)}
       <div class="line"><label for="d0">American Express</label><span class="dots"></span><input class="num f" id="d0" type="number" value="25000"><input class="num f" id="r0" type="number" step="0.1" value="24.5" style="width:52px">%</div>
       <div class="line"><label for="d1">Apple / Goldman</label><span class="dots"></span><input class="num f" id="d1" type="number" value="10000"><input class="num f" id="r1" type="number" step="0.1" value="24" style="width:52px">%</div>
       <div class="line"><label for="d2">Loan from Jason's dad</label><span class="dots"></span><input class="num f" id="d2" type="number" value="30000"><input class="num f" id="r2" type="number" step="0.1" value="10" style="width:52px">%</div>
-      <div class="htotal"><span class="lbl">Total owed</span><span class="amt num serif" id="dTot">—</span></div>
+      <div class="htotal"><span class="lbl">Total owed</span><span class="amt num disp" id="dTot">—</span></div>
       <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)">
         <div class="lbl" style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:12px">Cash reserve — funded first</div>
         <div class="line"><label for="rsv">Set aside each month</label><span class="dots"></span><input class="num f" id="rsv" type="number" value="1500"></div>
@@ -214,12 +214,12 @@ a{color:var(--accent)}
       </div>
     </div>
     <div class="panel">
-      <h4 class="serif">Payoff</h4>
+      <h4 class="disp">Payoff</h4>
       <div class="paywall" id="payoff" style="margin-top:14px"></div>
     </div>
   </div>
   <div class="margin-note">
-    <h4 class="serif" id="mTitle">The one real trade-off</h4>
+    <h4 class="disp" id="mTitle">The one real trade-off</h4>
     <p id="mBody"></p>
     <p id="mTrade"></p>
   </div>
@@ -241,7 +241,7 @@ a{color:var(--accent)}
 
 <section>
   <div class="panel" style="margin-top:22px">
-    <h4 class="serif">Sending your version over</h4>
+    <h4 class="disp">Sending your version over</h4>
     <p class="hint">Changes save in this browser. To send your version to the other person, copy a link — it carries every number you've entered.</p>
     <button class="share" id="shareBtn" type="button">Copy a link with these numbers</button>
     <span class="said" id="said"></span>
