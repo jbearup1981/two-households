@@ -7,13 +7,18 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
 <title>Two Households</title>
 <style>
-:root{--paper:#fbfaf7;--card:#fff;--ink:#1f3d2e;--ink-body:#2f3a35;--ink-soft:#6b7a72;--ink-faint:#9aa79f;
---rule:#dfe3dc;--hair:#ecefe8;--accent:#b8522a;--sage:#7a9282;--sage-pale:#e8ebe4;--field:#f4f6f1}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#141a17;--card:#1b221e;--ink:#e9efe9;
---ink-body:#cdd6d0;--ink-soft:#93a29a;--ink-faint:#6e7b74;--rule:#2c3630;--hair:#242c27;--accent:#d97a4a;
---sage:#8fa899;--sage-pale:#222b26;--field:#1f2723}}
-:root[data-theme="dark"]{--paper:#141a17;--card:#1b221e;--ink:#e9efe9;--ink-body:#cdd6d0;--ink-soft:#93a29a;
---ink-faint:#6e7b74;--rule:#2c3630;--hair:#242c27;--accent:#d97a4a;--sage:#8fa899;--sage-pale:#222b26;--field:#1f2723}
+:root{
+  --paper:#f3f5f7; --card:#ffffff; --ink:#16202b; --ink-body:#39434e; --ink-soft:#66717d; --ink-faint:#98a2ac;
+  --rule:#dbe0e6; --hair:#eaeef1; --accent:#35618c; --sage:#4a8462; --sage-pale:#e6f0ea; --field:#eef1f5;
+  --jason:#35618c; --jason-pale:#e8eff6; --amanda:#a8761c; --amanda-pale:#f7efdf; --warn:#ac4f3f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11161c; --card:#1a2129; --ink:#e9eef3; --ink-body:#c1cad3; --ink-soft:#8b96a2; --ink-faint:#68737e;
+  --rule:#2a333d; --hair:#212932; --accent:#7fb0dc; --sage:#79b48f; --sage-pale:#1a2620; --field:#212a33;
+  --jason:#7fb0dc; --jason-pale:#1c2a38; --amanda:#dcaf58; --amanda-pale:#2c2618; --warn:#dd8471}}
+:root[data-theme="dark"]{
+  --paper:#11161c; --card:#1a2129; --ink:#e9eef3; --ink-body:#c1cad3; --ink-soft:#8b96a2; --ink-faint:#68737e;
+  --rule:#2a333d; --hair:#212932; --accent:#7fb0dc; --sage:#79b48f; --sage-pale:#1a2620; --field:#212a33;
+  --jason:#7fb0dc; --jason-pale:#1c2a38; --amanda:#dcaf58; --amanda-pale:#2c2618; --warn:#dd8471}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink-body);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.6}
 .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
@@ -30,6 +35,10 @@ section{margin-bottom:44px}
 .intro{font-size:15px;color:var(--ink-soft);margin:-8px 0 20px;max-width:66ch}
 .houses{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 @media(max-width:760px){.houses{grid-template-columns:1fr;gap:34px}}
+.house{border-top:3px solid var(--rule);padding-top:16px}
+.house.hj{border-top-color:var(--jason)} .house.ha{border-top-color:var(--amanda)}
+.house.hj .htotal{border-top-color:var(--jason)} .house.hj .htotal .amt{color:var(--jason)}
+.house.ha .htotal{border-top-color:var(--amanda)} .house.ha .htotal .amt{color:var(--amanda)}
 .house h3{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:25px;font-weight:400;color:var(--ink);margin:0 0 3px}
 .house .place{font-size:13px;color:var(--ink-faint);margin:0 0 18px}
 .line{display:flex;align-items:baseline;gap:8px;padding:6px 0}
@@ -110,7 +119,7 @@ a{color:var(--accent)}
   <div class="sechead"><h2>What each household costs</h2><div class="fill"></div></div>
   <p class="intro">All four vehicles ride on one policy on Amanda's side — hers, Jason's, Eli's and Jacob's — which is cheaper than separate policies. Eli and Jacob's $400 contribution comes off the bottom.</p>
   <div class="houses">
-    <div class="house">
+    <div class="house hj">
       <h3 class="serif">Jason</h3><p class="place">Condo · one adult</p>
       <div class="line"><label for="j0">Rent</label><span class="dots"></span><input class="num f" id="j0" type="number" value="2000"></div>
 <div class="line"><label for="j1">Electric</label><span class="dots"></span><input class="num f" id="j1" type="number" value="100"></div>
@@ -125,7 +134,7 @@ a{color:var(--accent)}
 <div class="line"><label for="j10">Subscriptions</label><span class="dots"></span><input class="num f" id="j10" type="number" value="40"></div>
       <div class="htotal"><span class="lbl">Monthly</span><span class="amt num serif" id="jTotal">—</span></div>
     </div>
-    <div class="house">
+    <div class="house ha">
       <h3 class="serif">Amanda, Eli, Jacob &amp; Joseph</h3><p class="place">Rental · one adult, three boys (two driving)</p>
       <div class="line"><label for="a0">Rent</label><span class="dots"></span><input class="num f" id="a0" type="number" value="2600"></div>
 <div class="line"><label for="a1">Electric</label><span class="dots"></span><input class="num f" id="a1" type="number" value="150"></div>
