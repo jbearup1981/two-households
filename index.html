@@ -48,6 +48,15 @@ tr.sub td{color:var(--ink-soft)}
 .note{font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:66ch}
 .foot{border-top:1px solid var(--rule);padding-top:22px;margin-top:44px;font-size:13.5px;color:var(--ink-faint)}
 a{color:var(--accent)}
+textarea#notes{width:100%;min-height:150px;font:inherit;font-size:15px;line-height:1.6;color:var(--ink);
+background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;resize:vertical}
+textarea#notes:focus{outline:none;border-color:var(--accent)}
+.notebar{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
+button.share{font:inherit;font-size:14px;font-weight:600;color:var(--paper);background:var(--accent);
+border:none;border-radius:3px;padding:10px 20px;cursor:pointer}
+button.share:hover{filter:brightness(1.08)}
+button.share:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.said{font-size:13px;color:var(--sage)}
 </style>
 </head>
 <body>
@@ -284,9 +293,60 @@ a{color:var(--accent)}
   </div>
 </section>
 
+<section>
+  <div class="sechead"><h2>What happens next</h2><div class="fill"></div></div>
+  <p class="intro">Short list, in the order it matters.</p>
+  <div class="card">
+    <ul class="tl">
+      <li><span class="when">Now</span><span><b>Sell the John Deere and the household items.</b> Roughly $3,500 against the $3,939 that Sept–Dec runs short. This is the one that keeps the fall off a credit card.</span></li>
+      <li><span class="when">Now</span><span><b>Confirm the car insurance quote.</b> $750/mo for four vehicles with two teen drivers in Michigan is an estimate, not a bill. It's the largest soft number here.</span></li>
+      <li><span class="when">Sept</span><span><b>Michigan registration, then first payroll Sept 15.</b> Eight checks, $6,875 gross each.</span></li>
+      <li><span class="when">Sept</span><span><b>House work finished</b> — deck, yard, paint, exhaust fan, Joseph's egress window. About $2,900.</span></li>
+      <li><span class="when">Fall</span><span><b>Finish the 2025 return</b> and pin down the real IRS balance. The $20,000 here may be $6,000 too high.</span></li>
+      <li><span class="when">Jan</span><span><b>Reserve and debt paydown both start.</b> $1,500 a month set aside, the rest at the Amex.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><h2>Amanda — questions and notes</h2><div class="fill"></div></div>
+  <p class="intro">Anything that doesn't look right, anything missing, anything you want changed. Type it here — it saves as you go.</p>
+  <div class="card">
+    <textarea id="notes" rows="7" placeholder="Questions, corrections, things I'd change..."></textarea>
+    <div class="notebar">
+      <button class="share" id="sendNotes" type="button">Send these to Jason</button>
+      <span class="said" id="noteSaid"></span>
+    </div>
+    <p class="note"><b>Worth knowing how this works:</b> what you type is saved in this browser only — it does not reach Jason on its own. The button opens your email with the notes already written; you just hit send. Nothing goes anywhere until you do.</p>
+  </div>
+</section>
+
 <div class="foot">
   Built from the business books as of 19 August 2026. Monthly figures restate the Amex and Apple expenses across the months they were actually incurred. Tax figures use published 2026 brackets and assume married filing jointly. Household estimates are ours and easy to change — the working numbers live in the <a href="./budget.html">household budget</a>, where every figure can be edited and the debt-free date recalculates as you change them.
 </div>
 </div>
+<script>
+(function(){
+  var K="two-households-notes", t=document.getElementById("notes"), said=document.getElementById("noteSaid");
+  if(!t) return;
+  try{ var v=localStorage.getItem(K); if(v) t.value=v; }catch(e){}
+  var timer;
+  t.addEventListener("input",function(){
+    try{ localStorage.setItem(K,t.value); }catch(e){}
+    said.textContent="Saved";
+    clearTimeout(timer); timer=setTimeout(function(){ said.textContent=""; },1500);
+  });
+  document.getElementById("sendNotes").addEventListener("click",function(){
+    var body=t.value.trim();
+    if(!body){ said.textContent="Nothing written yet."; setTimeout(function(){said.textContent="";},2500); return; }
+    var url="mailto:jason@nexusbenefitsolutions.com"
+      +"?subject="+encodeURIComponent("Notes on the plan")
+      +"&body="+encodeURIComponent(body+"\n\n— from the shared plan page");
+    window.location.href=url;
+    said.textContent="Opening your email…";
+    setTimeout(function(){ said.textContent=""; },4000);
+  });
+})();
+</script>
 </body>
 </html>

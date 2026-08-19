@@ -234,8 +234,12 @@ a{color:var(--accent)}
   <div class="sechead"><h2>Notes</h2><div class="fill"></div></div>
   <div class="notesbox">
     <h4 class="serif">Between the two of you</h4>
-    <p class="hint">Questions, decisions, things to check.</p>
+    <p class="hint">Questions, decisions, things to check. Saved in this browser — use the button to send them over.</p>
     <div class="pad" contenteditable="true" id="pad"></div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <button class="share" id="sendPad" type="button">Send these notes to Jason</button>
+      <span class="said" id="padSaid"></span>
+    </div>
   </div>
   <div class="panel" style="margin-top:22px">
     <h4 class="serif">Sending your version to the other person</h4>
@@ -405,6 +409,16 @@ function restore(){
 document.addEventListener("input",()=>{calc();persist()});
 document.addEventListener("change",()=>{calc();persist()});
 const _pad=document.getElementById("pad"); if(_pad)_pad.addEventListener("blur",persist);
+document.getElementById("sendPad").addEventListener("click",function(){
+  const el=document.getElementById("pad");
+  const body=(el.innerText||el.textContent||"").trim();
+  const said=document.getElementById("padSaid");
+  if(!body){ said.textContent="Nothing written yet."; setTimeout(()=>{said.textContent=""},2500); return; }
+  window.location.href="mailto:jason@nexusbenefitsolutions.com?subject="
+    +encodeURIComponent("Notes on the budget")+"&body="
+    +encodeURIComponent(body+"\n\n— from the shared budget page");
+  said.textContent="Opening your email\u2026"; setTimeout(()=>{said.textContent=""},4000);
+});
 document.getElementById("shareBtn").addEventListener("click",function(){
   const url=location.origin+location.pathname+"#"+encodeURIComponent(enc(JSON.stringify(snap())));
   const done=ok=>{document.getElementById("said").textContent=ok?"Copied — paste it into a text.":"Couldn't copy. Link is in the address bar.";
