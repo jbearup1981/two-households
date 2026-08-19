@@ -56,7 +56,7 @@ h1{font-size:clamp(40px,7.2vw,64px);line-height:1.04;margin:0;font-weight:700;le
 
 /* ---------- the answer strip ---------- */
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);
-  border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:-30px 0 0;box-shadow:0 6px 24px rgba(16,26,38,.10)}
+  border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:0;box-shadow:0 6px 24px rgba(16,26,38,.10)}
 @media(max-width:760px){.strip{grid-template-columns:1fr 1fr}}
 .cell{background:var(--card);padding:20px 18px}
 .cell .lbl{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin-bottom:7px;line-height:1.35}
@@ -67,13 +67,17 @@ h1{font-size:clamp(40px,7.2vw,64px);line-height:1.04;margin:0;font-weight:700;le
 /* ---------- sections ---------- */
 section{margin:54px 0 0}
 .eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin:0 0 6px}
-h2{font-size:clamp(27px,4.1vw,36px);font-weight:700;color:var(--ink);margin:0 0 12px;
-  letter-spacing:-.028em;line-height:1.14;text-wrap:balance}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700;color:var(--ink);margin:0 0 11px;
+  letter-spacing:-.024em;line-height:1.2;text-wrap:balance}
 .intro{font-size:16px;color:var(--ink-soft);margin:0 0 20px;max-width:66ch}
-.act{display:flex;align-items:center;gap:15px;margin:70px 0 30px}
-.act .n{font-size:12.5px;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--amanda);font-weight:700;white-space:nowrap}
-.act .bar{flex:1;height:1px;background:var(--rule)}
+.act{width:100vw;margin:74px 0 34px calc(50% - 50vw);padding:30px 26px 28px;
+  background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.act-in{max-width:888px;margin:0 auto;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.act .n{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--amanda);
+  font-weight:800;white-space:nowrap;padding-top:2px}
+.act .t{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.032em;
+  color:var(--ink);line-height:1.05;margin:0}
+@media(max-width:600px){.act{padding:24px 22px 22px}.act-in{gap:4px}}
 
 .card{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:26px 28px}
 .card+.card{margin-top:18px}
@@ -155,14 +159,16 @@ tr:last-child td{border-bottom:none}
   </div>
 </header>
 
-<div class="strip">
+<div class="act"><div class="act-in"><span class="n">One</span><p class="t">Where we stand</p></div></div>
+
+<div class="strip" style="margin-top:0">
   <div class="cell"><div class="lbl">Both households</div><div class="v num disp">$9,640</div><div class="s">a month, all in</div></div>
   <div class="cell"><div class="lbl">Amanda &amp; the boys</div><div class="v num disp a">$1,686</div><div class="s">left over each month</div></div>
   <div class="cell"><div class="lbl">Jason&nbsp;/ the business</div><div class="v num disp j">$3,596</div><div class="s">a month at the debt</div></div>
   <div class="cell"><div class="lbl">Owed next April</div><div class="v num disp g">$0</div><div class="s">taxes fully withheld</div></div>
 </div>
 
-<div class="act"><span class="n">One — Your side</span><span class="bar"></span></div>
+<div class="act"><div class="act-in"><span class="n">Two</span><p class="t">On your side</p></div></div>
 
 <section style="margin-top:0">
   <p class="eyebrow">The two homes</p>
@@ -317,7 +323,7 @@ tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<div class="act"><span class="n">Two — Where it comes from</span><span class="bar"></span></div>
+<div class="act"><div class="act-in"><span class="n">Three</span><p class="t">Where it comes from</p></div></div>
 
 <section style="margin-top:0">
   <p class="eyebrow">Nexus</p>
@@ -350,21 +356,42 @@ tr:last-child td{border-bottom:none}
 
 <section>
   <p class="eyebrow">Taxes</p>
-  <h2 class="disp">The tax situation, in plain English</h2>
+  <h2>The tax situation, in plain English</h2>
   <div class="card">
-    <p style="margin:0 0 13px;font-size:15px">The business is an <b>S-corp</b>. That's a tax setup, not a different company — same Nexus, filed differently since January 1.</p>
-    <p style="margin:0 0 13px;font-size:15px"><b>The business itself pays no income tax.</b> Its profit passes through onto our personal return. So there is no such thing as "the business's taxes" separate from ours — it's one bill.</p>
-    <p style="margin:0 0 13px;font-size:15px">What the S-corp does require is that Jason <b>pay himself an actual paycheck</b> rather than just taking money out. The IRS insists on it. Money he takes <i>beyond</i> that paycheck comes out as a distribution, which skips the 15.3% Social Security and Medicare hit. That split is the entire reason for the S-corp and it saves several thousand dollars a year.</p>
-    <p style="margin:0 0 18px;font-size:15px">The catch: <b>no payroll has run yet this year.</b> Eight paychecks between September 15 and December 31 fix it — and because the IRS treats withholding as though it were paid evenly across the whole year, catching up now lands us exactly where we'd be had we started in January. No penalty.</p>
+    <p style="margin:0 0 13px;font-size:16px">The business is an <b>S-corp</b>. That's a tax setup, not a different company — same Nexus, filed differently since January 1.</p>
+    <p style="margin:0 0 13px;font-size:16px"><b>The business itself pays no income tax.</b> Its profit passes through onto our personal return, so there is no such thing as "the business's taxes" separate from ours. It's one bill.</p>
+    <p style="margin:0;font-size:16px">What the S-corp does require is that Jason <b>pay himself an actual paycheck</b> rather than just taking money out. Money he takes <i>beyond</i> that paycheck comes out as a distribution, which skips the 15.3% Social Security and Medicare hit. That split is the whole reason for the S-corp and it saves several thousand dollars a year.</p>
+  </div>
+
+  <div class="card">
     <table>
+      <tr><th style="width:34%">Behind us — 2025</th><th></th></tr>
+    </table>
+    <p class="note" style="margin-top:12px;font-size:15px;color:var(--ink-body)"><b>We filed an extension, so nothing is late.</b> The 2025 return is simply not finished yet — it gets done in the next few months. There's a balance owed to the IRS right now, probably a couple of thousand, and <b>finishing 2025 will add to it</b>. That combined number is exactly what the <b>$500 a month</b> is paying down. It is a known, contained, already-being-handled thing — not a surprise waiting to land.</p>
+    <p class="note" style="font-size:14px">Carried on this page at <b>$20,000</b> to stay on the safe side until the return is done. The real figure is likely lower — worth pinning down, because it decides whether the house proceeds clear it outright.</p>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr><th style="width:34%">This year — 2026, the catch-up</th><th></th></tr>
+    </table>
+    <p class="note" style="margin-top:12px;font-size:15px;color:var(--ink-body)"><b>No payroll has run yet this year.</b> January through August, Jason took money out with nothing withheld. Eight paychecks between September 15 and December 31 fix that — and because the IRS treats withholding as though it were paid evenly across the whole year, catching up now lands us exactly where we'd be had we started in January. <b>No penalty.</b></p>
+    <table style="margin-top:16px">
       <tr><th>The 2026 bill</th><th class="r"></th></tr>
       <tr><td>Total income tax, married filing jointly</td><td class="r num">$16,968</td></tr>
       <tr class="sub"><td>What filing jointly saves vs. separately</td><td class="r num pos">−8,450</td></tr>
       <tr class="sub"><td>Withheld from the eight remaining paychecks</td><td class="r num">16,968</td></tr>
       <tr class="tot"><td>Owed next April</td><td class="r num pos">$0</td></tr>
     </table>
-    <p class="note"><b>Separate and older:</b> roughly $20,000 from prior years, paid down at $500 a month. That is its own thing and not part of the 2026 number. Some of the house proceeds may clear it.</p>
   </div>
+
+  <div class="feat g">
+    <div class="lbl">From here on — 2027 and beyond</div>
+    <div class="amt">Clean, and mostly automatic</div>
+    <p>Once payroll is running, <b>Jason's taxes come out of his paycheck the same way Amanda's already do</b> — withheld before the money ever lands, nothing to remember and nothing to set aside. Between the two of us that covers the large majority of what we owe.</p>
+    <p><b>The one piece left to plan for is tax on the business profit above Jason's salary.</b> That's the only moving part, it's known in advance, and from September it's built into the withholding rather than saved up for. This is the year the messy part ends.</p>
+  </div>
+
   <div class="grid2" style="margin-top:18px">
     <div class="card">
       <table>
@@ -405,7 +432,7 @@ tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<div class="act"><span class="n">Three — The plan</span><span class="bar"></span></div>
+<div class="act"><div class="act-in"><span class="n">Four</span><p class="t">The plan</p></div></div>
 
 <section style="margin-top:0">
   <p class="eyebrow">Risk</p>
