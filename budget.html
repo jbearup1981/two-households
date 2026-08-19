@@ -27,13 +27,14 @@ section{margin-bottom:44px}
 .sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
 .sechead h2{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:0;white-space:nowrap}
 .sechead .fill{flex:1;height:1px;background:var(--rule)}
+.intro{font-size:15px;color:var(--ink-soft);margin:-8px 0 20px;max-width:66ch}
 .houses{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 @media(max-width:760px){.houses{grid-template-columns:1fr;gap:34px}}
 .house h3{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:25px;font-weight:400;color:var(--ink);margin:0 0 3px}
 .house .place{font-size:13px;color:var(--ink-faint);margin:0 0 18px}
 .line{display:flex;align-items:baseline;gap:8px;padding:6px 0}
 .line+.line{border-top:1px solid var(--hair)}
-.line label{font-size:14px;color:var(--ink-body);white-space:nowrap}
+.line label{font-size:14px;color:var(--ink-body)}
 .line .dots{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-3px);min-width:12px}
 input.f{width:78px;text-align:right;font-size:14px;padding:2px 4px;color:var(--ink);background:transparent;border:none;border-bottom:1px solid var(--rule)}
 input.f:hover{background:var(--field)}
@@ -48,11 +49,12 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
 .big .amt{font-size:clamp(42px,7vw,60px);line-height:.95;color:var(--ink);letter-spacing:-.025em}
 .big .sub{font-size:13.5px;color:var(--ink-faint);margin-top:8px}
 .annual{text-align:right}.annual .amt{font-size:29px;color:var(--ink)}
-.ledger{display:grid;grid-template-columns:1fr auto;gap:0 22px;max-width:560px}
+.ledger{display:grid;grid-template-columns:1fr auto;gap:0 22px;max-width:580px}
 .ledger .l,.ledger .v{font-size:14.5px;padding:7px 0;border-bottom:1px solid var(--hair)}
 .ledger .v{text-align:right;color:var(--ink)}
 .ledger .l.tot,.ledger .v.tot{border-bottom:none;border-top:2px solid var(--ink);font-weight:600;padding-top:11px;font-size:16px}
 .ledger .v.pos{color:var(--sage)}
+.ledger .l.sub{color:var(--ink-soft);padding-left:14px}
 .inputrow{display:flex;align-items:baseline;gap:10px;margin-bottom:9px;font-size:14.5px}
 .inputrow label{color:var(--ink-soft)}
 .inputrow input.f{width:92px;font-size:14.5px}
@@ -61,19 +63,35 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
 .margin-note p{margin:0 0 11px;font-size:14.5px;color:var(--ink-body);max-width:64ch}
 .margin-note p:last-child{margin-bottom:0}
 .hl{color:var(--accent);font-weight:600}
-.proceeds{border:1px solid var(--rule);border-radius:3px;padding:28px 32px;background:var(--card)}
-.notesbox{border:1px solid var(--rule);border-radius:3px;background:var(--card);padding:24px 28px}
-.notesbox h4{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:19px;font-weight:400;color:var(--ink);margin:0 0 4px}
-.notesbox .hint{font-size:13px;color:var(--ink-faint);margin:0 0 14px}
+.proceeds,.notesbox,.panel{border:1px solid var(--rule);border-radius:3px;padding:26px 30px;background:var(--card)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.dial{background:var(--sage-pale);border-radius:3px;padding:26px 30px;margin-bottom:24px}
+.dial .top{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-end;justify-content:space-between}
+.dial .lbl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:7px}
+.dial .amt{font-size:40px;line-height:1;color:var(--ink);letter-spacing:-.02em}
+.dial .amt small{font-size:.36em;letter-spacing:0;color:var(--ink-soft)}
+input[type=range]{width:100%;margin:20px 0 4px;accent-color:var(--accent)}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-faint)}
+.paywall{display:grid;grid-template-columns:auto 1fr auto;gap:8px 16px;align-items:baseline;font-size:14.5px}
+.paywall .n{color:var(--ink);font-weight:600}
+.paywall .d{border-bottom:1px dotted var(--rule);transform:translateY(-3px)}
+.notesbox h4,.panel h4{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:19px;font-weight:400;color:var(--ink);margin:0 0 4px}
+.notesbox .hint,.panel .hint{font-size:13px;color:var(--ink-faint);margin:0 0 14px;max-width:62ch}
 .pad{min-height:110px;font-size:14.5px;line-height:1.7;color:var(--ink-body);outline:none}
-.pad:focus{outline:none}
 .pad p{margin:0 0 8px}
-.pad:empty::before{content:"Type here — both of you see the same notes.";color:var(--ink-faint)}
+.pad:empty::before{content:"Type here — saved in this browser.";color:var(--ink-faint)}
+button.share{font:inherit;font-size:14px;font-weight:600;color:var(--paper);background:var(--accent);border:none;border-radius:3px;padding:9px 18px;cursor:pointer}
+button.share:hover{filter:brightness(1.08)}
+button.share:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.said{font-size:13px;color:var(--sage);margin-left:12px}
 .foot{border-top:1px solid var(--rule);padding-top:24px;margin-top:48px}
 .foot h4{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:0 0 13px}
 .foot dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 20px}
+@media(max-width:600px){.foot dl{grid-template-columns:1fr;gap:2px 0}.foot dd{margin-bottom:10px}}
 .foot dt{font-size:13.5px;color:var(--ink);font-weight:600;white-space:nowrap}
 .foot dd{margin:0;font-size:13.5px;color:var(--ink-soft);max-width:70ch}
+a{color:var(--accent)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -84,50 +102,49 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
   <p class="kicker">Household Plan · August 2026</p>
   <h1 class="serif">Two Households</h1>
   <div class="rule-accent"></div>
-  <p style="margin:0 0 14px;font-size:14px"><a href="./index.html" style="color:var(--accent)">← back to the whole picture</a></p>
-  <p class="lede">What each home needs to run, and where it comes from. Every figure is editable and shared — when one of you changes a number, the other sees it.</p>
+  <p style="margin:0 0 14px;font-size:14px"><a href="./index.html">← back to the whole picture</a></p>
+  <p class="lede">Every figure here is editable. Change anything and the whole plan re-runs — including the date the business debt is gone.</p>
 </div>
 
-
-<section>
-  <div class="sechead"><h2>What's needed</h2><div class="fill"></div></div>
+<section style="margin-top:38px">
+  <div class="sechead"><h2>What each household costs</h2><div class="fill"></div></div>
+  <p class="intro">All four vehicles ride on one policy on Amanda's side — hers, Jason's, Eli's and Jacob's — which is cheaper than separate policies. Eli and Jacob's $400 contribution comes off the bottom.</p>
   <div class="houses">
     <div class="house">
       <h3 class="serif">Jason</h3><p class="place">Condo · one adult</p>
-      <div class="line"><label for="j0">Rent</label><span class="dots"></span><input class="num f" id="j0" data-g="j" type="number" value="2000"></div>
-<div class="line"><label for="j1">Electric</label><span class="dots"></span><input class="num f" id="j1" data-g="j" type="number" value="100"></div>
-<div class="line"><label for="j2">Gas</label><span class="dots"></span><input class="num f" id="j2" data-g="j" type="number" value="20"></div>
-<div class="line"><label for="j3">Groceries</label><span class="dots"></span><input class="num f" id="j3" data-g="j" type="number" value="450"></div>
-<div class="line"><label for="j4">Dining out</label><span class="dots"></span><input class="num f" id="j4" data-g="j" type="number" value="250"></div>
-<div class="line"><label for="j5">Car insurance</label><span class="dots"></span><input class="num f" id="j5" data-g="j" type="number" value="0"></div>
-<div class="line"><label for="j6">Renters insurance</label><span class="dots"></span><input class="num f" id="j6" data-g="j" type="number" value="18"></div>
-<div class="line"><label for="j7">Fuel &amp; upkeep</label><span class="dots"></span><input class="num f" id="j7" data-g="j" type="number" value="90"></div>
-<div class="line"><label for="j8">Household</label><span class="dots"></span><input class="num f" id="j8" data-g="j" type="number" value="75"></div>
-<div class="line"><label for="j9">Personal</label><span class="dots"></span><input class="num f" id="j9" data-g="j" type="number" value="150"></div>
-<div class="line"><label for="j10">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="j10" data-g="j" type="number" value="100"></div>
-<div class="line"><label for="j11">Subscriptions</label><span class="dots"></span><input class="num f" id="j11" data-g="j" type="number" value="40"></div>
-      <div class="htotal"><span class="lbl">Monthly</span><span class="amt num serif" id="jTotal" >—</span></div>
+      <div class="line"><label for="j0">Rent</label><span class="dots"></span><input class="num f" id="j0" type="number" value="2000"></div>
+<div class="line"><label for="j1">Electric</label><span class="dots"></span><input class="num f" id="j1" type="number" value="100"></div>
+<div class="line"><label for="j2">Gas</label><span class="dots"></span><input class="num f" id="j2" type="number" value="20"></div>
+<div class="line"><label for="j3">Groceries</label><span class="dots"></span><input class="num f" id="j3" type="number" value="450"></div>
+<div class="line"><label for="j4">Dining out</label><span class="dots"></span><input class="num f" id="j4" type="number" value="250"></div>
+<div class="line"><label for="j5">Renters insurance</label><span class="dots"></span><input class="num f" id="j5" type="number" value="18"></div>
+<div class="line"><label for="j6">Fuel &amp; upkeep</label><span class="dots"></span><input class="num f" id="j6" type="number" value="90"></div>
+<div class="line"><label for="j7">Household supplies</label><span class="dots"></span><input class="num f" id="j7" type="number" value="75"></div>
+<div class="line"><label for="j8">Personal</label><span class="dots"></span><input class="num f" id="j8" type="number" value="150"></div>
+<div class="line"><label for="j9">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="j9" type="number" value="100"></div>
+<div class="line"><label for="j10">Subscriptions</label><span class="dots"></span><input class="num f" id="j10" type="number" value="40"></div>
+      <div class="htotal"><span class="lbl">Monthly</span><span class="amt num serif" id="jTotal">—</span></div>
     </div>
     <div class="house">
       <h3 class="serif">Amanda, Eli, Jacob &amp; Joseph</h3><p class="place">Rental · one adult, three boys (two driving)</p>
-      <div class="line"><label for="a0">Rent</label><span class="dots"></span><input class="num f" id="a0" data-g="a" type="number" value="2600"></div>
-<div class="line"><label for="a1">Electric</label><span class="dots"></span><input class="num f" id="a1" data-g="a" type="number" value="150"></div>
-<div class="line"><label for="a2">Gas / heat</label><span class="dots"></span><input class="num f" id="a2" data-g="a" type="number" value="65"></div>
-<div class="line"><label for="a3">Water &amp; sewer</label><span class="dots"></span><input class="num f" id="a3" data-g="a" type="number" value="60"></div>
-<div class="line"><label for="a4">Groceries</label><span class="dots"></span><input class="num f" id="a4" data-g="a" type="number" value="1400"></div>
-<div class="line"><label for="a5">Dining out</label><span class="dots"></span><input class="num f" id="a5" data-g="a" type="number" value="225"></div>
-<div class="line"><label for="a6">Car insurance — all 4 vehicles</label><span class="dots"></span><input class="num f" id="a6" data-g="a" type="number" value="750"></div>
-<div class="line"><label for="a7">Renters insurance</label><span class="dots"></span><input class="num f" id="a7" data-g="a" type="number" value="22"></div>
-<div class="line"><label for="a8">Fuel</label><span class="dots"></span><input class="num f" id="a8" data-g="a" type="number" value="200"></div>
-<div class="line"><label for="a9">Household</label><span class="dots"></span><input class="num f" id="a9" data-g="a" type="number" value="175"></div>
-<div class="line"><label for="a10">Boys — activities &amp; sports</label><span class="dots"></span><input class="num f" id="a10" data-g="a" type="number" value="350"></div>
-<div class="line"><label for="a11">Boys — school</label><span class="dots"></span><input class="num f" id="a11" data-g="a" type="number" value="150"></div>
-<div class="line"><label for="a12">Boys — clothing</label><span class="dots"></span><input class="num f" id="a12" data-g="a" type="number" value="225"></div>
-<div class="line"><label for="a13">Personal</label><span class="dots"></span><input class="num f" id="a13" data-g="a" type="number" value="150"></div>
-<div class="line"><label for="a14">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="a14" data-g="a" type="number" value="175"></div>
-<div class="line"><label for="a15">Subscriptions</label><span class="dots"></span><input class="num f" id="a15" data-g="a" type="number" value="50"></div>
-<div class="line credit"><label for="c0">− Eli &amp; Jacob (car insurance)</label><span class="dots"></span><input class="num f" id="c0" data-g="c" type="number" value="400"></div>
-      <div class="htotal"><span class="lbl">Monthly, net</span><span class="amt num serif" id="aTotal" >—</span></div>
+      <div class="line"><label for="a0">Rent</label><span class="dots"></span><input class="num f" id="a0" type="number" value="2600"></div>
+<div class="line"><label for="a1">Electric</label><span class="dots"></span><input class="num f" id="a1" type="number" value="150"></div>
+<div class="line"><label for="a2">Gas / heat</label><span class="dots"></span><input class="num f" id="a2" type="number" value="65"></div>
+<div class="line"><label for="a3">Water &amp; sewer</label><span class="dots"></span><input class="num f" id="a3" type="number" value="60"></div>
+<div class="line"><label for="a4">Groceries</label><span class="dots"></span><input class="num f" id="a4" type="number" value="1400"></div>
+<div class="line"><label for="a5">Dining out</label><span class="dots"></span><input class="num f" id="a5" type="number" value="225"></div>
+<div class="line"><label for="a6">Car insurance — all 4 vehicles</label><span class="dots"></span><input class="num f" id="a6" type="number" value="750"></div>
+<div class="line"><label for="a7">Renters insurance</label><span class="dots"></span><input class="num f" id="a7" type="number" value="22"></div>
+<div class="line"><label for="a8">Fuel</label><span class="dots"></span><input class="num f" id="a8" type="number" value="200"></div>
+<div class="line"><label for="a9">Household supplies</label><span class="dots"></span><input class="num f" id="a9" type="number" value="175"></div>
+<div class="line"><label for="a10">Boys — activities &amp; sports</label><span class="dots"></span><input class="num f" id="a10" type="number" value="350"></div>
+<div class="line"><label for="a11">Boys — school</label><span class="dots"></span><input class="num f" id="a11" type="number" value="150"></div>
+<div class="line"><label for="a12">Boys — clothing</label><span class="dots"></span><input class="num f" id="a12" type="number" value="225"></div>
+<div class="line"><label for="a13">Personal (Amanda)</label><span class="dots"></span><input class="num f" id="a13" type="number" value="150"></div>
+<div class="line"><label for="a14">Health out-of-pocket</label><span class="dots"></span><input class="num f" id="a14" type="number" value="175"></div>
+<div class="line"><label for="a15">Subscriptions</label><span class="dots"></span><input class="num f" id="a15" type="number" value="50"></div>
+<div class="line credit"><label for="c0">− Eli &amp; Jacob (car insurance)</label><span class="dots"></span><input class="num f" id="c0" type="number" value="400"></div>
+      <div class="htotal"><span class="lbl">Monthly, net</span><span class="amt num serif" id="aTotal">—</span></div>
     </div>
   </div>
 </section>
@@ -135,25 +152,62 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
 <section>
   <div class="combined">
     <div class="big"><div class="lbl">Both households, monthly</div>
-      <div class="amt num serif" id="combMo" >—</div>
+      <div class="amt num serif" id="combMo">—</div>
       <div class="sub">everything it takes to run two homes</div></div>
     <div class="annual"><div class="lbl">Annually</div>
-      <div class="amt num serif" id="combYr" >—</div></div>
+      <div class="amt num serif" id="combYr">—</div></div>
   </div>
 </section>
 
 <section>
-  <div class="sechead"><h2>Where it comes from</h2><div class="fill"></div></div>
-  <div class="inputrow"><label for="s0">Business net income / mo</label><input class="num f" id="s0" data-g="s" type="number" value="12187"></div>
-<div class="inputrow"><label for="s1">Amanda — net income / mo</label><input class="num f" id="s1" data-g="s" type="number" value="5000"></div>
-<div class="inputrow"><label for="s2">Consolidated debt note</label><input class="num f" id="s2" data-g="s" type="number" value="1446"></div>
-<div class="inputrow"><label for="s3">IRS installment</label><input class="num f" id="s3" data-g="s" type="number" value="500"></div>
-<div class="inputrow"><label for="s4">Tax reserve %</label><input class="num f" id="s4" data-g="s" type="number" value="24"></div>
-  <div class="ledger" id="flow" ></div>
+  <div class="sechead"><h2>The deposit</h2><div class="fill"></div></div>
+  <p class="intro">Jason deposits into the family account every other Friday, opposite Amanda's paycheck — so money lands every week rather than in two lumps. Move the slider to see what any amount does to everything downstream.</p>
+  <div class="dial">
+    <div class="top">
+      <div><div class="lbl">Every other Friday</div><div class="amt num serif" id="depBi">—</div></div>
+      <div style="text-align:right"><div class="lbl">Per month</div><div class="amt num serif" id="depMo" style="font-size:30px">—</div></div>
+    </div>
+    <input type="range" id="dep" min="0" max="2600" step="25" value="1400">
+    <div class="scale"><span>$0</span><span>$1,300</span><span>$2,600</span></div>
+  </div>
+  <div class="grid2">
+    <div class="panel">
+      <h4 class="serif">What lands for Amanda</h4>
+      <div class="inputrow" style="margin-top:10px"><label for="am">Amanda — net income / mo</label><input class="num f" id="am" type="number" value="5000"></div>
+      <div class="ledger" id="amFlow" style="margin-top:10px"></div>
+      <p class="hint" style="margin-top:14px" id="amWeek"></p>
+    </div>
+    <div class="panel">
+      <h4 class="serif">What the business has to cover</h4>
+      <p class="hint">Household income never touches business debt. This is business money only.</p>
+      <div class="inputrow"><label for="biz">Business net income / mo</label><input class="num f" id="biz" type="number" value="12187"></div>
+      <div class="inputrow"><label for="tax">Income tax / mo</label><input class="num f" id="tax" type="number" value="1414"></div>
+      <div class="inputrow"><label for="ptax">Employer payroll tax / mo</label><input class="num f" id="ptax" type="number" value="351"></div>
+      <div class="inputrow"><label for="irs">IRS installment (prior yrs)</label><input class="num f" id="irs" type="number" value="500"></div>
+      <div class="ledger" id="bizFlow" style="margin-top:14px"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><h2>The business debt, and when it's gone</h2><div class="fill"></div></div>
+  <p class="intro">Whatever the business has left after taxes, both households and the deposit goes straight at the debt — worst rate first. No consolidation loan, no bank, starting this month.</p>
+  <div class="grid2">
+    <div class="panel">
+      <div class="line"><label for="d0">American Express</label><span class="dots"></span><input class="num f" id="d0" type="number" value="25000"><input class="num f" id="r0" type="number" step="0.1" value="24.5" style="width:52px">%</div>
+      <div class="line"><label for="d1">Apple / Goldman</label><span class="dots"></span><input class="num f" id="d1" type="number" value="10000"><input class="num f" id="r1" type="number" step="0.1" value="24" style="width:52px">%</div>
+      <div class="line"><label for="d2">Loan from Jason's dad</label><span class="dots"></span><input class="num f" id="d2" type="number" value="30000"><input class="num f" id="r2" type="number" step="0.1" value="10" style="width:52px">%</div>
+      <div class="htotal"><span class="lbl">Total owed</span><span class="amt num serif" id="dTot">—</span></div>
+    </div>
+    <div class="panel">
+      <h4 class="serif">Payoff</h4>
+      <div class="paywall" id="payoff" style="margin-top:14px"></div>
+    </div>
+  </div>
   <div class="margin-note">
-    <h4 class="serif" id="mTitle">Margin</h4>
-    <p id="mBody" ></p>
-    <p id="mDebt" ></p>
+    <h4 class="serif" id="mTitle">The one real trade-off</h4>
+    <p id="mBody"></p>
+    <p id="mTrade"></p>
   </div>
 </section>
 
@@ -161,12 +215,12 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
   <div class="sechead"><h2>One-time · house proceeds</h2><div class="fill"></div></div>
   <div class="proceeds">
     <div class="inputrow"><label for="eq">Expected net at close</label><input class="num f" id="eq" type="number" value="20000"></div>
-    <p style="margin:6px 0 16px;font-size:14.5px;color:var(--ink-soft);max-width:66ch">Personal money clearing personal debt — the business note is handled separately by the consolidation loan.</p>
-    <div class="line"><label for="da0" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk0" checked><span>Student loans</span></label><span class="dots"></span><input class="num f" id="da0" data-g="d" type="number" value="15000"></div>
-<div class="line"><label for="da1" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk1" checked><span>Credit cards (remainder)</span></label><span class="dots"></span><input class="num f" id="da1" data-g="d" type="number" value="2000"></div>
-<div class="line"><label for="da2" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk2" ><span>IRS back taxes</span></label><span class="dots"></span><input class="num f" id="da2" data-g="d" type="number" value="20000"></div>
-    <div class="ledger" id="eqFlow"  style="margin-top:16px"></div>
-    <p style="margin:14px 0 0;font-size:14.5px;color:var(--ink-body);max-width:64ch" id="eqNote" ></p>
+    <p style="margin:6px 0 16px;font-size:14.5px;color:var(--ink-soft);max-width:66ch">Personal money clearing personal debt. The $65,000 on the business is a separate pile, paid from business income above.</p>
+    <div class="line"><label for="da0" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk0" checked><span>Student loans</span></label><span class="dots"></span><input class="num f" id="da0" type="number" value="15000"></div>
+<div class="line"><label for="da1" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk1" checked><span>Credit cards (remainder)</span></label><span class="dots"></span><input class="num f" id="da1" type="number" value="2000"></div>
+<div class="line"><label for="da2" style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="ck" id="dk2"><span>IRS back taxes</span></label><span class="dots"></span><input class="num f" id="da2" type="number" value="20000"></div>
+    <div class="ledger" id="eqFlow" style="margin-top:16px"></div>
+    <p style="margin:14px 0 0;font-size:14.5px;color:var(--ink-body);max-width:64ch" id="eqNote"></p>
   </div>
 </section>
 
@@ -174,19 +228,25 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
   <div class="sechead"><h2>Notes</h2><div class="fill"></div></div>
   <div class="notesbox">
     <h4 class="serif">Between the two of you</h4>
-    <p class="hint">Questions, decisions, things to check. Shared — you'll both see whatever the other writes.</p>
+    <p class="hint">Questions, decisions, things to check.</p>
     <div class="pad" contenteditable="true" id="pad"></div>
   </div>
+  <div class="panel" style="margin-top:22px">
+    <h4 class="serif">Sending your version to the other person</h4>
+    <p class="hint">Anything you change here is saved in <b>this browser only</b> — it does not travel to the other person on its own. To send your version, copy a link: it carries every number and note you've entered, and opens showing exactly what you see.</p>
+    <button class="share" id="shareBtn" type="button">Copy a link with these numbers</button>
+    <span class="said" id="said"></span>
+  </div>
 </section>
-
 
 <div class="foot">
   <h4>Notes on the figures</h4>
   <dl>
-    <dt>Business income</dt><dd>Annualized from $91,401 through 7.5 months — a stretch including the year's two weakest months. July alone was $30,450, and the accounts added in July aren't in here at all. Deliberately conservative.</dd>
-    <dt>Actuals vs. estimates</dt><dd>Rent, utilities and the boys' insurance contribution are real. Groceries, activities, clothing and personal spending are estimates — overwrite them.</dd>
-    <dt>Health insurance</dt><dd>Zero in both columns pending a decision on whether the boys are covered through Amanda's employer or the business. Largest unresolved item.</dd>
-    <dt>Tax reserve</dt><dd>A placeholder percentage, not a bill. An S-corp with the QBI deduction can land well below it — worth a real projection from the CPA.</dd>
+    <dt>Business income</dt><dd>Annualized from $91,401 through 7.5 months — about $146,000 a year. That span includes February and April, the year's two weakest months, and none of the accounts added in July. Deliberately conservative.</dd>
+    <dt>Income tax</dt><dd>$16,968 for 2026, married filing jointly — calculated from the published 2026 brackets against actual business profit and the $55,000 W-2 salary, including the QBI deduction. Not a placeholder percentage. It gets withheld from the eight remaining paychecks, so nothing is owed in April.</dd>
+    <dt>Health insurance</dt><dd>Settled: Amanda carries all five of us through her employer and maxes the HSA at the $8,750 family limit. That's why there's no premium line in either column — only out-of-pocket.</dd>
+    <dt>Actuals vs. estimates</dt><dd>Rent, utilities, the boys' insurance contribution and Amanda's income are real. Groceries, activities, clothing and personal spending are estimates — overwrite them as the actual bills arrive.</dd>
+    <dt>Car insurance</dt><dd>$750/mo for all four vehicles is a quote, not a bill. Michigan with two teen drivers can come in higher — worth confirming before it's locked in.</dd>
   </dl>
 </div>
 </div>
@@ -194,59 +254,149 @@ input.f:focus{outline:none;border-bottom:1.5px solid var(--accent);background:va
 <script>
 const money=n=>(n<0?"−":"")+"$"+Math.abs(Math.round(n)).toLocaleString();
 const val=id=>parseFloat((document.getElementById(id)||{}).value)||0;
+const set=(id,t)=>{const e=document.getElementById(id);if(e)e.textContent=t};
 const PMT=[165,60,500];
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+// payoff starts Sept 2026
+function mlabel(m){const t=8+(m-1);return MON[t%12]+" "+(2026+Math.floor(t/12));}
+
+function avalanche(monthly){
+  const d=[0,1,2].map(i=>({b:val("d"+i),r:val("r"+i)/100,n:i}));
+  const tot=d.reduce((s,x)=>s+x.b,0);
+  if(tot<=0) return {months:0,interest:0,gone:{},done:true};
+  const minRate=d.reduce((s,x)=>s+x.b*x.r/12,0);
+  if(monthly<=minRate) return {months:null,interest:null,gone:{},done:false,minNeeded:minRate};
+  let interest=0,gone={};
+  for(let m=1;m<=600;m++){
+    d.forEach(x=>{if(x.b>0){const i=x.b*x.r/12;x.b+=i;interest+=i;}});
+    let pay=monthly;
+    d.slice().sort((a,b)=>b.r-a.r).forEach(x=>{
+      if(x.b<=0||pay<=0)return;
+      const p=Math.min(pay,x.b);x.b-=p;pay-=p;
+      if(x.b<=0.005&&gone[x.n]===undefined)gone[x.n]=m;
+    });
+    if(d.every(x=>x.b<=0.005)) return {months:m,interest:interest,gone:gone,done:true};
+  }
+  return {months:null,interest:null,gone:{},done:false};
+}
+
 function calc(){
-  let jT=0; for(let i=0;i<12;i++) jT+=val("j"+i);
+  let jT=0; for(let i=0;i<11;i++) jT+=val("j"+i);
   let aG=0; for(let i=0;i<16;i++) aG+=val("a"+i);
   const aT=aG-val("c0"), need=jT+aT;
-  const biz=val("s0"), amInc=val("s1"), debt=val("s2"), irs=val("s3"), taxPct=val("s4");
-  const tax=biz*(taxPct/100), avail=biz-debt-irs-tax+amInc, margin=avail-need;
-  document.getElementById("jTotal").textContent=money(jT);
-  document.getElementById("aTotal").textContent=money(aT);
-  document.getElementById("combMo").textContent=money(need);
-  document.getElementById("combYr").textContent=money(need*12);
-  document.getElementById("flow").innerHTML=
+  set("jTotal",money(jT)); set("aTotal",money(aT));
+  set("combMo",money(need)); set("combYr",money(need*12));
+
+  const depBi=val("dep"), depMo=depBi*26/12;
+  set("depBi",money(depBi)); set("depMo",money(depMo));
+
+  // Amanda's side
+  const am=val("am"), lands=am+depMo, left=lands-aT;
+  document.getElementById("amFlow").innerHTML=
+    '<div class="l">Amanda\'s paycheck</div><div class="v num">'+money(am)+'</div>'+
+    '<div class="l">Jason\'s deposit</div><div class="v num pos">'+money(depMo)+'</div>'+
+    '<div class="l">Landing each month</div><div class="v num">'+money(lands)+'</div>'+
+    '<div class="l">less household costs</div><div class="v num">−'+money(aT).slice(1)+'</div>'+
+    '<div class="l tot">'+(left<0?"Short each month":"Left over")+'</div><div class="v num tot">'+money(left)+'</div>';
+  const wk=(am+depMo)*12/52;
+  document.getElementById("amWeek").innerHTML= left<0
+    ? 'At this deposit the household comes up <b>'+money(-left)+'</b> short each month. Raise the deposit, or trim a line above.'
+    : 'Roughly <b>'+money(wk)+' landing every week</b> — your paycheck one Friday, Jason\'s deposit the next. The '+money(left)+' left over is yours to save, absorb a surprise, or put toward the boys.';
+
+  // Business side
+  const biz=val("biz"),tax=val("tax"),ptax=val("ptax"),irs=val("irs");
+  const surplus=biz-tax-ptax-irs-jT-depMo;
+  document.getElementById("bizFlow").innerHTML=
     '<div class="l">Business net income</div><div class="v num">'+money(biz)+'</div>'+
-    '<div class="l">less consolidated debt note</div><div class="v num">−'+money(debt).slice(1)+'</div>'+
-    '<div class="l">less IRS installment</div><div class="v num">−'+money(irs).slice(1)+'</div>'+
-    '<div class="l">less tax reserve ('+taxPct+'%)</div><div class="v num">−'+money(tax).slice(1)+'</div>'+
-    '<div class="l">Amanda\'s net income</div><div class="v num pos">'+money(amInc)+'</div>'+
-    '<div class="l tot">Available each month</div><div class="v num tot">'+money(avail)+'</div>';
-  const t=document.getElementById("mTitle"),b=document.getElementById("mBody"),d=document.getElementById("mDebt");
-  if(margin>=0){
-    t.textContent="Margin";
-    b.innerHTML='Both households need <span class="hl">'+money(need)+'</span> a month. Available income is <span class="hl">'+money(avail)+'</span>, leaving <span class="hl">'+money(margin)+'</span> a month — <span class="hl">'+money(margin*12)+'</span> a year.';
-    d.innerHTML=margin>0?'Applied against the $65,000 of business debt, that clears it in roughly <span class="hl">'+Math.ceil(65000/margin)+' months</span> — before the growth still coming onto the books.':'';
+    '<div class="l sub">less income tax</div><div class="v num">−'+money(tax).slice(1)+'</div>'+
+    '<div class="l sub">less employer payroll tax</div><div class="v num">−'+money(ptax).slice(1)+'</div>'+
+    '<div class="l sub">less IRS installment</div><div class="v num">−'+money(irs).slice(1)+'</div>'+
+    '<div class="l sub">less Jason\'s household</div><div class="v num">−'+money(jT).slice(1)+'</div>'+
+    '<div class="l sub">less deposit to family</div><div class="v num">−'+money(depMo).slice(1)+'</div>'+
+    '<div class="l tot">'+(surplus<0?"Short":"Goes at the debt")+'</div><div class="v num tot">'+money(surplus)+'</div>';
+
+  // Debt
+  const dTot=val("d0")+val("d1")+val("d2");
+  set("dTot",money(dTot));
+  const res=avalanche(surplus);
+  const names=["Amex","Apple","Dad"];
+  const box=document.getElementById("payoff");
+  if(res.done&&res.months===0){
+    box.innerHTML='<div class="n" style="grid-column:1/-1">Nothing owed.</div>';
+  }else if(!res.done){
+    box.innerHTML='<div class="n" style="grid-column:1/-1">'+money(surplus)+' a month doesn\'t cover the interest, so the balance grows. It needs at least <b>'+money(res.minNeeded||0)+'</b> a month just to hold steady.</div>';
   }else{
-    t.textContent="Still to close";
-    b.innerHTML='Both households need <span class="hl">'+money(need)+'</span> against <span class="hl">'+money(avail)+'</span> available — a difference of <span class="hl">'+money(-margin)+'</span> a month.';
-    d.textContent="Revenue here excludes the accounts added in July.";
+    let h='';
+    [0,1,2].forEach(i=>{ if(res.gone[i]!==undefined&&val("d"+i)>0)
+      h+='<div>'+names[i]+'</div><div class="d"></div><div class="n num">'+mlabel(res.gone[i])+'</div>'; });
+    h+='<div style="border-top:2px solid var(--ink);padding-top:9px;font-weight:600">Debt-free</div>'+
+       '<div class="d" style="border-top:2px solid var(--ink);border-bottom:none"></div>'+
+       '<div class="n num" style="border-top:2px solid var(--ink);padding-top:9px;font-size:17px">'+mlabel(res.months)+'</div>'+
+       '<div style="color:var(--ink-soft)">Total interest</div><div class="d"></div><div class="n num" style="font-weight:400">'+money(res.interest)+'</div>'+
+       '<div style="color:var(--ink-soft)">Months from now</div><div class="d"></div><div class="n num" style="font-weight:400">'+res.months+'</div>';
+    box.innerHTML=h;
   }
+
+  const b=document.getElementById("mBody"),t=document.getElementById("mTrade");
+  if(res.done&&res.months>0){
+    b.innerHTML='After taxes, both households and a <span class="hl">'+money(depBi)+'</span> deposit, the business has <span class="hl">'+money(surplus)+' a month</span> left. All of it goes at the debt, which clears it in <span class="hl">'+res.months+' months</span> — <span class="hl">'+mlabel(res.months)+'</span>.';
+    const alt=avalanche(surplus-200*26/12);
+    t.innerHTML= alt.done&&alt.months
+      ? 'The deposit and the debt are the <b>same money</b>. Raising the deposit by $200 every other Friday would push debt-free from '+mlabel(res.months)+' to <span class="hl">'+mlabel(alt.months)+'</span>. That\'s the whole trade — there is no third pile.'
+      : 'The deposit and the debt are the <b>same money</b>. Every dollar added to the deposit is a dollar that stops going at the debt.';
+  }else if(surplus<0){
+    b.innerHTML='At a <span class="hl">'+money(depBi)+'</span> deposit the business runs <span class="hl">'+money(-surplus)+' a month</span> short before a dollar reaches the debt.';
+    t.textContent='Lower the deposit, trim a household line, or the growth still coming onto the books has to cover it.';
+  }else{
+    b.innerHTML='At a <span class="hl">'+money(depBi)+'</span> deposit only <span class="hl">'+money(surplus)+' a month</span> reaches the debt — less than the interest, so the balance grows.';
+    t.textContent='The deposit and the debt are the same money. This deposit is above what the business can carry.';
+  }
+
+  // Proceeds
   const eq=val("eq"); let used=0,freed=0,rows="";
   for(let i=0;i<3;i++){
     if(document.getElementById("dk"+i).checked){
       const a=val("da"+i); used+=a; freed+=PMT[i];
-      rows+='<div class="l">'+document.querySelector('label[for="da'+i+'"] span').textContent+'</div><div class="v num">−'+money(a).slice(1)+'</div>';
+      rows+='<div class="l sub">'+document.querySelector('label[for="da'+i+'"] span').textContent+'</div><div class="v num">−'+money(a).slice(1)+'</div>';
     }
   }
-  const left=eq-used;
+  const rem=eq-used;
   document.getElementById("eqFlow").innerHTML=
     '<div class="l">Proceeds at close</div><div class="v num pos">'+money(eq)+'</div>'+rows+
-    '<div class="l tot">Remaining</div><div class="v num tot">'+money(left)+'</div>';
-  document.getElementById("eqNote").innerHTML=
-    left<0 ? 'Payoffs exceed the proceeds by <span class="hl">'+money(-left)+'</span> — untick one, or cover the difference from monthly margin.'
-    : 'Leaves <span class="hl">'+money(left)+'</span> and frees <span class="hl">'+money(freed)+'</span> a month. That remainder covers about <span class="hl">'+(left/need).toFixed(1)+' months</span> of both households.';
+    '<div class="l tot">Remaining</div><div class="v num tot">'+money(rem)+'</div>';
+  document.getElementById("eqNote").innerHTML= rem<0
+    ? 'Payoffs exceed the proceeds by <span class="hl">'+money(-rem)+'</span> — untick one, or cover the difference from monthly margin.'
+    : 'Leaves <span class="hl">'+money(rem)+'</span> and frees <span class="hl">'+money(freed)+'</span> a month. That remainder covers about <span class="hl">'+(need>0?(rem/need).toFixed(1):"0")+' months</span> of both households.';
 }
+
+// ---- state: this browser, plus a shareable link ----
 const KEY="two-households";
-function persist(){const o={};document.querySelectorAll("input").forEach(i=>{o[i.id]=i.type==="checkbox"?i.checked:i.value});
-  const p=document.getElementById("pad");if(p)o.__pad=p.innerHTML;
-  try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
-function restore(){try{const o=JSON.parse(localStorage.getItem(KEY)||"null");if(!o)return;
-  Object.keys(o).forEach(k=>{if(k==="__pad"){const p=document.getElementById("pad");if(p&&o[k])p.innerHTML=o[k];return;}
-  const el=document.getElementById(k);if(!el)return;if(el.type==="checkbox")el.checked=o[k];else el.value=o[k];});}catch(e){}}
+const snap=()=>{const o={};document.querySelectorAll("input").forEach(i=>{o[i.id]=i.type==="checkbox"?i.checked:i.value});
+  const p=document.getElementById("pad"); if(p) o.__pad=p.innerHTML; return o;};
+const apply=o=>{Object.keys(o).forEach(k=>{
+  if(k==="__pad"){const p=document.getElementById("pad");if(p&&o[k])p.innerHTML=o[k];return;}
+  const el=document.getElementById(k);if(!el)return;
+  if(el.type==="checkbox")el.checked=o[k];else el.value=o[k];});};
+const enc=s=>btoa(String.fromCharCode.apply(null,new TextEncoder().encode(s)));
+const dec=s=>new TextDecoder().decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)));
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(snap()))}catch(e){}}
+function restore(){
+  if(location.hash.length>1){
+    try{apply(JSON.parse(dec(decodeURIComponent(location.hash.slice(1)))));return;}catch(e){}
+  }
+  try{const o=JSON.parse(localStorage.getItem(KEY)||"null");if(o)apply(o);}catch(e){}
+}
 document.addEventListener("input",()=>{calc();persist()});
 document.addEventListener("change",()=>{calc();persist()});
-const _pad=document.getElementById("pad");if(_pad)_pad.addEventListener("blur",persist);
+const _pad=document.getElementById("pad"); if(_pad)_pad.addEventListener("blur",persist);
+document.getElementById("shareBtn").addEventListener("click",function(){
+  const url=location.origin+location.pathname+"#"+encodeURIComponent(enc(JSON.stringify(snap())));
+  const done=ok=>{document.getElementById("said").textContent=ok?"Copied — paste it into a text.":"Couldn't copy. Link is in the address bar.";
+    setTimeout(()=>{document.getElementById("said").textContent=""},4000);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(()=>done(true),()=>{history.replaceState(null,"",url);done(false)});
+  }else{history.replaceState(null,"",url);done(false);}
+});
 restore();calc();
 </script></body>
 </html>
