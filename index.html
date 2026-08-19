@@ -48,15 +48,6 @@ tr.sub td{color:var(--ink-soft)}
 .note{font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:66ch}
 .foot{border-top:1px solid var(--rule);padding-top:22px;margin-top:44px;font-size:13.5px;color:var(--ink-faint)}
 a{color:var(--accent)}
-textarea#notes{width:100%;min-height:150px;font:inherit;font-size:15px;line-height:1.6;color:var(--ink);
-background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;resize:vertical}
-textarea#notes:focus{outline:none;border-color:var(--accent)}
-.notebar{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
-button.share{font:inherit;font-size:14px;font-weight:600;color:var(--paper);background:var(--accent);
-border:none;border-radius:3px;padding:10px 20px;cursor:pointer}
-button.share:hover{filter:brightness(1.08)}
-button.share:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.said{font-size:13px;color:var(--sage)}
 </style>
 </head>
 <body>
@@ -133,6 +124,24 @@ button.share:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
     <p>At <span class="hl">$1,500 a month</span> starting in January, both are funded by <span class="hl">October 2027</span>. After that every dollar goes back to the debt. Curiously, saving $1,500 a month instead of $1,000 lands on the <b>same debt-free month</b> — it just gets us protected five months sooner. So we take the $1,500.</p>
   </div>
   <p class="note">The family account cushion is Amanda's, not a business account — one month of household costs sitting there so a surprise doesn't have to become a phone call.</p>
+</section>
+
+<section>
+  <div class="sechead"><h2>The tax situation, in plain English</h2><div class="fill"></div></div>
+  <div class="card">
+    <p style="margin:0 0 14px;font-size:15px">The business is an <b>S-corp</b>. That's a tax setup, not a different company — same Nexus, filed differently since January 1.</p>
+    <p style="margin:0 0 14px;font-size:15px"><b>The business itself pays no income tax.</b> Its profit passes through onto our personal return. So there is no such thing as "the business's taxes" separate from ours — it's one bill, and it's the one below.</p>
+    <p style="margin:0 0 14px;font-size:15px">What the S-corp does require is that Jason <b>pay himself an actual paycheck</b> rather than just taking money out. The IRS insists on it. Money he takes <i>beyond</i> that paycheck comes out as a distribution, which skips the 15.3% Social Security and Medicare hit. Paycheck plus distributions instead of everything as a paycheck is the entire reason for the S-corp, and it saves several thousand dollars a year.</p>
+    <p style="margin:0 0 18px;font-size:15px">The catch: <b>no payroll has run yet this year.</b> January through August, Jason took money out with nothing withheld. Eight paychecks between September 15 and December 31 fix that — and because the IRS treats withholding as though it were paid evenly across the whole year, catching up now lands us exactly where we'd be if we'd done it right in January. No penalty.</p>
+    <table>
+      <tr><th>The 2026 bill</th><th class="r"></th></tr>
+      <tr><td>Total income tax, married filing jointly</td><td class="r num">$16,968</td></tr>
+      <tr class="sub"><td>What filing jointly saves vs. separately</td><td class="r num">−8,450</td></tr>
+      <tr class="sub"><td>Withheld from the eight remaining paychecks</td><td class="r num">16,968</td></tr>
+      <tr class="tot"><td>Owed next April</td><td class="r num">$0</td></tr>
+    </table>
+    <p class="note"><b>Separate and older:</b> roughly $20,000 from prior years, being paid down at $500 a month. That is its own thing and it is not part of the 2026 number. Some of the house proceeds may clear it.</p>
+  </div>
 </section>
 
 <section>
@@ -308,45 +317,9 @@ button.share:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
   </div>
 </section>
 
-<section>
-  <div class="sechead"><h2>Amanda — questions and notes</h2><div class="fill"></div></div>
-  <p class="intro">Anything that doesn't look right, anything missing, anything you want changed. Type it here — it saves as you go.</p>
-  <div class="card">
-    <textarea id="notes" rows="7" placeholder="Questions, corrections, things I'd change..."></textarea>
-    <div class="notebar">
-      <button class="share" id="sendNotes" type="button">Send these to Jason</button>
-      <span class="said" id="noteSaid"></span>
-    </div>
-    <p class="note"><b>Worth knowing how this works:</b> what you type is saved in this browser only — it does not reach Jason on its own. The button opens your email with the notes already written; you just hit send. Nothing goes anywhere until you do.</p>
-  </div>
-</section>
-
 <div class="foot">
   Built from the business books as of 19 August 2026. Monthly figures restate the Amex and Apple expenses across the months they were actually incurred. Tax figures use published 2026 brackets and assume married filing jointly. Household estimates are ours and easy to change — the working numbers live in the <a href="./budget.html">household budget</a>, where every figure can be edited and the debt-free date recalculates as you change them.
 </div>
 </div>
-<script>
-(function(){
-  var K="two-households-notes", t=document.getElementById("notes"), said=document.getElementById("noteSaid");
-  if(!t) return;
-  try{ var v=localStorage.getItem(K); if(v) t.value=v; }catch(e){}
-  var timer;
-  t.addEventListener("input",function(){
-    try{ localStorage.setItem(K,t.value); }catch(e){}
-    said.textContent="Saved";
-    clearTimeout(timer); timer=setTimeout(function(){ said.textContent=""; },1500);
-  });
-  document.getElementById("sendNotes").addEventListener("click",function(){
-    var body=t.value.trim();
-    if(!body){ said.textContent="Nothing written yet."; setTimeout(function(){said.textContent="";},2500); return; }
-    var url="mailto:jason@nexusbenefitsolutions.com"
-      +"?subject="+encodeURIComponent("Notes on the plan")
-      +"&body="+encodeURIComponent(body+"\n\n— from the shared plan page");
-    window.location.href=url;
-    said.textContent="Opening your email…";
-    setTimeout(function(){ said.textContent=""; },4000);
-  });
-})();
-</script>
 </body>
 </html>

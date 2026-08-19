@@ -231,19 +231,9 @@ a{color:var(--accent)}
 </section>
 
 <section>
-  <div class="sechead"><h2>Notes</h2><div class="fill"></div></div>
-  <div class="notesbox">
-    <h4 class="serif">Between the two of you</h4>
-    <p class="hint">Questions, decisions, things to check. Saved in this browser — use the button to send them over.</p>
-    <div class="pad" contenteditable="true" id="pad"></div>
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px">
-      <button class="share" id="sendPad" type="button">Send these notes to Jason</button>
-      <span class="said" id="padSaid"></span>
-    </div>
-  </div>
   <div class="panel" style="margin-top:22px">
-    <h4 class="serif">Sending your version to the other person</h4>
-    <p class="hint">Anything you change here is saved in <b>this browser only</b> — it does not travel to the other person on its own. To send your version, copy a link: it carries every number and note you've entered, and opens showing exactly what you see.</p>
+    <h4 class="serif">Sending your version over</h4>
+    <p class="hint">Changes save in this browser. To send your version to the other person, copy a link — it carries every number you've entered.</p>
     <button class="share" id="shareBtn" type="button">Copy a link with these numbers</button>
     <span class="said" id="said"></span>
   </div>
@@ -391,10 +381,8 @@ function calc(){
 
 // ---- state: this browser, plus a shareable link ----
 const KEY="two-households";
-const snap=()=>{const o={};document.querySelectorAll("input").forEach(i=>{o[i.id]=i.type==="checkbox"?i.checked:i.value});
-  const p=document.getElementById("pad"); if(p) o.__pad=p.innerHTML; return o;};
+const snap=()=>{const o={};document.querySelectorAll("input").forEach(i=>{o[i.id]=i.type==="checkbox"?i.checked:i.value}); return o;};
 const apply=o=>{Object.keys(o).forEach(k=>{
-  if(k==="__pad"){const p=document.getElementById("pad");if(p&&o[k])p.innerHTML=o[k];return;}
   const el=document.getElementById(k);if(!el)return;
   if(el.type==="checkbox")el.checked=o[k];else el.value=o[k];});};
 const enc=s=>btoa(String.fromCharCode.apply(null,new TextEncoder().encode(s)));
@@ -408,17 +396,6 @@ function restore(){
 }
 document.addEventListener("input",()=>{calc();persist()});
 document.addEventListener("change",()=>{calc();persist()});
-const _pad=document.getElementById("pad"); if(_pad)_pad.addEventListener("blur",persist);
-document.getElementById("sendPad").addEventListener("click",function(){
-  const el=document.getElementById("pad");
-  const body=(el.innerText||el.textContent||"").trim();
-  const said=document.getElementById("padSaid");
-  if(!body){ said.textContent="Nothing written yet."; setTimeout(()=>{said.textContent=""},2500); return; }
-  window.location.href="mailto:jason@nexusbenefitsolutions.com?subject="
-    +encodeURIComponent("Notes on the budget")+"&body="
-    +encodeURIComponent(body+"\n\n— from the shared budget page");
-  said.textContent="Opening your email\u2026"; setTimeout(()=>{said.textContent=""},4000);
-});
 document.getElementById("shareBtn").addEventListener("click",function(){
   const url=location.origin+location.pathname+"#"+encodeURIComponent(enc(JSON.stringify(snap())));
   const done=ok=>{document.getElementById("said").textContent=ok?"Copied — paste it into a text.":"Couldn't copy. Link is in the address bar.";
