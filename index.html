@@ -36,7 +36,7 @@ body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--body);
 /* ---- editorial grid: narrow measure, wide breakouts ---- */
 .page{max-width:1080px;margin:0 auto;padding:0 26px}
 .wide{width:100%}
-h2,h3,p,.kick,.lede,.dateline,.tl,.aside,.foot-note,figcaption,caption{max-width:68ch}
+h2,h3,p,.lede,.dateline,.tl,.aside,.foot-note,figcaption,caption{max-width:68ch}
 .lede{max-width:54ch}
 .mark{max-width:none}
 .mark p{max-width:64ch}
@@ -45,24 +45,23 @@ section>table{max-width:none}
 /* ---- masthead ---- */
 .mast{padding:78px 0 0}
 .dateline{font-size:11.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--amanda);font-weight:700;margin:0 0 22px}
-h1{font-size:clamp(44px,8vw,78px);line-height:.98;margin:0;font-weight:800;letter-spacing:-.042em;color:var(--ink);text-wrap:balance}
+h1{font-size:clamp(44px,8vw,76px);line-height:.98;margin:0;font-weight:800;letter-spacing:-.042em;color:var(--ink);text-wrap:balance}
 .lede{font-size:20.5px;line-height:1.5;color:var(--soft);margin:26px 0 0;font-weight:400;text-wrap:pretty}
 .mast .hr{height:3px;background:var(--ink);margin:44px 0 0}
 
 /* ---- chapter openers ---- */
-.chap{margin:96px 0 0;padding:0 0 4px;border-top:3px solid var(--ink);display:flex;align-items:flex-start;gap:22px}
-.chap .n{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--amanda);
-  padding-top:18px;white-space:nowrap}
-.chap .t{font-size:clamp(32px,5.4vw,50px);font-weight:800;letter-spacing:-.04em;line-height:1.04;
+.chap{margin:118px 0 0;padding:0 0 6px;border-top:4px solid var(--ink);display:flex;align-items:flex-start;gap:24px}
+.chap .n{font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--amanda);
+  padding-top:20px;white-space:nowrap}
+.chap .t{font-size:clamp(34px,5.8vw,52px);font-weight:800;letter-spacing:-.04em;line-height:1.04;
   color:var(--ink);margin:12px 0 0;text-wrap:balance}
 @media(max-width:620px){.chap{flex-direction:column;gap:0}.chap .n{padding-top:14px}.chap .t{margin-top:4px}}
 
 /* ---- sections ---- */
-section{margin:56px 0 0}
-.kick{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--faint);font-weight:700;margin:0 0 9px}
-h2{font-size:clamp(25px,3.4vw,32px);font-weight:750;letter-spacing:-.03em;line-height:1.16;
-  color:var(--ink);margin:0 0 14px;text-wrap:balance}
-h3{font-size:19px;font-weight:750;letter-spacing:-.02em;color:var(--ink);margin:34px 0 10px}
+section{margin:62px 0 0}
+h2{font-size:clamp(25px,3.3vw,30px);font-weight:750;letter-spacing:-.03em;line-height:1.18;
+  color:var(--ink);margin:0 0 13px;text-wrap:balance}
+h3{font-size:20px;font-weight:750;letter-spacing:-.02em;color:var(--ink);margin:40px 0 10px}
 p{margin:0 0 17px;text-wrap:pretty}
 p:last-child{margin-bottom:0}
 b,strong{color:var(--ink);font-weight:650}
@@ -76,7 +75,7 @@ a{color:var(--jason);text-underline-offset:3px}
 .mark{background:var(--wash);padding:26px 28px;margin:30px 0}
 .mark.j{border-left:3px solid var(--jason)} .mark.a{border-left:3px solid var(--amanda)}
 .mark.g{border-left:3px solid var(--good)} .mark.c{border-left:3px solid var(--clay)}
-.mark .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:700;margin:0 0 10px}
+.mark .lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:700;margin:0 0 10px}
 .mark .big{font-size:clamp(30px,4.4vw,42px);font-weight:800;letter-spacing:-.036em;line-height:1.04;color:var(--ink);margin:0 0 12px}
 .mark .big small{font-size:.4em;font-weight:650;letter-spacing:-.01em;color:var(--soft)}
 .mark p{font-size:16.5px;margin-bottom:12px}
@@ -87,18 +86,18 @@ a{color:var(--jason);text-underline-offset:3px}
 .st{padding:26px 24px 26px 0;border-bottom:1px solid var(--rule)}
 .st+.st{border-left:1px solid var(--rule);padding-left:24px}
 @media(max-width:720px){.st:nth-child(3){border-left:none;padding-left:0}}
-.st .l{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-weight:700;line-height:1.4;margin-bottom:11px;min-height:2.8em}
+.st .l{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;line-height:1.4;margin-bottom:11px;min-height:2.8em}
 .st .v{font-size:34px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)}
 .st .v.j{color:var(--jason)} .st .v.a{color:var(--amanda)} .st .v.g{color:var(--good)}
 .st .s{font-size:13px;color:var(--faint);margin-top:8px}
 
 /* ---- tables: rules, no boxes ---- */
 table{width:100%;border-collapse:collapse;margin:22px 0 0}
-caption{text-align:left;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
-  font-weight:700;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+caption{text-align:left;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding-bottom:11px;border-bottom:1px solid var(--rule-mid)}
 td,th{padding:11px 0;text-align:left;font-size:16px;border-bottom:1px solid var(--rule);vertical-align:baseline}
-th{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-weight:700;
-  border-bottom:2px solid var(--ink);padding-bottom:11px}
+th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;
+  border-bottom:1px solid var(--rule-mid);padding-bottom:11px}
 td.r,th.r{text-align:right}
 tr.sub td{color:var(--soft);font-size:15.5px}
 tr.tot td{border-bottom:none;border-top:2px solid var(--ink);font-weight:750;font-size:18px;padding-top:14px;color:var(--ink)}
@@ -121,8 +120,8 @@ tr.tot td{border-bottom:none;border-top:2px solid var(--ink);font-weight:750;fon
 
 /* ---- charts ---- */
 figure{margin:34px 0 0}
-figcaption{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);font-weight:700;
-  padding-bottom:14px;margin-bottom:6px;border-bottom:1px solid var(--rule)}
+figcaption{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;
+  padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--rule)}
 figure .cap{font-size:15px;color:var(--soft);margin-top:16px;line-height:1.6;max-width:66ch}
 figure .cap b{color:var(--body)}
 .bars{display:flex;height:38px;margin:22px 0 0;overflow:hidden}
@@ -168,8 +167,7 @@ figure .cap b{color:var(--body)}
 <div class="chap"><span class="n">Two</span><h2 class="t">On your side</h2></div>
 
 <section>
-  <p class="kick">The two homes</p>
-  <h2>What each household costs</h2>
+    <h2>What each household costs</h2>
   <p class="stand">Rent, utilities, the boys' insurance contribution and Amanda's income are real numbers. Groceries, activities, clothing and personal spending are estimates we adjust as the actual bills arrive.</p>
   <p>All four vehicles ride on one policy on Amanda's side — hers, Jason's, Eli's and Jacob's — which is cheaper than separate policies and simpler to run.</p>
 </section>
@@ -284,8 +282,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <p class="kick">Amanda</p>
-  <h2>What lands, and when</h2>
+  <h2>What lands for Amanda, and when</h2>
   <p class="stand">Your paycheck one Friday, Jason's deposit the next — so money arrives every week instead of in two lumps.</p>
   <table>
     <caption>Coming in, going out</caption>
@@ -304,8 +301,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <p class="kick">Amanda</p>
-  <h2>What you're carrying</h2>
+  <h2>What Amanda's carrying</h2>
   <table>
     <tr><td>Health insurance for all five of us</td><td class="r">through your employer</td></tr>
     <tr><td>HSA, maxed — 2026 family limit</td><td class="r num">$8,750/yr · $729/mo</td></tr>
@@ -316,8 +312,7 @@ figure .cap b{color:var(--body)}
 <div class="chap"><span class="n">Three</span><h2 class="t">Where it comes from</h2></div>
 
 <section>
-  <p class="kick">Nexus</p>
-  <h2>The business</h2>
+    <h2>The business</h2>
   <p class="stand">January through mid-August, cash basis — money actually in and actually out.</p>
   <table>
     <tr><td>Commission income</td><td class="r num">$194,516</td></tr>
@@ -345,8 +340,7 @@ figure .cap b{color:var(--body)}
 <div class="hr-thin"></div>
 
 <section>
-  <p class="kick">Taxes</p>
-  <h2>The tax situation, in plain English</h2>
+    <h2>The tax situation, in plain English</h2>
   <p class="stand">The business is an <b>S-corp</b>. That is a tax setup, not a different company — same Nexus, filed differently since January 1.</p>
   <p><b>The business itself pays no income tax.</b> Its profit passes through onto our personal return, so there is no such thing as "the business's taxes" separate from ours. It is one bill.</p>
   <p>What the S-corp does require is that Jason <b>pay himself an actual paycheck</b> rather than just taking money out. Money he takes <i>beyond</i> that paycheck comes out as a distribution, which skips the 15.3% Social Security and Medicare hit. That split is the whole reason for the S-corp and it saves several thousand dollars a year.</p>
@@ -397,8 +391,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <p class="kick">Every month</p>
-  <h2>Where each business dollar goes</h2>
+    <h2>Where each business dollar goes</h2>
   <p class="stand">The business brings in about $12,187 a month. This is all of it — nothing hidden, nothing left over that is not already spoken for.</p>
 </section>
 <div class="wide">
@@ -409,8 +402,7 @@ figure .cap b{color:var(--body)}
 <div class="chap"><span class="n">Four</span><h2 class="t">The plan</h2></div>
 
 <section>
-  <p class="kick">Risk</p>
-  <h2>Why a cushion comes before killing the debt</h2>
+    <h2>Why a cushion comes before killing the debt</h2>
   <p class="stand">The business earns well on average. It does not earn evenly — and that gap is the single biggest financial risk either of us carries right now.</p>
 </section>
 <div class="wide">
@@ -466,9 +458,8 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <p class="kick">$65,000, on the business — not on us personally</p>
   <h2>The debt, and how it ends</h2>
-  <p class="stand">Paid from business income, worst rate first. No consolidation loan — the savings were small enough that an application fee ate most of them.</p>
+  <p class="stand"><b>$65,000 — and it sits on the business, not on us personally.</b> Paid from business income, worst rate first. No consolidation loan — the savings were small enough that an application fee ate most of them.</p>
 </section>
 <div class="wide">
   <figure>
@@ -514,9 +505,8 @@ figure .cap b{color:var(--body)}
 <div class="hr-thin"></div>
 
 <section>
-  <p class="kick">Before listing</p>
   <h2>Getting the house ready</h2>
-  <p class="stand">Most of it is Jason's own labor plus some paid help.</p>
+  <p class="stand">Everything that needs doing before it lists. Most of it is Jason's own labor plus some paid help.</p>
   <table>
     <tr><th>Job</th><th class="r">Cost</th></tr>
     <tr><td>Deck repair — materials already bought</td><td class="r">—</td></tr>
@@ -532,8 +522,8 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <p class="kick">In order of what matters</p>
   <h2>What happens next</h2>
+  <p class="stand">In order of what matters most.</p>
   <ul class="tl next">
     <li><span class="when">Now</span><span><b>Sell the John Deere and the household items.</b> Roughly $3,500 against the $3,939 that Sept–Dec runs short. This is the one that keeps the fall off a credit card.</span></li>
     <li><span class="when">Now</span><span><b>Confirm the car insurance quote.</b> $750 a month for four vehicles with two teen drivers in Michigan is an estimate, not a bill. It is the largest soft number here.</span></li>
@@ -544,8 +534,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <p class="kick">The arc</p>
-  <h2>The year ahead</h2>
+    <h2>The year ahead</h2>
   <ul class="tl">
     <li><span class="when">Sept</span><span>House work finished. First payroll runs — taxes start being withheld.</span></li>
     <li><span class="when">Oct–Nov</span><span>House listed and sold. Proceeds clear the student loans and the last credit card.</span></li>
