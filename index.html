@@ -13,18 +13,21 @@
   --rule:#e0e2e0; --rule-mid:#c6cac7; --wash:#f4f4f1;
   --jason:#2d5578; --amanda:#8a5f12; --good:#3d7052; --clay:#a8452f;
   --jason-w:#eaeff4; --amanda-w:#f8f2e4;
+  --band-bg:#14181d; --band-fg:#fcfcfa; --band-dim:#8f9aa2;
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
   --rule:#262b2e; --rule-mid:#3a4145; --wash:#171b1d;
   --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
   --jason-w:#16232e; --amanda-w:#241f14;
+  --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
 }}
 :root[data-theme="dark"]{
   --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
   --rule:#262b2e; --rule-mid:#3a4145; --wash:#171b1d;
   --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
   --jason-w:#16232e; --amanda-w:#241f14;
+  --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -50,17 +53,20 @@ h1{font-size:clamp(44px,8vw,76px);line-height:.98;margin:0;font-weight:800;lette
 .mast .hr{height:3px;background:var(--ink);margin:44px 0 0}
 
 /* ---- chapter openers ---- */
-.chap{margin:118px 0 0;padding:0 0 6px;border-top:4px solid var(--ink);display:flex;align-items:flex-start;gap:24px}
-.chap .n{font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--amanda);
-  padding-top:20px;white-space:nowrap}
-.chap .t{font-size:clamp(34px,5.8vw,52px);font-weight:800;letter-spacing:-.04em;line-height:1.04;
-  color:var(--ink);margin:12px 0 0;text-wrap:balance}
-@media(max-width:620px){.chap{flex-direction:column;gap:0}.chap .n{padding-top:14px}.chap .t{margin-top:4px}}
+.chap{width:100vw;margin:104px 0 0 calc(50% - 50vw);padding:38px 0 40px;background:var(--band-bg);border-top:none}
+.chap-in{max-width:1080px;margin:0 auto;padding:0 26px;display:flex;align-items:baseline;gap:26px}
+.chap .n{font-size:clamp(40px,6vw,60px);font-weight:800;letter-spacing:-.04em;line-height:.9;
+  color:var(--band-dim);white-space:nowrap;flex:none;font-variant-numeric:tabular-nums}
+.chap .t{font-size:clamp(32px,5.4vw,50px);font-weight:800;letter-spacing:-.038em;line-height:1.02;
+  color:var(--band-fg);margin:0;text-wrap:balance}
+@media(max-width:620px){.chap{padding:28px 0 30px}.chap-in{gap:16px}}
 
 /* ---- sections ---- */
-section{margin:62px 0 0}
-h2{font-size:clamp(25px,3.3vw,30px);font-weight:750;letter-spacing:-.03em;line-height:1.18;
-  color:var(--ink);margin:0 0 13px;text-wrap:balance}
+section{margin:70px 0 0}
+h2{font-size:clamp(26px,3.5vw,33px);font-weight:750;letter-spacing:-.03em;line-height:1.16;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance}
+section>h2:first-child::before{content:"";display:block;width:46px;height:4px;
+  background:var(--amanda);margin:0 0 18px}
 h3{font-size:20px;font-weight:750;letter-spacing:-.02em;color:var(--ink);margin:40px 0 10px}
 p{margin:0 0 17px;text-wrap:pretty}
 p:last-child{margin-bottom:0}
@@ -153,7 +159,7 @@ figure .cap b{color:var(--body)}
   <p class="lede">Two households for a year, what each one costs, and where every dollar comes from. Nothing held back and nothing rounded in our favor.</p>
 </header>
 
-<div class="chap" style="margin-top:52px"><span class="n">One</span><h2 class="t">Where we stand</h2></div>
+<div class="chap" style="margin-top:56px"><div class="chap-in"><span class="n num">1</span><h2 class="t">Where we stand</h2></div></div>
 
 <div class="wide">
   <div class="stand-grid">
@@ -164,7 +170,7 @@ figure .cap b{color:var(--body)}
   </div>
 </div>
 
-<div class="chap"><span class="n">Two</span><h2 class="t">On your side</h2></div>
+<div class="chap"><div class="chap-in"><span class="n num">2</span><h2 class="t">On your side</h2></div></div>
 
 <section>
     <h2>What each household costs</h2>
@@ -309,7 +315,7 @@ figure .cap b{color:var(--body)}
   </table>
   <p class="foot-note">Maxing the HSA is one of the highest-return things either of us does — it comes out pre-tax, covers medical costs we are already paying, and lowers what we owe. Worth continuing next year without question.</p>
 </section>
-<div class="chap"><span class="n">Three</span><h2 class="t">Where it comes from</h2></div>
+<div class="chap"><div class="chap-in"><span class="n num">3</span><h2 class="t">Where it comes from</h2></div></div>
 
 <section>
     <h2>The business</h2>
@@ -399,7 +405,7 @@ figure .cap b{color:var(--body)}
   <div class="key"><div><i style="background:var(--clay)"></i>Income tax<b>$1,414</b></div><div><i style="background:#c98a6f"></i>Employer payroll tax<b>$351</b></div><div><i style="background:#8d7f6a"></i>IRS — prior years<b>$500</b></div><div><i style="background:var(--jason)"></i>Jason's household<b>$3,293</b></div><div><i style="background:var(--amanda)"></i>Deposit to the family account<b>$3,033</b></div><div><i style="background:var(--good)"></i>Cushion, then the debt<b>$3,596</b></div></div>
   <p class="cap" style="font-size:15px;color:var(--soft);margin-top:20px;line-height:1.6;max-width:66ch">Just over half leaves as the two households. Taxes and the old IRS balance take another fifth. What is left — <b style="color:var(--body)">$3,596</b> — is the only genuinely flexible money in the whole picture, and it has to cover both the cushion and the debt.</p>
 </div>
-<div class="chap"><span class="n">Four</span><h2 class="t">The plan</h2></div>
+<div class="chap"><div class="chap-in"><span class="n num">4</span><h2 class="t">The plan</h2></div></div>
 
 <section>
     <h2>Why a cushion comes before killing the debt</h2>
