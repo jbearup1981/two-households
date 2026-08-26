@@ -14,6 +14,7 @@
   --jason:#2d5578; --amanda:#8a5f12; --good:#3d7052; --clay:#a8452f;
   --jason-w:#eaeff4; --amanda-w:#f8f2e4;
   --band-bg:#14181d; --band-fg:#fcfcfa; --band-dim:#8f9aa2;
+  --seg-ptax:var(--seg-ptax); --seg-irs:var(--seg-irs);
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
@@ -21,6 +22,7 @@
   --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
   --jason-w:#16232e; --amanda-w:#241f14;
   --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
+  --seg-ptax:#d99b7e; --seg-irs:#a2937c;
 }}
 :root[data-theme="dark"]{
   --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
@@ -28,6 +30,7 @@
   --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
   --jason-w:#16232e; --amanda-w:#241f14;
   --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
+  --seg-ptax:#d99b7e; --seg-irs:#a2937c;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -429,8 +432,8 @@ figure .cap b{color:var(--body)}
   <p class="stand">The business brings in about $12,187 a month. This is all of it — nothing hidden, nothing left over that is not already spoken for.</p>
 </section>
 <div class="wide">
-  <div class="bars"><span style="width:11.60%;background:var(--clay)"></span><span style="width:2.88%;background:#c98a6f"></span><span style="width:4.10%;background:#8d7f6a"></span><span style="width:27.02%;background:var(--jason)"></span><span style="width:24.89%;background:var(--amanda)"></span><span style="width:29.51%;background:var(--good)"></span></div>
-  <div class="key"><div><i style="background:var(--clay)"></i>Income tax<b>$1,414</b></div><div><i style="background:#c98a6f"></i>Employer payroll tax<b>$351</b></div><div><i style="background:#8d7f6a"></i>IRS — prior years<b>$500</b></div><div><i style="background:var(--jason)"></i>Jason's household<b>$3,450</b></div><div><i style="background:var(--amanda)"></i>Deposit to the family account<b>$3,033</b></div><div><i style="background:var(--good)"></i>Cushion, then the debt<b>$3,439</b></div></div>
+  <div class="bars"><span style="width:11.60%;background:var(--clay)"></span><span style="width:2.88%;background:var(--seg-ptax)"></span><span style="width:4.10%;background:var(--seg-irs)"></span><span style="width:27.02%;background:var(--jason)"></span><span style="width:24.89%;background:var(--amanda)"></span><span style="width:29.51%;background:var(--good)"></span></div>
+  <div class="key"><div><i style="background:var(--clay)"></i>Income tax<b>$1,414</b></div><div><i style="background:var(--seg-ptax)"></i>Employer payroll tax<b>$351</b></div><div><i style="background:var(--seg-irs)"></i>IRS — prior years<b>$500</b></div><div><i style="background:var(--jason)"></i>Jason's household<b>$3,450</b></div><div><i style="background:var(--amanda)"></i>Deposit to the family account<b>$3,033</b></div><div><i style="background:var(--good)"></i>Cushion, then the debt<b>$3,439</b></div></div>
   <p class="cap" style="font-size:15px;color:var(--soft);margin-top:20px;line-height:1.6;max-width:66ch">Just over half leaves as the two households. Taxes and the old IRS balance take another fifth. What is left — <b style="color:var(--body)">$3,439</b> — is the only genuinely flexible money in the whole picture, and it has to cover both the cushion and the debt.</p>
 </div>
 <div class="chap"><div class="chap-in"><span class="n num">4</span><h2 class="t">The plan</h2></div></div>
