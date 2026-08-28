@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
+<title>What Needs Doing</title>
+<style>
+:root{
+  --paper:#fcfcfa; --ink:#14181d; --body:#3a4249; --soft:#6d767d; --faint:#9aa2a8;
+  --rule:#e0e2e0; --rule-mid:#c6cac7; --wash:#f4f4f1;
+  --jason:#2d5578; --amanda:#8a5f12; --good:#3d7052; --clay:#a8452f;
+  --jason-w:#eaeff4; --amanda-w:#f8f2e4;
+  --band-bg:#14181d; --band-fg:#fcfcfa; --band-dim:#8f9aa2;
+  --seg-ptax:var(--seg-ptax); --seg-irs:var(--seg-irs);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
+  --rule:#262b2e; --rule-mid:#3a4145; --wash:#171b1d;
+  --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
+  --jason-w:#16232e; --amanda-w:#241f14;
+  --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
+  --seg-ptax:#d99b7e; --seg-irs:#a2937c;
+}}
+:root[data-theme="dark"]{
+  --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
+  --rule:#262b2e; --rule-mid:#3a4145; --wash:#171b1d;
+  --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
+  --jason-w:#16232e; --amanda-w:#241f14;
+  --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
+  --seg-ptax:#d99b7e; --seg-irs:#a2937c;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--body);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+/* ---- editorial grid: narrow measure, wide breakouts ---- */
+.page{max-width:1080px;margin:0 auto;padding:0 26px}
+.wide{width:100%}
+h2,h3,p,.lede,.dateline,.tl,.aside,.foot-note,figcaption,caption{max-width:68ch}
+.lede{max-width:54ch}
+.mark{max-width:none}
+.mark p{max-width:64ch}
+section>table{max-width:none}
+
+/* ---- masthead ---- */
+.mast{padding:78px 0 0}
+.dateline{font-size:11.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--amanda);font-weight:700;margin:0 0 22px}
+h1{font-size:clamp(44px,8vw,76px);line-height:.98;margin:0;font-weight:800;letter-spacing:-.042em;color:var(--ink);text-wrap:balance}
+.lede{font-size:20.5px;line-height:1.5;color:var(--soft);margin:26px 0 0;font-weight:400;text-wrap:pretty}
+.mast .hr{height:3px;background:var(--ink);margin:44px 0 0}
+
+/* ---- chapter openers ---- */
+.chap{width:100vw;margin:104px 0 0 calc(50% - 50vw);padding:38px 0 40px;background:var(--band-bg);border-top:none}
+.chap-in{max-width:1080px;margin:0 auto;padding:0 26px;display:flex;align-items:baseline;gap:26px}
+.chap .n{font-size:clamp(40px,6vw,60px);font-weight:800;letter-spacing:-.04em;line-height:.9;
+  color:var(--band-dim);white-space:nowrap;flex:none;font-variant-numeric:tabular-nums}
+.chap .t{font-size:clamp(32px,5.4vw,50px);font-weight:800;letter-spacing:-.038em;line-height:1.02;
+  color:var(--band-fg);margin:0;text-wrap:balance}
+@media(max-width:620px){.chap{padding:28px 0 30px}.chap-in{gap:16px}}
+
+/* ---- sections ---- */
+section{margin:70px 0 0}
+h2{font-size:clamp(26px,3.5vw,33px);font-weight:750;letter-spacing:-.03em;line-height:1.16;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance}
+section>h2:first-child::before{content:"";display:block;width:46px;height:4px;
+  background:var(--amanda);margin:0 0 18px}
+h3{font-size:20px;font-weight:750;letter-spacing:-.02em;color:var(--ink);margin:40px 0 10px}
+p{margin:0 0 17px;text-wrap:pretty}
+p:last-child{margin-bottom:0}
+b,strong{color:var(--ink);font-weight:650}
+a{color:var(--jason);text-underline-offset:3px}
+.stand{font-size:19px;line-height:1.6;color:var(--body)}
+
+/* ---- rules & asides ---- */
+.hr-thin{height:1px;background:var(--rule);margin:44px 0}
+.aside{border-left:3px solid var(--rule-mid);padding:2px 0 2px 22px;margin:26px 0;font-size:16px;color:var(--soft)}
+.aside b{color:var(--ink)}
+.mark{background:var(--wash);padding:26px 28px;margin:30px 0}
+.mark.j{border-left:3px solid var(--jason)} .mark.a{border-left:3px solid var(--amanda)}
+.mark.g{border-left:3px solid var(--good)} .mark.c{border-left:3px solid var(--clay)}
+.mark .lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:700;margin:0 0 10px}
+.mark .big{font-size:clamp(30px,4.4vw,42px);font-weight:800;letter-spacing:-.036em;line-height:1.04;color:var(--ink);margin:0 0 12px}
+.mark .big small{font-size:.4em;font-weight:650;letter-spacing:-.01em;color:var(--soft)}
+.mark p{font-size:16.5px;margin-bottom:12px}
+
+/* ---- the standings row ---- */
+.stand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);margin:36px 0 0}
+@media(max-width:720px){.stand-grid{grid-template-columns:1fr 1fr}}
+.st{padding:26px 24px 26px 0;border-bottom:1px solid var(--rule)}
+.st+.st{border-left:1px solid var(--rule);padding-left:24px}
+@media(max-width:720px){.st:nth-child(3){border-left:none;padding-left:0}}
+.st .l{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;line-height:1.4;margin-bottom:11px;min-height:2.8em}
+.st .v{font-size:34px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.st .v.j{color:var(--jason)} .st .v.a{color:var(--amanda)} .st .v.g{color:var(--good)}
+.st .s{font-size:13px;color:var(--faint);margin-top:8px}
+
+/* ---- tables: rules, no boxes ---- */
+table{width:100%;border-collapse:collapse;margin:22px 0 0}
+caption{text-align:left;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding-bottom:11px;border-bottom:1px solid var(--rule-mid)}
+td,th{padding:11px 0;text-align:left;font-size:16px;border-bottom:1px solid var(--rule);vertical-align:baseline}
+th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;
+  border-bottom:1px solid var(--rule-mid);padding-bottom:11px}
+td.r,th.r{text-align:right}
+tr.sub td{color:var(--soft);font-size:15.5px}
+tr.tot td{border-bottom:none;border-top:2px solid var(--ink);font-weight:750;font-size:18px;padding-top:14px;color:var(--ink)}
+.neg{color:var(--clay);font-weight:700}
+.pos{color:var(--good);font-weight:700}
+.foot-note{font-size:15px;line-height:1.62;color:var(--soft);margin:16px 0 0}
+.foot-note b{color:var(--body)}
+
+/* ---- two households ---- */
+.homes{display:grid;grid-template-columns:1fr 1fr;gap:0 52px;margin:30px 0 0}
+@media(max-width:760px){.homes{grid-template-columns:1fr;gap:44px}}
+.home .hd{border-top:3px solid var(--rule);padding-top:14px}
+.home.j .hd{border-top-color:var(--jason)} .home.a .hd{border-top-color:var(--amanda)}
+.home .who{font-size:20px;font-weight:750;letter-spacing:-.024em;color:var(--ink);line-height:1.25}
+.home .where{font-size:13.5px;color:var(--faint);margin-top:3px}
+.home table{margin-top:14px}
+.home td{font-size:15px;padding:8.5px 0}
+.home.j tr.tot td{border-top-color:var(--jason);color:var(--jason)}
+.home.a tr.tot td{border-top-color:var(--amanda);color:var(--amanda)}
+
+/* ---- charts ---- */
+figure{margin:34px 0 0}
+figcaption{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;
+  padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--rule)}
+figure .cap{font-size:15px;color:var(--soft);margin-top:16px;line-height:1.6;max-width:66ch}
+figure .cap b{color:var(--body)}
+.bars{display:flex;height:38px;margin:22px 0 0;overflow:hidden}
+.bars span{display:block;height:100%}
+.key{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:9px 26px;margin-top:20px}
+.key div{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--body);
+  padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.key i{width:10px;height:10px;flex:none}
+.key b{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
+
+/* ---- lists ---- */
+.tl{list-style:none;padding:0;margin:26px 0 0}
+.tl li{display:flex;gap:24px;padding:15px 0;border-bottom:1px solid var(--rule);font-size:16px;line-height:1.6}
+.tl .when{width:96px;flex:none;color:var(--jason);font-weight:750;font-size:12.5px;letter-spacing:.06em;
+  text-transform:uppercase;padding-top:3px}
+.tl.next .when{color:var(--amanda)}
+@media(max-width:560px){.tl li{flex-direction:column;gap:5px}.tl .when{width:auto}}
+
+.colophon{margin:92px 0 0;padding:26px 0 90px;border-top:1px solid var(--rule-mid);font-size:14px;
+  line-height:1.65;color:var(--faint)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>
+.chk{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.chk:last-child{border-bottom:none}
+.chk .n{flex:none;width:30px;font-weight:800;color:var(--faint);font-variant-numeric:tabular-nums;padding-top:1px}
+.chk .b{flex:1}
+.chk .t{font-weight:650;color:var(--ink);display:block;margin-bottom:3px}
+.chk .d{font-size:15px;color:var(--soft);line-height:1.55}
+.chk .w{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:6px;display:inline-block}
+.w.red{color:var(--clay)} .w.amber{color:var(--amanda)} .w.green{color:var(--good)} .w.blue{color:var(--jason)}
+.done{color:var(--faint);text-decoration:line-through}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:5px 11px;border-radius:2px;margin-bottom:16px}
+.pill.red{background:var(--clay);color:var(--paper)}
+.pill.amber{background:var(--amanda);color:var(--paper)}
+.pill.green{background:var(--good);color:var(--paper)}
+.pill.blue{background:var(--jason);color:var(--paper)}
+.countdown{background:var(--band-bg);color:var(--band-fg);padding:30px 26px;width:100vw;
+  margin:0 0 0 calc(50% - 50vw);text-align:center}
+.countdown .big{font-size:clamp(38px,7vw,60px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.countdown .sub{font-size:15px;color:var(--band-dim);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="mast">
+  <p class="dateline">Updated 27 August 2026</p>
+  <h1>What Needs Doing</h1>
+  <p class="lede">Everything still open, in the order it blocks other things. <a href="./index.html">The full financial picture is here.</a></p>
+</header>
+
+<div class="countdown">
+  <div class="big">19 days</div>
+  <div class="sub">until the first payroll run — Tuesday 15 September</div>
+</div>
+
+<div class="chap"><div class="chap-in"><span class="n num">1</span><h2 class="t">Blocking payroll</h2></div></div>
+<section style="margin-top:0">
+  <span class="pill red">Do these first</span>
+  <div class="chk"><span class="n">01</span><span class="b"><span class="t">Michigan MTO e-Registration</span>
+    <span class="d">One application produces two account numbers — a Treasury withholding account and a UIA employer number. QuickBooks Payroll cannot calculate or file Michigan taxes without both, so <b>nothing else about payroll can start until these arrive.</b> Everything else in QBO is already done: bank connected, direct deposit live. The prepared packet is in the finance folder.</span>
+    <span class="w red">The only hard blocker · 19 days</span></span></div>
+  <div class="chk"><span class="n">02</span><span class="b"><span class="t">Answer the UIA coverage question before submitting</span>
+    <span class="d">The packet flags an open item: whether an LLC owner's own wages count as covered employment for unemployment tax. The answer changes what gets filed. Worth resolving first rather than amending later.</span>
+    <span class="w red">Same application</span></span></div>
+  <div class="chk"><span class="n">03</span><span class="b"><span class="t">Set up MiLogin for Business, then activate MiUI</span>
+    <span class="d">Needed to file the quarterly unemployment reports. Michigan retired the old MiWAM system in February 2026, so older instructions point at the wrong place.</span>
+    <span class="w red">After registration</span></span></div>
+  <div class="chk"><span class="n">04</span><span class="b"><span class="t">Sell the John Deere and the household items</span>
+    <span class="d">September through December runs about <b>$4,568 short</b> once a full year of salary and a full year of tax get paid in three and a half months. The roughly $3,500 from these sales is what covers it. Without it the gap goes on a credit card, which is how the $65,000 happened in the first place.</span>
+    <span class="w red">Before mid-September</span></span></div>
+</section>
+
+<div class="chap"><div class="chap-in"><span class="n num">2</span><h2 class="t">Payroll setup</h2></div></div>
+<section style="margin-top:0">
+  <span class="pill amber">Before 15 September</span>
+  <div class="chk"><span class="n">05</span><span class="b"><span class="t">Point direct deposit at the Bank of America personal account</span>
+    <span class="d">The plan is for payroll to land in personal banking, with housing and personal bills paid from there rather than from the business account. <b>QuickBooks will not warn about this</b> — it will simply deposit wherever it is currently pointed, which may still be ZenBusiness.</span>
+    <span class="w amber">Easy to miss</span></span></div>
+  <div class="chk"><span class="n">06</span><span class="b"><span class="t">Enter the tax IDs in QuickBooks Payroll</span>
+    <span class="d">Federal EIN is known. The two Michigan numbers come from item 01. Path: Payroll → Overview → "Let's set up your taxes."</span>
+    <span class="w amber">After 01</span></span></div>
+  <div class="chk"><span class="n">07</span><span class="b"><span class="t">Change the W-4 to married filing jointly, and set the withholding override</span>
+    <span class="d">$2,121 per check. Without the manual override QuickBooks will under-withhold against the $16,968 the year actually owes — and the whole point of catching up now is that nothing is owed in April.</span>
+    <span class="w amber">Before the first run</span></span></div>
+  <div class="chk"><span class="n">08</span><span class="b"><span class="t">Confirm the business can cover $7,401 on each of eight dates</span>
+    <span class="d">Sept 15 · Sept 29 · Oct 13 · Oct 27 · Nov 10 · Nov 24 · Dec 8 · Dec 22. That is $6,875 gross plus the employer's $526 share each time.</span>
+    <span class="w amber">Cash-flow check</span></span></div>
+</section>
+
+<div class="chap"><div class="chap-in"><span class="n num">3</span><h2 class="t">Tax, and the loan it unlocks</h2></div></div>
+<section style="margin-top:0">
+  <span class="pill blue">This autumn</span>
+  <div class="chk"><span class="n">09</span><span class="b"><span class="t">Find out whether the $500 a month to the IRS is a formal Installment Agreement</span>
+    <span class="d">Most lenders decline outright with open federal tax debt <i>unless</i> there is a documented agreement in good standing. If those payments are informal, converting them is cheap now and expensive to discover during underwriting. <b>This is the highest-value hour on the whole list.</b></span>
+    <span class="w blue">This week</span></span></div>
+  <div class="chk"><span class="n">10</span><span class="b"><span class="t">File the 2025 return</span>
+    <span class="d">An extension was filed, so nothing is late — but lenders want two to three years of business returns, and this gates the refinance entirely.</span>
+    <span class="w blue">Gates the loan</span></span></div>
+  <div class="chk"><span class="n">11</span><span class="b"><span class="t">Pin down the real IRS balance</span>
+    <span class="d">The arithmetic gives $10,000–14,000. It is carried at $20,000 to stay safe. The difference decides whether the house proceeds clear it outright.</span>
+    <span class="w blue">With the return</span></span></div>
+  <div class="chk"><span class="n">12</span><span class="b"><span class="t">Apply for the business loan — and keep paying what you pay now</span>
+    <span class="d">Cash flow is not the constraint; the debt-service ratio is roughly sixteen times what lenders ask. Consolidating all $65,000 saves $3,300–5,300 <b>only if the payment stays where it is today.</b> Taking the ten-year minimum instead costs $42,445 in interest against $14,189 for changing nothing. All debts get disclosed, including the loan from Dad.</span>
+    <span class="w blue">After 09 and 10</span></span></div>
+</section>
+
+<div class="chap"><div class="chap-in"><span class="n num">4</span><h2 class="t">Costs already decided</h2></div></div>
+<section style="margin-top:0">
+  <span class="pill green">Start any time</span>
+  <div class="chk"><span class="n">13</span><span class="b"><span class="t">Cancel Tesla connectivity, Mister Car Wash, Google One, Genspark</span>
+    <span class="d">$185 a month, $2,220 a year. The Tesla subscription is on a car that is now paid off.</span>
+    <span class="w green">Nothing changes about daily life</span></span></div>
+  <div class="chk"><span class="n">14</span><span class="b"><span class="t">No more golf equipment</span>
+    <span class="d">Decided. $4,723 since January was almost entirely gear — TaylorMade, Stix, PGA Superstore. The rounds themselves are $5 to $30 and are not the issue.</span>
+    <span class="w green">~$400 a month</span></span></div>
+  <div class="chk"><span class="n">15</span><span class="b"><span class="t">Eating out down to $325 a month</span>
+    <span class="d">The cards showed $484 across 108 fast-food visits since May, against a budget line of $250. The $325 is a commitment, not an estimate — it is the one figure on the plan that is a decision rather than a measurement.</span>
+    <span class="w green">~$160 a month</span></span></div>
+  <div class="chk"><span class="n">16</span><span class="b"><span class="t">Ask Intuit why QuickBooks went from $92 to $136</span>
+    <span class="d">A 48% increase in July with no apparent change.</span>
+    <span class="w green">One phone call</span></span></div>
+  <div class="chk"><span class="n">17</span><span class="b"><span class="t">Do not cancel these</span>
+    <span class="d">Replit $225 (hosts the CRM and the website, removes their branding), biBERK business liability, eRenterPlan, GitHub, ZenBusiness registered agent, Anytime Mailbox, Microsoft 365.</span>
+    <span class="w green">Keep</span></span></div>
+</section>
+
+<div class="chap"><div class="chap-in"><span class="n num">5</span><h2 class="t">Open questions</h2></div></div>
+<section style="margin-top:0">
+  <span class="pill amber">Answers change the numbers</span>
+  <div class="chk"><span class="n">18</span><span class="b"><span class="t">How many Davenport employees are actually enrolled?</span>
+    <span class="d">The records show 900 employees and $4,950 a month. If that is compensation at $15 per employee, it implies about 330 enrolled — and the step to $25 would be worth <b>$3,300 a month on its own</b>, more than the entire growth estimate for all five accounts combined. Worth knowing before relying on either number.</span>
+    <span class="w amber">Changes the timeline</span></span></div>
+  <div class="chk"><span class="n">19</span><span class="b"><span class="t">Confirm the car insurance quotes</span>
+    <span class="d">$515 for the boys, $250 for the two adults. Michigan with two teenage drivers can come in higher, and it is the largest soft number in the household budget.</span>
+    <span class="w amber">Before it is locked</span></span></div>
+  <div class="chk"><span class="n">20</span><span class="b"><span class="t">Fix ten journal entries in QuickBooks</span>
+    <span class="d">The Amex and Apple catch-up entries are all dated 6 August instead of their real month-ends. The year-to-date total is right, but August shows a phantom $13,500 loss and the month-by-month split is wrong.</span>
+    <span class="w amber">Bookkeeping</span></span></div>
+  <div class="chk"><span class="n">21</span><span class="b"><span class="t">Reconnect the Amex feed, set a monthly Apple Card export</span>
+    <span class="d">Card data currently stops at 4 August and 31 July. Anything after that is invisible.</span>
+    <span class="w amber">Monthly close step</span></span></div>
+</section>
+
+<div class="chap"><div class="chap-in"><span class="n num">6</span><h2 class="t">Already done</h2></div></div>
+<section style="margin-top:0">
+  <span class="pill green">This week</span>
+  <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">Books caught up — 150 checking transactions and all card data posted; P&amp;L final at $91,401</span></span></div>
+  <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">2026 tax calculated at $16,968 filing jointly, fully covered by the eight remaining paychecks</span></span></div>
+  <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">Both household budgets built, reconciled, and reframed as one budget</span></span></div>
+  <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">Car insurance resolved — boys $515 less $400 they pay, adults $250 split evenly</span></span></div>
+  <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">796 card charges read line by line; recurring costs and trim tiers identified</span></span></div>
+  <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">Replit investigated and retained — $225 plan, kept deliberately</span></span></div>
+  <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">Refinance modelled at full $65,000, including how it goes wrong</span></span></div>
+</section>
+
+<div class="colophon">
+  This list is the working queue behind <a href="./index.html">the financial plan</a>. Items are ordered by what blocks what, not by size.
+</div>
+</div>
+</body>
+</html>
