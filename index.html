@@ -152,10 +152,18 @@ figure .cap b{color:var(--body)}
 .colophon{margin:92px 0 0;padding:26px 0 90px;border-top:1px solid var(--rule-mid);font-size:14px;
   line-height:1.65;color:var(--faint)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.sitenav{display:flex;gap:0;flex-wrap:wrap;margin:0 0 34px;border-bottom:1px solid var(--rule)}
+.sitenav a{display:inline-block;padding:11px 18px 12px;font-size:14.5px;font-weight:650;
+  text-decoration:none;color:var(--soft);border-bottom:3px solid transparent;margin-bottom:-1px}
+.sitenav a:hover{color:var(--ink)}
+.sitenav a.on{color:var(--ink);border-bottom-color:var(--amanda)}
+@media(max-width:520px){.sitenav a{padding:10px 13px;font-size:13.5px}}
 </style>
 </head>
 <body>
 <div class="page">
+<nav class="sitenav"><a href="./index.html" class="on">The plan</a><a href="./budget.html">Budget calculator</a><a href="./todo.html">What needs doing</a></nav>
 <header class="mast">
   <p class="dateline">Where we stand · August 2026</p>
   <h1>The Whole Picture</h1>
