@@ -215,49 +215,12 @@ html{scroll-behavior:smooth}
 <div class="chap" id="blocking-payroll"><div class="chap-in"><span class="n num">1</span><h2 class="t">Blocking payroll</h2></div></div>
 <section style="margin-top:0">
   <span class="pill red">Do these first</span>
-  <div class="chk"><span class="n">01</span><span class="b"><span class="t">Michigan MTO e-Registration</span>
-    <span class="d">One application produces two account numbers — a Treasury withholding account and a UIA employer number. QuickBooks Payroll cannot calculate or file Michigan taxes without both, so <b>nothing else about payroll can start until these arrive.</b> Everything else in QBO is already done: bank connected, direct deposit live. The prepared packet is in the finance folder.</span>
-    <span class="w red">The only hard blocker · 19 days</span></span></div>
-  <div class="chk"><span class="n">02</span><span class="b"><span class="t">Answer the UIA coverage question before submitting</span>
-    <span class="d">The packet flags an open item: whether an LLC owner's own wages count as covered employment for unemployment tax. The answer changes what gets filed. Worth resolving first rather than amending later.</span>
-    <span class="w red">Same application</span></span></div>
-  <div class="chk"><span class="n">03</span><span class="b"><span class="t">Set up MiLogin for Business, then activate MiUI</span>
-    <span class="d">Needed to file the quarterly unemployment reports. Michigan retired the old MiWAM system in February 2026, so older instructions point at the wrong place.</span>
-    <span class="w red">After registration</span></span></div>
+  <div class="chk"><span class="n">01</span><span class="b"><span class="t">Michigan MTO e-Registration — withholding only</span>
+    <span class="d">At <b>mto.treasury.michigan.gov</b> → "Start a New Business (E-Registration)". <b>Register for withholding and skip the unemployment section entirely.</b> Michigan Fact Sheet 176 is explicit: a single-member LLC that elected to file as a corporation is not taxable for unemployment purposes on payments to its member. Your withholding account number is simply your FEIN — <b>301349321</b>.</span>
+    <span class="w red">The only blocker · first payroll Sept 15</span></span></div>
   <div class="chk"><span class="n">04</span><span class="b"><span class="t">Sell the John Deere and the household items</span>
     <span class="d">September through December runs about <b>$4,568 short</b> once a full year of salary and a full year of tax get paid in three and a half months. The roughly $3,500 from these sales is what covers it. Without it the gap goes on a credit card, which is how the $65,000 happened in the first place.</span>
     <span class="w red">Before mid-September</span></span></div>
-</section>
-
-<div class="chap"><div class="chap-in"><span class="n num">1b</span><h2 class="t">Call script — read this on the phone</h2></div></div>
-<section style="margin-top:0">
-  <span class="pill red">UIA Employer Ombudsman · 1-855-484-2636</span>
-  <p class="stand">Ten minutes, and it is the only thing standing between today and payroll.</p>
-  <div class="mark j">
-    <p class="lbl">Say this, word for word</p>
-    <p style="font-size:17px;line-height:1.7">"I have a single-member Michigan LLC that elected S-Corporation treatment for federal tax, effective January 1st 2026. The sole member will be paid as a W-2 employee. <b>Are those wages covered employment for Michigan unemployment insurance, and do I need an employer account number?</b>"</p>
-    <p style="font-size:17px;line-height:1.7;margin-top:14px">Then: <b>"I am also adding a second employee who is not an owner — my son, part-time administrative work. Does that change the answer?"</b></p>
-  </div>
-  <table>
-    <caption>Write the answers here</caption>
-    <tr><th>Question</th><th class="r">Answer</th></tr>
-    <tr><td>Are owner wages covered for UI?</td><td class="r">yes / no</td></tr>
-    <tr><td>Do I need a UIA employer account number?</td><td class="r">yes / no</td></tr>
-    <tr><td>Does the second employee change it?</td><td class="r">yes / no</td></tr>
-    <tr><td>Assigned UI rate</td><td class="r">_____ %</td></tr>
-    <tr><td>Who you spoke to</td><td class="r">___________</td></tr>
-  </table>
-  <p class="foot-note"><b>If NOT covered</b> — skip the UIA half entirely, mark Michigan UI exempt in QuickBooks, register for withholding only, and payroll unblocks faster. <b>If covered</b> — register for both in the same MTO application, about $243 a year. Either answer moves this forward; not knowing is what stalls it.</p>
-  <div class="mark">
-    <p class="lbl">Have these in front of you before you dial</p>
-    <p style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14.5px;line-height:1.9">JMB Enterprises LLC · dba Nexus Benefit Solutions<br>
-FEIN 30-1349321<br>
-8329 Young Ave NE, Rockford, MI 49341 (Kent County)<br>
-616-425-9740<br>
-LLC taxed as S-Corp, Form 2553 effective 1/1/2026<br>
-2 employees · first payroll 9/15/2026 · $0 wages paid in 2026 to date<br>
-NAICS 524210 — Insurance Agencies and Brokerages</p>
-  </div>
 </section>
 
 <div class="chap" id="payroll-setup-the-plan"><div class="chap-in"><span class="n num">2</span><h2 class="t">Payroll setup — the plan</h2></div></div>
@@ -266,8 +229,8 @@ NAICS 524210 — Insurance Agencies and Brokerages</p>
   <table>
     <caption>How this actually goes</caption>
     <tr><th>Step</th><th>What happens</th><th class="r">When</th></tr>
-    <tr><td><b>1</b></td><td><b>Register with Michigan.</b> One application at Michigan Treasury Online produces both numbers — Treasury withholding and the UIA employer account. Everything waits on this.</td><td class="r"><b>Now</b></td></tr>
-    <tr><td><b>2</b></td><td><b>Enter three things in QuickBooks:</b> the federal EIN, the two Michigan numbers, and the bank account payroll deposits into. That last one is the easy miss — it must point at Bank of America personal, not the business account.</td><td class="r">Same day the numbers arrive</td></tr>
+    <tr><td><b>1</b></td><td><b>Register with Michigan for withholding.</b> One application at Michigan Treasury Online. Skip the unemployment section — you are not liable for it while you are the only employee.</td><td class="r"><b>Now</b></td></tr>
+    <tr><td><b>2</b></td><td><b>Enter three things in QuickBooks:</b> the federal EIN, the Michigan withholding number (= your FEIN), and the bank account payroll deposits into. <b>Mark Michigan unemployment as exempt</b> rather than entering an account number. That last one is the easy miss — it must point at Bank of America personal, not the business account.</td><td class="r">Same day the numbers arrive</td></tr>
     <tr><td><b>3</b></td><td><b>Set the W-4 to married filing jointly and override the withholding to $2,121 per check.</b> QuickBooks will not do this on its own, and without it the year under-withholds against the $16,968 actually owed.</td><td class="r">Before the first run</td></tr>
     <tr><td><b>4</b></td><td><b>Run payroll.</b> $6,875 gross, $4,228 net, every other Friday through 22 December.</td><td class="r"><b>Tue 15 Sept</b></td></tr>
   </table>
@@ -291,13 +254,13 @@ NAICS 524210 — Insurance Agencies and Brokerages</p>
     <span class="w amber">Cash-flow check</span></span></div>
 </section>
 
-<div class="chap" id="hiring-your-son"><div class="chap-in"><span class="n num">2c</span><h2 class="t">Hiring your son</h2></div></div>
+<div class="chap" id="hiring-your-son"><div class="chap-in"><span class="n num">2c</span><h2 class="t">Hiring your son — on hold</h2></div></div>
 <section style="margin-top:0">
-  <span class="pill amber">Do it with the same payroll setup</span>
-  <p class="stand">The admin help was already in the plan at $1,500 a month. Filling it with a family member costs the business exactly the same and keeps most of the money in the household.</p>
-  <div class="chk"><span class="n">A</span><span class="b"><span class="t">Tell the UIA Ombudsman there are two employees, not one</span>
-    <span class="d">On the same call about owner-wages. A non-owner employee is <b>unambiguously covered</b> for unemployment even if your own wages are not — which may settle the open question in the packet on the spot, and it changes what you register for.</span>
-    <span class="w amber">Same phone call · 1-855-484-2636</span></span></div>
+  <span class="pill blue">Deferred — the plan below still holds when you want it</span>
+  <p class="stand">Not happening for September. The admin help is still in the forward plan at $1,500 a month, and filling it with a family member still costs the business the same while keeping most of the money in the household — but it adds an unemployment registration, so it is off the critical path until you want it.</p>
+  <div class="chk"><span class="n">A</span><span class="b"><span class="t">It triggers the unemployment registration you are otherwise skipping</span>
+    <span class="d">Your own wages are exempt from Michigan unemployment. <b>A non-owner employee is not.</b> Paying him crosses the $1,000 wage threshold and makes the business a liable employer — so this adds a registration step that going solo avoids. Worth it when the work justifies it; just not in the next two weeks.</span>
+    <span class="w blue">Why it is deferred</span></span></div>
   <div class="chk"><span class="n">B</span><span class="b"><span class="t">Set the wage in the defensible range</span>
     <span class="d">15 hours a week at $22 is $17,160 a year — ordinary part-time admin pay, and just under the standard deduction so he owes <b>no federal income tax</b>. 20 hours at $18 is $18,720. Anything in that band is easy to justify.</span>
     <span class="w amber">Pick a rate and hours</span></span></div>
