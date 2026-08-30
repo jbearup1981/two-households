@@ -153,12 +153,27 @@ figure .cap b{color:var(--body)}
   line-height:1.65;color:var(--faint)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-.sitenav{display:flex;gap:0;flex-wrap:wrap;margin:0 0 34px;border-bottom:1px solid var(--rule)}
 .sitenav a{display:inline-block;padding:11px 18px 12px;font-size:14.5px;font-weight:650;
   text-decoration:none;color:var(--soft);border-bottom:3px solid transparent;margin-bottom:-1px}
 .sitenav a:hover{color:var(--ink)}
 .sitenav a.on{color:var(--ink);border-bottom-color:var(--amanda)}
 @media(max-width:520px){.sitenav a{padding:10px 13px;font-size:13.5px}}
+
+.sitenav{position:sticky;top:0;z-index:50;background:var(--paper);
+  display:flex;gap:0;flex-wrap:wrap;margin:0 0 30px;border-bottom:1px solid var(--rule)}
+.toc{display:flex;flex-wrap:wrap;gap:7px 0;align-items:baseline;margin:0 0 40px;
+  padding:20px 0 22px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.toc .tl{flex:0 0 100%;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);font-weight:700;margin-bottom:10px}
+.toc a{font-size:14.5px;color:var(--soft);text-decoration:none;padding:3px 0;margin-right:20px;
+  border-bottom:1px solid transparent;white-space:nowrap}
+.toc a:hover{color:var(--ink);border-bottom-color:var(--amanda)}
+.toc a.c{color:var(--ink);font-weight:750;margin-right:22px}
+.toc a.c::before{content:"— ";color:var(--amanda)}
+h2[id],.chap[id]{scroll-margin-top:76px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:520px){.toc a{font-size:13.5px;margin-right:15px}}
 </style>
 </head>
 <body>
@@ -170,8 +185,9 @@ figure .cap b{color:var(--body)}
   <p class="lede">Two households for a year, what each one costs, and where every dollar comes from. Nothing held back and nothing rounded in our favor.</p>
   <p style="margin:18px 0 0;font-size:16px"><a href="./todo.html"><b>→ What needs doing, and by when</b></a></p>
 </header>
+<nav class="toc"><span class="tl">On this page</span><a href="#where-we-stand" class="c">Where we stand</a><a href="#on-your-side" class="c">On your side</a><a href="#where-it-comes-from" class="c">Where it comes from</a><a href="#the-plan" class="c">The plan</a><a href="#one-budget-two-addresses">One budget, two addresses</a><a href="#what-lands-for-amanda-and-when">What lands for Amanda, and when</a><a href="#what-amandas-carrying">What Amanda's carrying</a><a href="#the-business">The business</a><a href="#the-tax-situation-in-plain-english">The tax situation, in plain English</a><a href="#can-the-business-actually-afford-payroll">Can the business actually afford payroll?</a><a href="#where-each-business-dollar-goes">Where each business dollar goes</a><a href="#why-a-cushion-comes-before-killing-the-debt">Why a cushion comes before killing the debt</a><a href="#the-debt-and-how-it-ends">The debt, and how it ends</a><a href="#getting-the-house-ready">Getting the house ready</a><a href="#what-happens-next">What happens next</a><a href="#the-year-ahead">The year ahead</a></nav>
 
-<div class="chap" style="margin-top:56px"><div class="chap-in"><span class="n num">1</span><h2 class="t">Where we stand</h2></div></div>
+<div class="chap" id="where-we-stand" style="margin-top:56px"><div class="chap-in"><span class="n num">1</span><h2 class="t">Where we stand</h2></div></div>
 
 <div class="wide">
   <div class="stand-grid">
@@ -182,10 +198,10 @@ figure .cap b{color:var(--body)}
   </div>
 </div>
 
-<div class="chap"><div class="chap-in"><span class="n num">2</span><h2 class="t">On your side</h2></div></div>
+<div class="chap" id="on-your-side"><div class="chap-in"><span class="n num">2</span><h2 class="t">On your side</h2></div></div>
 
 <section>
-    <h2>One budget, two addresses</h2>
+    <h2 id="one-budget-two-addresses">One budget, two addresses</h2>
   <p class="stand">Below is what each roof costs, which is worth seeing separately. But the money is one pot and it is spent in one order — that comes after. Rent, utilities, the boys' insurance contribution and Amanda's income are real numbers. Groceries, activities, clothing and personal spending are estimates we adjust as the actual bills arrive.</p>
   <p><b>Why the dining line moved.</b> Reading Jason's card statements, fast food ran <b>$445 a month across 108 visits since May</b> — against a budget line of $250 meant to cover all eating out. The $325 is not an estimate of what he spends; it is a deliberate cut from the $484 he actually spent, and it is the one figure on this page that is a commitment rather than a measurement.</p>
   <p>All four vehicles ride on one policy on Amanda's side — hers, Jason's, Eli's and Jacob's — which is cheaper than separate policies and simpler to run.</p>
@@ -323,7 +339,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <h2>What lands for Amanda, and when</h2>
+  <h2 id="what-lands-for-amanda-and-when">What lands for Amanda, and when</h2>
   <p class="stand">Your paycheck one Friday, Jason's deposit the next — so money arrives every week instead of in two lumps.</p>
   <table>
     <caption>Coming in, going out</caption>
@@ -354,7 +370,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <h2>What Amanda's carrying</h2>
+  <h2 id="what-amandas-carrying">What Amanda's carrying</h2>
   <table>
     <tr><td>Health insurance for all five of us</td><td class="r">through your employer</td></tr>
     <tr><td>HSA, maxed — 2026 family limit</td><td class="r num">$8,750/yr · $729/mo</td></tr>
@@ -362,10 +378,10 @@ figure .cap b{color:var(--body)}
   </table>
   <p class="foot-note">Maxing the HSA is one of the highest-return things either of us does — it comes out pre-tax, covers medical costs we are already paying, and lowers what we owe. Worth continuing next year without question.</p>
 </section>
-<div class="chap"><div class="chap-in"><span class="n num">3</span><h2 class="t">Where it comes from</h2></div></div>
+<div class="chap" id="where-it-comes-from"><div class="chap-in"><span class="n num">3</span><h2 class="t">Where it comes from</h2></div></div>
 
 <section>
-    <h2>The business</h2>
+    <h2 id="the-business">The business</h2>
   <p class="stand">January through mid-August, cash basis — money actually in and actually out.</p>
   <table>
     <tr><td>Commission income</td><td class="r num">$194,516</td></tr>
@@ -439,7 +455,7 @@ figure .cap b{color:var(--body)}
 <div class="hr-thin"></div>
 
 <section>
-    <h2>The tax situation, in plain English</h2>
+    <h2 id="the-tax-situation-in-plain-english">The tax situation, in plain English</h2>
   <p class="stand">The business is an <b>S-corp</b>. That is a tax setup, not a different company — same Nexus, filed differently since January 1.</p>
   <p><b>The business itself pays no income tax.</b> Its profit passes through onto our personal return, so there is no such thing as "the business's taxes" separate from ours. It is one bill.</p>
   <p>What the S-corp does require is that Jason <b>pay himself an actual paycheck</b> rather than just taking money out. Money he takes <i>beyond</i> that paycheck comes out as a distribution, which skips the 15.3% Social Security and Medicare hit. That split is the whole reason for the S-corp and it saves several thousand dollars a year.</p>
@@ -490,7 +506,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <h2>Can the business actually afford payroll?</h2>
+  <h2 id="can-the-business-actually-afford-payroll">Can the business actually afford payroll?</h2>
   <p class="stand">This is the question that decides whether the fall works. Starting September 15 the business has to produce a real paycheck every two weeks — not a draw, an actual payroll run with taxes withheld.</p>
   <table>
     <caption>Eight pay dates, Sept 15 → Dec 31</caption>
@@ -509,7 +525,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <h2>Where each business dollar goes</h2>
+  <h2 id="where-each-business-dollar-goes">Where each business dollar goes</h2>
   <p class="stand">The business brings in about $12,187 a month. This is all of it — nothing hidden, nothing left over that is not already spoken for.</p>
 </section>
 <div class="wide">
@@ -517,10 +533,10 @@ figure .cap b{color:var(--body)}
   <div class="key"><div><i style="background:var(--clay)"></i>Income tax<b>$1,414</b></div><div><i style="background:var(--seg-ptax)"></i>Employer payroll tax<b>$351</b></div><div><i style="background:var(--seg-irs)"></i>IRS — prior years<b>$500</b></div><div><i style="background:var(--jason)"></i>Jason's household<b>$3,525</b></div><div><i style="background:var(--amanda)"></i>Deposit to the family account<b>$3,033</b></div><div><i style="background:var(--good)"></i>Cushion, then the debt<b>$3,364</b></div></div>
   <p class="cap" style="font-size:15px;color:var(--soft);margin-top:20px;line-height:1.6;max-width:66ch">Just over half leaves as the two households. Taxes and the old IRS balance take another fifth. What is left — <b style="color:var(--body)">$3,364</b> — is the only genuinely flexible money in the whole picture, and it has to cover both the cushion and the debt.</p>
 </div>
-<div class="chap"><div class="chap-in"><span class="n num">4</span><h2 class="t">The plan</h2></div></div>
+<div class="chap" id="the-plan"><div class="chap-in"><span class="n num">4</span><h2 class="t">The plan</h2></div></div>
 
 <section>
-    <h2>Why a cushion comes before killing the debt</h2>
+    <h2 id="why-a-cushion-comes-before-killing-the-debt">Why a cushion comes before killing the debt</h2>
   <p class="stand">The business earns well on average. It does not earn evenly — and that gap is the single biggest financial risk either of us carries right now.</p>
 </section>
 <div class="wide">
@@ -576,7 +592,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <h2>The debt, and how it ends</h2>
+  <h2 id="the-debt-and-how-it-ends">The debt, and how it ends</h2>
   <p class="stand"><b>$65,000 — and it sits on the business, not on us personally.</b> Paid from business income, worst rate first. No consolidation loan — the savings were small enough that an application fee ate most of them.</p>
 </section>
 <div class="wide">
@@ -646,7 +662,7 @@ figure .cap b{color:var(--body)}
 <div class="hr-thin"></div>
 
 <section>
-  <h2>Getting the house ready</h2>
+  <h2 id="getting-the-house-ready">Getting the house ready</h2>
   <p class="stand">Everything that needs doing before it lists. Most of it is Jason's own labor plus some paid help.</p>
   <table>
     <tr><th>Job</th><th class="r">Cost</th></tr>
@@ -663,7 +679,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-  <h2>What happens next</h2>
+  <h2 id="what-happens-next">What happens next</h2>
   <p class="stand">In order of what matters most.</p>
   <ul class="tl next">
     <li><span class="when">Now</span><span><b>Sell the John Deere and the household items.</b> Roughly $3,500 against the $4,568 that Sept–Dec runs short. This is the one that keeps the fall off a credit card.</span></li>
@@ -675,7 +691,7 @@ figure .cap b{color:var(--body)}
 </section>
 
 <section>
-    <h2>The year ahead</h2>
+    <h2 id="the-year-ahead">The year ahead</h2>
   <ul class="tl">
     <li><span class="when">Sept</span><span>House prepped for sale. First payroll runs — taxes start being withheld.</span></li>
     <li><span class="when">Oct</span><span>House lists. Start looking for Amanda's place.</span></li>

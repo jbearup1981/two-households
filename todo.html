@@ -153,12 +153,27 @@ figure .cap b{color:var(--body)}
   line-height:1.65;color:var(--faint)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-.sitenav{display:flex;gap:0;flex-wrap:wrap;margin:0 0 34px;border-bottom:1px solid var(--rule)}
 .sitenav a{display:inline-block;padding:11px 18px 12px;font-size:14.5px;font-weight:650;
   text-decoration:none;color:var(--soft);border-bottom:3px solid transparent;margin-bottom:-1px}
 .sitenav a:hover{color:var(--ink)}
 .sitenav a.on{color:var(--ink);border-bottom-color:var(--amanda)}
 @media(max-width:520px){.sitenav a{padding:10px 13px;font-size:13.5px}}
+
+.sitenav{position:sticky;top:0;z-index:50;background:var(--paper);
+  display:flex;gap:0;flex-wrap:wrap;margin:0 0 30px;border-bottom:1px solid var(--rule)}
+.toc{display:flex;flex-wrap:wrap;gap:7px 0;align-items:baseline;margin:0 0 40px;
+  padding:20px 0 22px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.toc .tl{flex:0 0 100%;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);font-weight:700;margin-bottom:10px}
+.toc a{font-size:14.5px;color:var(--soft);text-decoration:none;padding:3px 0;margin-right:20px;
+  border-bottom:1px solid transparent;white-space:nowrap}
+.toc a:hover{color:var(--ink);border-bottom-color:var(--amanda)}
+.toc a.c{color:var(--ink);font-weight:750;margin-right:22px}
+.toc a.c::before{content:"— ";color:var(--amanda)}
+h2[id],.chap[id]{scroll-margin-top:76px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:520px){.toc a{font-size:13.5px;margin-right:15px}}
 </style>
 <style>
 .chk{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
@@ -190,13 +205,14 @@ figure .cap b{color:var(--body)}
   <h1>What Needs Doing</h1>
   <p class="lede">Everything still open, in the order it blocks other things. <a href="./index.html">The full financial picture is here.</a></p>
 </header>
+<nav class="toc"><span class="tl">On this page</span><a href="#blocking-payroll" class="c">Blocking payroll</a><a href="#payroll-setup-the-plan" class="c">Payroll setup — the plan</a><a href="#the-steps-in-detail" class="c">The steps in detail</a><a href="#hiring-your-son" class="c">Hiring your son</a><a href="#tax-and-the-loan-it-unlocks" class="c">Tax, and the loan it unlocks</a><a href="#costs-already-decided" class="c">Costs already decided</a><a href="#open-questions" class="c">Open questions</a><a href="#already-done" class="c">Already done</a></nav>
 
 <div class="countdown">
   <div class="big">19 days</div>
   <div class="sub">until the first payroll run — Tuesday 15 September</div>
 </div>
 
-<div class="chap"><div class="chap-in"><span class="n num">1</span><h2 class="t">Blocking payroll</h2></div></div>
+<div class="chap" id="blocking-payroll"><div class="chap-in"><span class="n num">1</span><h2 class="t">Blocking payroll</h2></div></div>
 <section style="margin-top:0">
   <span class="pill red">Do these first</span>
   <div class="chk"><span class="n">01</span><span class="b"><span class="t">Michigan MTO e-Registration</span>
@@ -213,7 +229,7 @@ figure .cap b{color:var(--body)}
     <span class="w red">Before mid-September</span></span></div>
 </section>
 
-<div class="chap"><div class="chap-in"><span class="n num">2</span><h2 class="t">Payroll setup — the plan</h2></div></div>
+<div class="chap" id="payroll-setup-the-plan"><div class="chap-in"><span class="n num">2</span><h2 class="t">Payroll setup — the plan</h2></div></div>
 <section style="margin-top:0">
   <p class="stand">Four steps, in order. Steps 2 and 3 cannot start until Michigan sends the numbers, so step 1 is the whole game.</p>
   <table>
@@ -227,7 +243,7 @@ figure .cap b{color:var(--body)}
   <p class="foot-note">Nothing else is outstanding — the bank is connected in QuickBooks and direct deposit is already live. <b>Michigan is the only thing standing between here and the first paycheck.</b></p>
 </section>
 
-<div class="chap"><div class="chap-in"><span class="n num">2b</span><h2 class="t">The steps in detail</h2></div></div>
+<div class="chap" id="the-steps-in-detail"><div class="chap-in"><span class="n num">2b</span><h2 class="t">The steps in detail</h2></div></div>
 <section style="margin-top:0">
   <span class="pill amber">Before 15 September</span>
   <div class="chk"><span class="n">05</span><span class="b"><span class="t">Point direct deposit at the Bank of America personal account</span>
@@ -244,7 +260,7 @@ figure .cap b{color:var(--body)}
     <span class="w amber">Cash-flow check</span></span></div>
 </section>
 
-<div class="chap"><div class="chap-in"><span class="n num">2c</span><h2 class="t">Hiring your son</h2></div></div>
+<div class="chap" id="hiring-your-son"><div class="chap-in"><span class="n num">2c</span><h2 class="t">Hiring your son</h2></div></div>
 <section style="margin-top:0">
   <span class="pill amber">Do it with the same payroll setup</span>
   <p class="stand">The admin help was already in the plan at $1,500 a month. Filling it with a family member costs the business exactly the same and keeps most of the money in the household.</p>
@@ -269,7 +285,7 @@ figure .cap b{color:var(--body)}
   <p class="foot-note"><b>What this does not do:</b> there is no family payroll-tax break. The under-18 and under-21 exemptions apply only to sole proprietorships — <b>the S-corp election disqualifies them</b>, and he is 20 regardless. He pays the same 7.65% as anyone. The benefit is that $16,623 of the $18,000 stays in the household and he owes no income tax on it.</p>
 </section>
 
-<div class="chap"><div class="chap-in"><span class="n num">3</span><h2 class="t">Tax, and the loan it unlocks</h2></div></div>
+<div class="chap" id="tax-and-the-loan-it-unlocks"><div class="chap-in"><span class="n num">3</span><h2 class="t">Tax, and the loan it unlocks</h2></div></div>
 <section style="margin-top:0">
   <span class="pill blue">This autumn</span>
   <div class="chk"><span class="n">09</span><span class="b"><span class="t">Find out whether the $500 a month to the IRS is a formal Installment Agreement</span>
@@ -286,7 +302,7 @@ figure .cap b{color:var(--body)}
     <span class="w blue">After 09 and 10</span></span></div>
 </section>
 
-<div class="chap"><div class="chap-in"><span class="n num">4</span><h2 class="t">Costs already decided</h2></div></div>
+<div class="chap" id="costs-already-decided"><div class="chap-in"><span class="n num">4</span><h2 class="t">Costs already decided</h2></div></div>
 <section style="margin-top:0">
   <span class="pill green">Start any time</span>
   <div class="chk"><span class="n">13</span><span class="b"><span class="t">Look at Google One and Genspark</span>
@@ -306,7 +322,7 @@ figure .cap b{color:var(--body)}
     <span class="w green">Keep</span></span></div>
 </section>
 
-<div class="chap"><div class="chap-in"><span class="n num">5</span><h2 class="t">Open questions</h2></div></div>
+<div class="chap" id="open-questions"><div class="chap-in"><span class="n num">5</span><h2 class="t">Open questions</h2></div></div>
 <section style="margin-top:0">
   <span class="pill amber">Answers change the numbers</span>
   <div class="chk"><span class="n">18</span><span class="b"><span class="t">Read the enrolled count off the Davenport commission statement</span>
@@ -323,7 +339,7 @@ figure .cap b{color:var(--body)}
     <span class="w amber">Monthly, with the close</span></span></div>
 </section>
 
-<div class="chap"><div class="chap-in"><span class="n num">6</span><h2 class="t">Already done</h2></div></div>
+<div class="chap" id="already-done"><div class="chap-in"><span class="n num">6</span><h2 class="t">Already done</h2></div></div>
 <section style="margin-top:0">
   <span class="pill green">This week</span>
   <div class="chk"><span class="n">✓</span><span class="b"><span class="d done">Books caught up — 150 checking transactions and all card data posted; P&amp;L final at $91,401</span></span></div>

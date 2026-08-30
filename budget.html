@@ -103,12 +103,27 @@ button.share:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 a{color:var(--accent)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-.sitenav{display:flex;gap:0;flex-wrap:wrap;margin:0 0 34px;border-bottom:1px solid var(--rule)}
 .sitenav a{display:inline-block;padding:11px 18px 12px;font-size:14.5px;font-weight:650;
   text-decoration:none;color:var(--soft);border-bottom:3px solid transparent;margin-bottom:-1px}
 .sitenav a:hover{color:var(--ink)}
 .sitenav a.on{color:var(--ink);border-bottom-color:var(--amanda)}
 @media(max-width:520px){.sitenav a{padding:10px 13px;font-size:13.5px}}
+
+.sitenav{position:sticky;top:0;z-index:50;background:var(--paper);
+  display:flex;gap:0;flex-wrap:wrap;margin:0 0 30px;border-bottom:1px solid var(--rule)}
+.toc{display:flex;flex-wrap:wrap;gap:7px 0;align-items:baseline;margin:0 0 40px;
+  padding:20px 0 22px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.toc .tl{flex:0 0 100%;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);font-weight:700;margin-bottom:10px}
+.toc a{font-size:14.5px;color:var(--soft);text-decoration:none;padding:3px 0;margin-right:20px;
+  border-bottom:1px solid transparent;white-space:nowrap}
+.toc a:hover{color:var(--ink);border-bottom-color:var(--amanda)}
+.toc a.c{color:var(--ink);font-weight:750;margin-right:22px}
+.toc a.c::before{content:"— ";color:var(--amanda)}
+h2[id],.chap[id]{scroll-margin-top:76px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:520px){.toc a{font-size:13.5px;margin-right:15px}}
 </style>
 </head>
 <body>
@@ -124,7 +139,7 @@ a{color:var(--accent)}
 </div>
 
 <section style="margin-top:38px">
-  <div class="sechead"><h2>What each household costs</h2><div class="fill"></div></div>
+  <div class="sechead"><h2 id="what-each-household-costs">What each household costs</h2><div class="fill"></div></div>
   <p class="intro">All four vehicles ride on one policy on Amanda's side — hers, Jason's, Eli's and Jacob's — which is cheaper than separate policies. Eli and Jacob's $400 contribution comes off the bottom.</p>
   <div class="houses">
     <div class="house hj">
@@ -177,7 +192,7 @@ a{color:var(--accent)}
 </section>
 
 <section>
-  <div class="sechead"><h2>The deposit</h2><div class="fill"></div></div>
+  <div class="sechead"><h2 id="the-deposit">The deposit</h2><div class="fill"></div></div>
   <p class="intro">Jason deposits into the family account every other Friday, opposite Amanda's paycheck — so money lands every week rather than in two lumps. Move the slider to see what any amount does to everything downstream.</p>
   <div class="dial">
     <div class="top">
@@ -207,7 +222,7 @@ a{color:var(--accent)}
 </section>
 
 <section>
-  <div class="sechead"><h2>The business debt, and when it's gone</h2><div class="fill"></div></div>
+  <div class="sechead"><h2 id="the-business-debt-and-when-its-gone">The business debt, and when it's gone</h2><div class="fill"></div></div>
   <p class="intro">Whatever the business has left after taxes, both households and the deposit gets split: the cash reserve fills first, then everything goes at the debt, worst rate first. No consolidation loan, no bank. <b>The clock starts January 2027</b> — Sept through Dec is consumed by catching payroll and the year's tax up in one run, so the debt sits at minimums until then.</p>
   <div class="grid2">
     <div class="panel">
@@ -234,7 +249,7 @@ a{color:var(--accent)}
 </section>
 
 <section>
-  <div class="sechead"><h2>One-time money</h2><div class="fill"></div></div>
+  <div class="sechead"><h2 id="onetime-money">One-time money</h2><div class="fill"></div></div>
   <div class="proceeds">
     <div class="inputrow"><label for="eq">House — expected net at close</label><input class="num f" id="eq" type="number" value="20000"></div>
     <div class="inputrow"><label for="eq2">Tractor &amp; household items sold</label><input class="num f" id="eq2" type="number" value="3500"></div>
