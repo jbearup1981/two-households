@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
+<title>Selling It Ourselves</title>
+<style>
+:root{
+  --paper:#fcfcfa; --ink:#14181d; --body:#3a4249; --soft:#6d767d; --faint:#9aa2a8;
+  --rule:#e0e2e0; --rule-mid:#c6cac7; --wash:#f4f4f1;
+  --jason:#2d5578; --amanda:#8a5f12; --good:#3d7052; --clay:#a8452f;
+  --jason-w:#eaeff4; --amanda-w:#f8f2e4;
+  --band-bg:#14181d; --band-fg:#fcfcfa; --band-dim:#8f9aa2;
+  --seg-ptax:var(--seg-ptax); --seg-irs:var(--seg-irs);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
+  --rule:#262b2e; --rule-mid:#3a4145; --wash:#171b1d;
+  --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
+  --jason-w:#16232e; --amanda-w:#241f14;
+  --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
+  --seg-ptax:#d99b7e; --seg-irs:#a2937c;
+}}
+:root[data-theme="dark"]{
+  --paper:#0f1214; --ink:#eef0f1; --body:#c4cacd; --soft:#8d959a; --faint:#69716f;
+  --rule:#262b2e; --rule-mid:#3a4145; --wash:#171b1d;
+  --jason:#82b3dc; --amanda:#dcaf58; --good:#7cb693; --clay:#dd8a74;
+  --jason-w:#16232e; --amanda-w:#241f14;
+  --band-bg:#1c2429; --band-fg:#eef0f1; --band-dim:#8d959a;
+  --seg-ptax:#d99b7e; --seg-irs:#a2937c;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:clip;background:var(--paper);color:var(--body);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+/* ---- editorial grid: narrow measure, wide breakouts ---- */
+.page{max-width:1080px;margin:0 auto;padding:0 26px}
+.wide{width:100%}
+h2,h3,p,.lede,.dateline,.tl,.aside,.foot-note,figcaption,caption{max-width:68ch}
+.lede{max-width:54ch}
+.mark{max-width:none}
+.mark p{max-width:64ch}
+section>table{max-width:none}
+
+/* ---- masthead ---- */
+.mast{padding:78px 0 0}
+.dateline{font-size:11.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--amanda);font-weight:700;margin:0 0 22px}
+h1{font-size:clamp(44px,8vw,76px);line-height:.98;margin:0;font-weight:800;letter-spacing:-.042em;color:var(--ink);text-wrap:balance}
+.lede{font-size:20.5px;line-height:1.5;color:var(--soft);margin:26px 0 0;font-weight:400;text-wrap:pretty}
+.mast .hr{height:3px;background:var(--ink);margin:44px 0 0}
+
+/* ---- chapter openers ---- */
+.chap{width:100vw;margin:104px 0 0 calc(50% - 50vw);padding:38px 0 40px;background:var(--band-bg);border-top:none}
+.chap-in{max-width:1080px;margin:0 auto;padding:0 26px;display:flex;align-items:baseline;gap:26px}
+.chap .n{font-size:clamp(40px,6vw,60px);font-weight:800;letter-spacing:-.04em;line-height:.9;
+  color:var(--band-dim);white-space:nowrap;flex:none;font-variant-numeric:tabular-nums}
+.chap .t{font-size:clamp(32px,5.4vw,50px);font-weight:800;letter-spacing:-.038em;line-height:1.02;
+  color:var(--band-fg);margin:0;text-wrap:balance}
+@media(max-width:620px){.chap{padding:28px 0 30px}.chap-in{gap:16px}}
+
+/* ---- sections ---- */
+section{margin:70px 0 0}
+h2{font-size:clamp(26px,3.5vw,33px);font-weight:750;letter-spacing:-.03em;line-height:1.16;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance}
+section>h2:first-child::before{content:"";display:block;width:46px;height:4px;
+  background:var(--amanda);margin:0 0 18px}
+h3{font-size:20px;font-weight:750;letter-spacing:-.02em;color:var(--ink);margin:40px 0 10px}
+p{margin:0 0 17px;text-wrap:pretty}
+p:last-child{margin-bottom:0}
+b,strong{color:var(--ink);font-weight:650}
+a{color:var(--jason);text-underline-offset:3px}
+.stand{font-size:19px;line-height:1.6;color:var(--body)}
+
+/* ---- rules & asides ---- */
+.hr-thin{height:1px;background:var(--rule);margin:44px 0}
+.aside{border-left:3px solid var(--rule-mid);padding:2px 0 2px 22px;margin:26px 0;font-size:16px;color:var(--soft)}
+.aside b{color:var(--ink)}
+.mark{background:var(--wash);padding:26px 28px;margin:30px 0}
+.mark.j{border-left:3px solid var(--jason)} .mark.a{border-left:3px solid var(--amanda)}
+.mark.g{border-left:3px solid var(--good)} .mark.c{border-left:3px solid var(--clay)}
+.mark .lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:700;margin:0 0 10px}
+.mark .big{font-size:clamp(30px,4.4vw,42px);font-weight:800;letter-spacing:-.036em;line-height:1.04;color:var(--ink);margin:0 0 12px}
+.mark .big small{font-size:.4em;font-weight:650;letter-spacing:-.01em;color:var(--soft)}
+.mark p{font-size:16.5px;margin-bottom:12px}
+
+/* ---- the standings row ---- */
+.stand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);margin:36px 0 0}
+@media(max-width:720px){.stand-grid{grid-template-columns:1fr 1fr}}
+.st{padding:26px 24px 26px 0;border-bottom:1px solid var(--rule)}
+.st+.st{border-left:1px solid var(--rule);padding-left:24px}
+@media(max-width:720px){.st:nth-child(3){border-left:none;padding-left:0}}
+.st .l{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;line-height:1.4;margin-bottom:11px;min-height:2.8em}
+.st .v{font-size:34px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.st .v.j{color:var(--jason)} .st .v.a{color:var(--amanda)} .st .v.g{color:var(--good)}
+.st .s{font-size:13px;color:var(--faint);margin-top:8px}
+
+/* ---- tables: rules, no boxes ---- */
+table{width:100%;border-collapse:collapse;margin:22px 0 0}
+caption{text-align:left;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding-bottom:11px;border-bottom:1px solid var(--rule-mid)}
+td,th{padding:11px 0;text-align:left;font-size:16px;border-bottom:1px solid var(--rule);vertical-align:baseline}
+th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;
+  border-bottom:1px solid var(--rule-mid);padding-bottom:11px}
+td.r,th.r{text-align:right}
+tr.sub td{color:var(--soft);font-size:15.5px}
+tr.tot td{border-bottom:none;border-top:2px solid var(--ink);font-weight:750;font-size:18px;padding-top:14px;color:var(--ink)}
+.neg{color:var(--clay);font-weight:700}
+.pos{color:var(--good);font-weight:700}
+.foot-note{font-size:15px;line-height:1.62;color:var(--soft);margin:16px 0 0}
+.foot-note b{color:var(--body)}
+
+/* ---- two households ---- */
+.homes{display:grid;grid-template-columns:1fr 1fr;gap:0 52px;margin:30px 0 0}
+@media(max-width:760px){.homes{grid-template-columns:1fr;gap:44px}}
+.home .hd{border-top:3px solid var(--rule);padding-top:14px}
+.home.j .hd{border-top-color:var(--jason)} .home.a .hd{border-top-color:var(--amanda)}
+.home .who{font-size:20px;font-weight:750;letter-spacing:-.024em;color:var(--ink);line-height:1.25}
+.home .where{font-size:13.5px;color:var(--faint);margin-top:3px}
+.home table{margin-top:14px}
+.home td{font-size:15px;padding:8.5px 0}
+.home.j tr.tot td{border-top-color:var(--jason);color:var(--jason)}
+.home.a tr.tot td{border-top-color:var(--amanda);color:var(--amanda)}
+
+/* ---- charts ---- */
+figure{margin:34px 0 0}
+figcaption{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;
+  padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--rule)}
+figure .cap{font-size:15px;color:var(--soft);margin-top:16px;line-height:1.6;max-width:66ch}
+figure .cap b{color:var(--body)}
+.bars{display:flex;height:38px;margin:22px 0 0;overflow:hidden}
+.bars span{display:block;height:100%}
+.key{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:9px 26px;margin-top:20px}
+.key div{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--body);
+  padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.key i{width:10px;height:10px;flex:none}
+.key b{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
+
+/* ---- lists ---- */
+.tl{list-style:none;padding:0;margin:26px 0 0}
+.tl li{display:flex;gap:24px;padding:15px 0;border-bottom:1px solid var(--rule);font-size:16px;line-height:1.6}
+.tl .when{width:96px;flex:none;color:var(--jason);font-weight:750;font-size:12.5px;letter-spacing:.06em;
+  text-transform:uppercase;padding-top:3px}
+.tl.next .when{color:var(--amanda)}
+@media(max-width:560px){.tl li{flex-direction:column;gap:5px}.tl .when{width:auto}}
+
+.colophon{margin:92px 0 0;padding:26px 0 90px;border-top:1px solid var(--rule-mid);font-size:14px;
+  line-height:1.65;color:var(--faint)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.sitenav a{display:inline-block;padding:11px 18px 12px;font-size:14.5px;font-weight:650;
+  text-decoration:none;color:var(--soft);border-bottom:3px solid transparent;margin-bottom:-1px}
+.sitenav a:hover{color:var(--ink)}
+.sitenav a.on{color:var(--ink);border-bottom-color:var(--amanda)}
+@media(max-width:520px){.sitenav a{padding:10px 13px;font-size:13.5px}}
+
+.sitenav{position:sticky;top:0;z-index:50;background:var(--paper);
+  display:flex;gap:0;flex-wrap:wrap;margin:0 0 30px;border-bottom:1px solid var(--rule)}
+.toc{display:flex;flex-wrap:wrap;gap:7px 0;align-items:baseline;margin:0 0 40px;
+  padding:20px 0 22px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.toc .tl{flex:0 0 100%;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);font-weight:700;margin-bottom:10px}
+.toc a{font-size:14.5px;color:var(--soft);text-decoration:none;padding:3px 0;margin-right:20px;
+  border-bottom:1px solid transparent;white-space:nowrap}
+.toc a:hover{color:var(--ink);border-bottom-color:var(--amanda)}
+.toc a.c{color:var(--ink);font-weight:750;margin-right:22px}
+.toc a.c::before{content:"— ";color:var(--amanda)}
+h2[id],.chap[id]{scroll-margin-top:76px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:520px){.toc a{font-size:13.5px;margin-right:15px}}
+</style>
+<style>
+.chk{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.chk:last-child{border-bottom:none}
+.chk .n{flex:none;width:30px;font-weight:800;color:var(--faint);font-variant-numeric:tabular-nums;padding-top:1px}
+.chk .b{flex:1}
+.chk .t{font-weight:650;color:var(--ink);display:block;margin-bottom:3px}
+.chk .d{font-size:15px;color:var(--soft);line-height:1.55}
+.chk .w{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:6px;display:inline-block}
+.w.red{color:var(--clay)} .w.amber{color:var(--amanda)} .w.green{color:var(--good)} .w.blue{color:var(--jason)}
+.done{color:var(--faint);text-decoration:line-through}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:5px 11px;border-radius:2px;margin-bottom:16px}
+.pill.red{background:var(--clay);color:var(--paper)}
+.pill.amber{background:var(--amanda);color:var(--paper)}
+.pill.green{background:var(--good);color:var(--paper)}
+.pill.blue{background:var(--jason);color:var(--paper)}
+.countdown{background:var(--band-bg);color:var(--band-fg);padding:30px 26px;width:100vw;
+  margin:0 0 0 calc(50% - 50vw);text-align:center}
+.countdown .big{font-size:clamp(38px,7vw,60px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.countdown .sub{font-size:15px;color:var(--band-dim);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="sitenav"><a href="./index.html">The plan</a><a href="./budget.html">Budget calculator</a><a href="./todo.html">What needs doing</a><a href="./fsbo.html" class="on">Selling the house</a></nav>
+<header class="mast">
+  <p class="dateline">For sale by owner · Michigan</p>
+  <h1>Selling It Ourselves</h1>
+  <p class="lede">A realtor's commission on this house would cost more than the entire equity we expect to walk away with. That is the whole reason to consider doing it ourselves.</p>
+</header>
+<nav class="toc"><span class="tl">On this page</span><a href="#the-math" class="c">The math</a><a href="#what-it-costs">What doing it ourselves costs</a><a href="#the-steps">The steps, in order</a><a href="#michigan">What Michigan requires</a><a href="#the-timeline">The timeline</a><a href="#honest">Where this can go wrong</a></nav>
+
+<div class="chap" id="the-math"><div class="chap-in"><span class="n num">1</span><h2 class="t">The math</h2></div></div>
+<section style="margin-top:0">
+  <p class="stand">We expect to clear somewhere around <b>$20,000</b> at close. Here is what a commission takes out of that.</p>
+  <table>
+    <caption>Commission against a $350,000 sale</caption>
+    <tr><th>Route</th><th class="r">Commission</th><th class="r">Share of our equity</th></tr>
+    <tr><td>Full service, both sides at 6%</td><td class="r num">$21,000</td><td class="r num neg">105%</td></tr>
+    <tr><td>We sell it, buyer has an agent at 2.5%</td><td class="r num">8,750</td><td class="r num">44%</td></tr>
+    <tr class="tot"><td>We sell it, buyer is unrepresented</td><td class="r num pos">$0</td><td class="r num pos">0%</td></tr>
+  </table>
+  <p class="foot-note">Read the top line again: <b>a full commission can cost more than everything we walk away with.</b> That is not a criticism of realtors — it is what a percentage fee does to a sale with thin equity. On a house with $150,000 of equity the same 6% would be an annoyance. On ours it is the whole thing.</p>
+  <div class="mark c">
+    <p class="lbl">Across likely sale prices, full 6% commission</p>
+    <p class="big num">$16,500 – $25,500</p>
+    <p>At $275,000 it is $16,500. At $425,000 it is $25,500. In every case it is <b>roughly equal to or greater than the equity</b> — which means the money that would pay off the back taxes and the student loans is the same money that would pay the commission.</p>
+  </div>
+</section>
+
+<div class="chap" id="what-it-costs"><div class="chap-in"><span class="n num">2</span><h2 class="t">What doing it ourselves costs</h2></div></div>
+<section style="margin-top:0">
+  <table>
+    <tr><th>Item</th><th class="r">Cost</th><th>Skip it?</th></tr>
+    <tr><td><b>Flat-fee MLS listing</b></td><td class="r num">$300–500</td><td><b>Never.</b> This is the one that matters</td></tr>
+    <tr><td>Professional photography</td><td class="r num">200–400</td><td>No — it is how people decide to visit</td></tr>
+    <tr><td>Pre-listing inspection</td><td class="r num">350–500</td><td>Optional, but it removes the buyer's leverage</td></tr>
+    <tr><td>Appraisal or paid market analysis</td><td class="r num">400–550</td><td>Worth it — mispricing costs more than this</td></tr>
+    <tr><td>Attorney review of the purchase agreement</td><td class="r num">400–800</td><td>No. See below</td></tr>
+    <tr><td>Sign, lockbox, printing</td><td class="r num">100–200</td><td>—</td></tr>
+    <tr class="tot"><td>Total</td><td class="r num">$1,750–2,950</td><td></td></tr>
+  </table>
+  <div class="mark g">
+    <p class="lbl">Against $21,000 of commission</p>
+    <p class="big num">Roughly $18,000 kept</p>
+    <p>And even in the likely case — where the buyer brings an agent and we pay that side 2.5% — we still keep about <b>$9,300</b> after every cost above.</p>
+  </div>
+  <p class="foot-note"><b>The flat-fee MLS listing is not optional.</b> Almost every buyer finds houses through Zillow, Realtor.com and Redfin, and those sites pull from the MLS. A house that is not on the MLS is invisible to most of the market. For $300–500 a flat-fee broker puts it there and we handle everything else ourselves — that single line item is most of what a listing agent was doing.</p>
+</section>
+
+<div class="chap" id="the-steps"><div class="chap-in"><span class="n num">3</span><h2 class="t">The steps, in order</h2></div></div>
+<section style="margin-top:0">
+  <div class="chk"><span class="n">01</span><span class="b"><span class="t">Price it from evidence, not hope</span>
+    <span class="d">Overpricing is the single most common way this fails. A house that sits for three weeks gets treated as damaged goods and sells for less than if it had been priced right on day one. Pay for an appraisal or a market analysis and then <b>believe the number</b>.</span></span></div>
+  <div class="chk"><span class="n">02</span><span class="b"><span class="t">Get the pre-listing inspection</span>
+    <span class="d">Find the problems before a buyer's inspector does. Anything discovered after an accepted offer becomes a price renegotiation from a weak position. Anything fixed beforehand is just a fixed thing.</span></span></div>
+  <div class="chk"><span class="n">03</span><span class="b"><span class="t">Finish the repairs — including the egress window</span>
+    <span class="d">That window makes it a legal <b>four-bedroom</b>, which moves both the price and the pool of buyers far more than the $900 it costs. It is the highest-return item on the punch list.</span></span></div>
+  <div class="chk"><span class="n">04</span><span class="b"><span class="t">Professional photos, after the repairs</span>
+    <span class="d">Not phone photos. The listing photos are the entire first impression for nearly every buyer, and they are why someone books a showing.</span></span></div>
+  <div class="chk"><span class="n">05</span><span class="b"><span class="t">Decide the buyer-agent offer before listing</span>
+    <span class="d">Since the 2024 rule changes, buyer agents negotiate their fee with their own buyers rather than taking a posted split. <b>Decide up front</b> whether to offer 2–2.5%, and be consistent. Offering something keeps agents willing to show it; offering nothing narrows the buyer pool but keeps every dollar.</span></span></div>
+  <div class="chk"><span class="n">06</span><span class="b"><span class="t">Line up the title company early</span>
+    <span class="d">In Michigan the title company runs the closing. Pick one before the first offer so there is no scramble, and ask what they need from a for-sale-by-owner seller.</span></span></div>
+  <div class="chk"><span class="n">07</span><span class="b"><span class="t">Have an attorney review the purchase agreement</span>
+    <span class="d">This is the one place not to save money. A few hundred dollars against a three-hundred-thousand-dollar contract, on the document that decides what happens if something goes wrong. Everything else here is worth doing yourself; this is not.</span></span></div>
+  <div class="chk"><span class="n">08</span><span class="b"><span class="t">Screen for a mortgage pre-approval before accepting</span>
+    <span class="d">Not a pre-qualification — a pre-approval from an actual lender. A buyer who cannot close wastes weeks and the house goes back on the market looking stale.</span></span></div>
+</section>
+
+<div class="chap" id="michigan"><div class="chap-in"><span class="n num">4</span><h2 class="t">What Michigan requires</h2></div></div>
+<section style="margin-top:0">
+  <table>
+    <tr><td><b>Seller's Disclosure Statement</b></td><td>Required by law on residential sales. Fill it out honestly and completely — this is the document that comes back at you later if something was hidden.</td></tr>
+    <tr><td><b>Lead-based paint disclosure</b></td><td>Federal requirement if the house was built before 1978.</td></tr>
+    <tr><td><b>No attorney required at closing</b></td><td>The title company handles it. This is why for-sale-by-owner is more workable in Michigan than in states that require an attorney at the table.</td></tr>
+  </table>
+  <p class="foot-note">Nothing here is legal advice — it is the practical shape of the thing. The disclosure statement and the purchase agreement are the two documents where getting it wrong is expensive.</p>
+</section>
+
+<div class="chap" id="the-timeline"><div class="chap-in"><span class="n num">5</span><h2 class="t">The timeline</h2></div></div>
+<section style="margin-top:0">
+  <p class="stand">Working backward from being in the new place before Thanksgiving.</p>
+  <ul class="tl">
+    <li><span class="when">Oct 16</span><span>Repairs finished, egress window in</span></li>
+    <li><span class="when">Oct 23</span><span>Photos taken, price set from the appraisal</span></li>
+    <li><span class="when">Oct 25</span><span><b>MLS listing goes live</b></span></li>
+    <li><span class="when">Nov 2</span><span>Showings and offers</span></li>
+    <li><span class="when">Nov 6</span><span>Accepted offer</span></li>
+    <li><span class="when">Nov 10</span><span>Buyer's inspection and appraisal</span></li>
+    <li><span class="when">Nov 15</span><span>Title work and financing</span></li>
+    <li><span class="when">Nov 20</span><span><b>Close</b></span></li>
+  </ul>
+  <p class="foot-note">That is a tight but realistic schedule <b>only if the repairs finish on time</b>. Every week the punch list slips pushes the close past Thanksgiving and into the holidays, which is the worst stretch of the year to have a house on the market.</p>
+</section>
+
+<div class="chap" id="honest"><div class="chap-in"><span class="n num">6</span><h2 class="t">Where this can go wrong</h2></div></div>
+<section style="margin-top:0">
+  <p class="stand">Worth naming honestly, because the savings are real but so are these.</p>
+  <table>
+    <tr><td><b>Overpricing</b></td><td>The most common failure by a wide margin. Without an agent nobody is professionally obliged to tell you the number is too high. The appraisal is the antidote — and only if you believe it.</td></tr>
+    <tr><td><b>Some agents steer around us</b></td><td>Less true since the 2024 rule changes, but a buyer's agent working for free has little reason to bring anyone. Offering 2–2.5% mostly solves it.</td></tr>
+    <tr><td><b>Time</b></td><td>Showings, calls, scheduling — during the same weeks as first payroll, the 2025 return and a move. This is the cost people underestimate.</td></tr>
+    <tr><td><b>Negotiating without a buffer</b></td><td>An agent absorbs the awkward parts. Doing it yourself means hearing criticism of your house directly and staying commercial about it.</td></tr>
+  </table>
+  <div class="mark j">
+    <p class="lbl">The fallback, decided in advance</p>
+    <p class="big">Three weeks, then reassess</p>
+    <p>If the listing is live and there is no serious interest after three weeks, that is the signal — either the price is wrong or the approach is. <b>Deciding that now, while nothing is at stake, is much easier than deciding it in November</b> with the move looming.</p>
+  </div>
+</section>
+
+<div class="colophon">
+  Costs and commission rates are typical Michigan figures, not quotes. The equity estimate is Jason's. See <a href="./index.html">the financial plan</a> for what the proceeds are earmarked for.
+</div>
+</div>
+</body>
+</html>
